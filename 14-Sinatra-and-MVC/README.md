@@ -1,5 +1,7 @@
 # Sinatra & MVC
 
+Lecture notes: https://drive.google.com/file/d/1OpFhKN-LqND5qp3FAn04wjBiyKJKeZBJ/view?usp=sharing
+
 * Deliverables:
     
     * View all the books
