@@ -1,0 +1,13 @@
+<h3> <%= @author.name %> </h3>
+<ul>
+ <% @author.books.each do |book| %>
+ <li><%= book.title %></li>
+ <% end %>
+ </ul>
+
+
+
+<form action="/authors/<%= @author.id%>" method="post">
+<input type="hidden" name="_method" value="delete" />
+<input type="submit" value="Delete the Author" />
+</form>
