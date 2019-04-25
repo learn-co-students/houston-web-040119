@@ -2,6 +2,7 @@ module GoogleBooks
   class Adapter
     BASE_URL = 'https://www.googleapis.com/books/v1/volumes?q='
 
+    
     attr_reader :author, :author_raw
 
     def initialize(author)
