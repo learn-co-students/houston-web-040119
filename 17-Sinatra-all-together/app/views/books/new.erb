@@ -1,0 +1,17 @@
+<form action="/books" method="post">
+<label for="title">Title</label>
+<input type="text" name="book[title]" value=""/><br/>
+<label for="snippet">Snippet</label>
+<input type="text" name="book[snippet]" value=""/><br/>
+<label> Authors: </label><br/>
+ <% @authors.each do |author| %>
+ <label><%= author.name %> </label>
+ <input type="checkbox" name="book[author_ids][]" value="<%= author.id %>"/><br/>
+<% end %>
+
+<label> Create Author </label>
+<input type="text" name="author[name]" />
+
+
+<input type="submit" value="Create Book"/>
+</form>
