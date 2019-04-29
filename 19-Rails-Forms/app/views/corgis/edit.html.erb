@@ -1,0 +1,6 @@
+
+<%= render "form" %>
+
+<%= form_tag("/corgis/#{@corgi.id}", method: "delete") do %>
+<%= submit_tag("DELETE CORGI")%>
+<% end %>
