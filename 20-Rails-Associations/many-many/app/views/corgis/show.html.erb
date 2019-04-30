@@ -1,0 +1,7 @@
+<h1><%=@corgi.name%></h1>
+
+<% @corgi.owners.each do |owner| %>
+<li>
+<%= owner.name %>
+</li>
+<%end%>

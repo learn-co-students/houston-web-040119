@@ -1,0 +1,9 @@
+<%= form_for @corgi do |f| %>
+<%= f.label :name %>
+<%= f.text_field :name %>
+<br/>
+<%= f.label 'Owners' %>
+<%= f.collection_select :owner_id, Owner.all, :id, :name, {:prompt => "Please select the owner"} %>
+<br/>
+<%= f.submit %>
+<% end %> 

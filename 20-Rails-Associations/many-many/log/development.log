@@ -1,0 +1,1527 @@
+  [1m[35m (2.2ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateCorgis (20190429143523)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "corgis" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190429143523"]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2019-04-29 14:36:40.013759"], ["updated_at", "2019-04-29 14:36:40.013759"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mCorgi Load (2.1ms)[0m  [1m[34mSELECT "corgis".* FROM "corgis"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "corgis" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Charles"], ["created_at", "2019-04-29 14:40:51.937812"], ["updated_at", "2019-04-29 14:40:51.937812"]]
+  [1m[35m (2.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mCorgi Load (0.2ms)[0m  [1m[34mSELECT "corgis".* FROM "corgis"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.4ms)[0m  [1m[32mINSERT INTO "corgis" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Minh"], ["created_at", "2019-04-29 14:41:59.476917"], ["updated_at", "2019-04-29 14:41:59.476917"]]
+  [1m[35m (2.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mCorgi Load (0.3ms)[0m  [1m[34mSELECT "corgis".* FROM "corgis"[0m
+Started GET "/" for ::1 at 2019-04-29 09:44:47 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Rails::WelcomeController#index as HTML
+  Parameters: {"internal"=>true}
+  Rendering /Users/vidhi.sharma/.rvm/gems/ruby-2.6.1/gems/railties-5.0.7.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/vidhi.sharma/.rvm/gems/ruby-2.6.1/gems/railties-5.0.7.2/lib/rails/templates/rails/welcome/index.html.erb (3.4ms)
+Completed 200 OK in 15ms (Views: 8.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/corgis" for ::1 at 2019-04-29 09:45:00 -0500
+Processing by CorgisController#index as HTML
+  Rendering corgis/index.html.erb within layouts/application
+  [1m[36mCorgi Load (0.4ms)[0m  [1m[34mSELECT "corgis".* FROM "corgis"[0m
+  Rendered corgis/index.html.erb within layouts/application (11.9ms)
+Completed 200 OK in 916ms (Views: 909.8ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/corgis/1" for ::1 at 2019-04-29 09:47:09 -0500
+Processing by CorgisController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCorgi Load (0.1ms)[0m  [1m[34mSELECT  "corgis".* FROM "corgis" WHERE "corgis"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering corgis/show.html.erb within layouts/application
+  Rendered corgis/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 41ms (Views: 27.4ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/" for ::1 at 2019-04-29 09:52:23 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Rails::WelcomeController#index as HTML
+  Parameters: {"internal"=>true}
+  Rendering /Users/vidhi.sharma/.rvm/gems/ruby-2.6.1/gems/railties-5.0.7.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/vidhi.sharma/.rvm/gems/ruby-2.6.1/gems/railties-5.0.7.2/lib/rails/templates/rails/welcome/index.html.erb (4.0ms)
+Completed 200 OK in 22ms (Views: 11.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/corgis/2" for ::1 at 2019-04-29 09:52:42 -0500
+Processing by CorgisController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mCorgi Load (0.3ms)[0m  [1m[34mSELECT  "corgis".* FROM "corgis" WHERE "corgis"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering corgis/show.html.erb within layouts/application
+  Rendered corgis/show.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 294ms (Views: 278.4ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/corgis/1" for ::1 at 2019-04-29 09:52:47 -0500
+Processing by CorgisController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCorgi Load (0.1ms)[0m  [1m[34mSELECT  "corgis".* FROM "corgis" WHERE "corgis"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering corgis/show.html.erb within layouts/application
+  Rendered corgis/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 46ms (Views: 41.5ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/corgis/new" for ::1 at 2019-04-29 09:58:26 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by CorgisController#new as HTML
+  Rendering corgis/new.html.erb within layouts/application
+  Rendered corgis/new.html.erb within layouts/application (35.0ms)
+Completed 200 OK in 280ms (Views: 263.2ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/corgis" for ::1 at 2019-04-29 09:59:08 -0500
+Processing by CorgisController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Mxav4QNspjQQxvT/uWOLxvIhtG8IJn1ij7GgEGxYv6cqryc9qyushvjwgCGM4DbskZ+sahLo78z51PDwAwvD/g==", "corgi"=>{"name"=>"Sam"}, "commit"=>"Create Corgi"}
+Completed 500 Internal Server Error in 120210ms (ActiveRecord: 0.0ms)
+
+
+  
+SystemExit (exit):
+  
+app/controllers/corgis_controller.rb:17:in `create'
+  Rendering /Users/vidhi.sharma/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/vidhi.sharma/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/vidhi.sharma/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (124.3ms)
+  Rendering /Users/vidhi.sharma/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/vidhi.sharma/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (55.4ms)
+  Rendering /Users/vidhi.sharma/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/vidhi.sharma/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (34.4ms)
+  Rendered /Users/vidhi.sharma/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (289.8ms)
+Started GET "/corgis/new" for ::1 at 2019-04-29 10:02:36 -0500
+Processing by CorgisController#new as HTML
+  Rendering corgis/new.html.erb within layouts/application
+  Rendered corgis/new.html.erb within layouts/application (28.5ms)
+Completed 200 OK in 443ms (Views: 358.7ms | ActiveRecord: 3.2ms)
+
+
+Started POST "/corgis" for ::1 at 2019-04-29 10:02:51 -0500
+Processing by CorgisController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"O5gN0ft/KjYNtq6bx/dgUtqoE0f4Il1oqT48lhKs91giIYUNUzgghOWA2kXydN14uRYLQuLsz8bfW2x2ff+LAQ==", "corgi"=>{"name"=>"Sam"}, "commit"=>"Create Corgi"}
+Completed 500 Internal Server Error in 24728ms (ActiveRecord: 0.0ms)
+
+
+  
+SystemExit (exit):
+  
+app/controllers/corgis_controller.rb:18:in `create'
+  Rendering /Users/vidhi.sharma/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/vidhi.sharma/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/vidhi.sharma/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (432.4ms)
+  Rendering /Users/vidhi.sharma/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/vidhi.sharma/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (111.8ms)
+  Rendering /Users/vidhi.sharma/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/vidhi.sharma/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (40.5ms)
+  Rendered /Users/vidhi.sharma/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (636.2ms)
+Started GET "/corgis/new" for ::1 at 2019-04-29 10:03:46 -0500
+Processing by CorgisController#new as HTML
+  Rendering corgis/new.html.erb within layouts/application
+  Rendered corgis/new.html.erb within layouts/application (42.8ms)
+Completed 200 OK in 495ms (Views: 385.6ms | ActiveRecord: 3.1ms)
+
+
+Started POST "/corgis" for ::1 at 2019-04-29 10:03:50 -0500
+Processing by CorgisController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"rTG/P5zU1ug2CU8M87IPfIFjFcBskE8K3+kiBmhaIpG0iDfjNJPcWt4/O9LGMbJW4t0NxXZe3aSpjHLmBwleyA==", "corgi"=>{"name"=>"Sam"}, "commit"=>"Create Corgi"}
+Completed 500 Internal Server Error in 61506ms (ActiveRecord: 0.0ms)
+
+
+  
+SystemExit (exit):
+  
+app/controllers/corgis_controller.rb:18:in `create'
+  Rendering /Users/vidhi.sharma/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/vidhi.sharma/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/vidhi.sharma/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (296.9ms)
+  Rendering /Users/vidhi.sharma/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/vidhi.sharma/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (64.2ms)
+  Rendering /Users/vidhi.sharma/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/vidhi.sharma/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (26.2ms)
+  Rendered /Users/vidhi.sharma/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (422.0ms)
+Started GET "/corgis/new" for ::1 at 2019-04-29 10:05:01 -0500
+Processing by CorgisController#new as HTML
+  Rendering corgis/new.html.erb within layouts/application
+  Rendered corgis/new.html.erb within layouts/application (30.6ms)
+Completed 200 OK in 516ms (Views: 429.6ms | ActiveRecord: 14.5ms)
+
+
+  [1m[36mCorgi Load (0.3ms)[0m  [1m[34mSELECT  "corgis".* FROM "corgis" ORDER BY "corgis"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+Started GET "/corgis/new" for ::1 at 2019-04-29 10:09:36 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by CorgisController#new as HTML
+  Rendering corgis/new.html.erb within layouts/application
+  Rendered corgis/new.html.erb within layouts/application (18.0ms)
+Completed 200 OK in 262ms (Views: 246.3ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/corgis" for ::1 at 2019-04-29 10:09:40 -0500
+Processing by CorgisController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ckHLBxPFswETOJhvhNSD9pP+ZBjvRUvGizq/AiNMUV1r+EPbu4K5s/sO7LGxVz7c8EB8HfWL2Wj9X+/iTB8tBA==", "corgi"=>{"name"=>"Sam"}, "commit"=>"Create Corgi"}
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.4ms)[0m  [1m[32mINSERT INTO "corgis" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Sam"], ["created_at", "2019-04-29 15:09:40.800537"], ["updated_at", "2019-04-29 15:09:40.800537"]]
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/corgis/3
+Completed 302 Found in 8ms (ActiveRecord: 2.9ms)
+
+
+Started GET "/corgis/3" for ::1 at 2019-04-29 10:09:40 -0500
+Processing by CorgisController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mCorgi Load (0.2ms)[0m  [1m[34mSELECT  "corgis".* FROM "corgis" WHERE "corgis"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering corgis/show.html.erb within layouts/application
+  Rendered corgis/show.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 33ms (Views: 27.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/corgis/new" for ::1 at 2019-04-29 10:10:14 -0500
+Started GET "/corgis/new" for ::1 at 2019-04-29 10:10:24 -0500
+Processing by CorgisController#new as HTML
+  Rendering corgis/new.html.erb within layouts/application
+  Rendered corgis/new.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 64ms (Views: 51.0ms | ActiveRecord: 0.7ms)
+
+
+Processing by CorgisController#new as HTML
+  Rendering corgis/new.html.erb within layouts/application
+  Rendered corgis/new.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 30ms (Views: 22.9ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/corgis" for ::1 at 2019-04-29 10:10:28 -0500
+Processing by CorgisController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"6SzA1znL7HoQn9Y+5i7KHCKys0N3dHL+9dhIaB3rFvDwlUgLkYzmyPipouDTrXc2QQyrRm264FCDvRiIcrhqqQ==", "corgi"=>{"name"=>"Justin"}, "commit"=>"Create Corgi"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.5ms)[0m  [1m[32mINSERT INTO "corgis" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Justin"], ["created_at", "2019-04-29 15:10:29.002078"], ["updated_at", "2019-04-29 15:10:29.002078"]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/corgis/4
+Completed 302 Found in 10ms (ActiveRecord: 2.7ms)
+
+
+Started GET "/corgis/4" for ::1 at 2019-04-29 10:10:29 -0500
+Processing by CorgisController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mCorgi Load (0.7ms)[0m  [1m[34mSELECT  "corgis".* FROM "corgis" WHERE "corgis"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering corgis/show.html.erb within layouts/application
+  Rendered corgis/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 35ms (Views: 30.5ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/corgis/4/edit" for ::1 at 2019-04-29 10:14:21 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by CorgisController#edit as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mCorgi Load (0.1ms)[0m  [1m[34mSELECT  "corgis".* FROM "corgis" WHERE "corgis"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering corgis/edit.html.erb within layouts/application
+  Rendered corgis/edit.html.erb within layouts/application (20.7ms)
+Completed 200 OK in 261ms (Views: 245.1ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/corgis/4/edit" for ::1 at 2019-04-29 10:17:46 -0500
+Processing by CorgisController#edit as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mCorgi Load (0.2ms)[0m  [1m[34mSELECT  "corgis".* FROM "corgis" WHERE "corgis"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering corgis/edit.html.erb within layouts/application
+  Rendered corgis/_form.html.erb (1.3ms)
+  Rendered corgis/edit.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 28ms (Views: 26.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/corgis/new" for ::1 at 2019-04-29 10:17:52 -0500
+Processing by CorgisController#new as HTML
+  Rendering corgis/new.html.erb within layouts/application
+  Rendered corgis/_form.html.erb (7.3ms)
+  Rendered corgis/new.html.erb within layouts/application (8.7ms)
+Completed 200 OK in 66ms (Views: 64.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/corgis/4/edit" for ::1 at 2019-04-29 10:20:46 -0500
+Processing by CorgisController#edit as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mCorgi Load (0.2ms)[0m  [1m[34mSELECT  "corgis".* FROM "corgis" WHERE "corgis"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering corgis/edit.html.erb within layouts/application
+  Rendered corgis/_form.html.erb (3.9ms)
+  Rendered corgis/edit.html.erb within layouts/application (6.2ms)
+Completed 200 OK in 79ms (Views: 74.7ms | ActiveRecord: 0.2ms)
+
+
+Started PATCH "/corgis/4" for ::1 at 2019-04-29 10:20:55 -0500
+Processing by CorgisController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"X40FH0bI9zawyA5lUFkw2bpSo1D5C6dYq4KHRhFRKUhGNI3D7o/9hFj+ertl2o3z2ey7VePFNfbd59emfgJVEQ==", "corgi"=>{"name"=>"Justin is the collest"}, "commit"=>"Update Corgi", "id"=>"4"}
+Completed 500 Internal Server Error in 87380ms (ActiveRecord: 0.0ms)
+
+
+  
+SystemExit (exit):
+  
+app/controllers/corgis_controller.rb:26:in `update'
+  Rendering /Users/vidhi.sharma/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/vidhi.sharma/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/vidhi.sharma/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (194.0ms)
+  Rendering /Users/vidhi.sharma/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/vidhi.sharma/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (62.1ms)
+  Rendering /Users/vidhi.sharma/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/vidhi.sharma/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (35.3ms)
+  Rendered /Users/vidhi.sharma/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (323.8ms)
+Started GET "/corgis/4/edit" for ::1 at 2019-04-29 10:22:28 -0500
+Processing by CorgisController#edit as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mCorgi Load (1.2ms)[0m  [1m[34mSELECT  "corgis".* FROM "corgis" WHERE "corgis"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering corgis/edit.html.erb within layouts/application
+  Rendered corgis/_form.html.erb (32.4ms)
+  Rendered corgis/edit.html.erb within layouts/application (39.2ms)
+Completed 200 OK in 487ms (Views: 389.0ms | ActiveRecord: 5.2ms)
+
+
+Started PATCH "/corgis/4" for ::1 at 2019-04-29 10:22:35 -0500
+Processing by CorgisController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"axjdAlLq5KJqp0AHJSLWMfAFyTVyPkPhHS511O8LIJ5yoVXe+q3uEIKRNNkQoWsbk7vRMGjw0U9rSyU0gFhcxw==", "corgi"=>{"name"=>"Justin is the coolest"}, "commit"=>"Update Corgi", "id"=>"4"}
+  [1m[36mCorgi Load (0.5ms)[0m  [1m[34mSELECT  "corgis".* FROM "corgis" WHERE "corgis"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.6ms)[0m  [1m[33mUPDATE "corgis" SET "name" = ?, "updated_at" = ? WHERE "corgis"."id" = ?[0m  [["name", "Justin is the coolest"], ["updated_at", "2019-04-29 15:22:35.978564"], ["id", 4]]
+  [1m[35m (2.7ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/corgis/4
+Completed 302 Found in 92ms (ActiveRecord: 5.2ms)
+
+
+Started GET "/corgis/4" for ::1 at 2019-04-29 10:22:36 -0500
+Processing by CorgisController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mCorgi Load (0.6ms)[0m  [1m[34mSELECT  "corgis".* FROM "corgis" WHERE "corgis"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering corgis/show.html.erb within layouts/application
+  Rendered corgis/show.html.erb within layouts/application (9.9ms)
+Completed 200 OK in 439ms (Views: 414.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/corgis/4/edit" for ::1 at 2019-04-29 10:28:20 -0500
+Processing by CorgisController#edit as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mCorgi Load (1.8ms)[0m  [1m[34mSELECT  "corgis".* FROM "corgis" WHERE "corgis"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering corgis/edit.html.erb within layouts/application
+  Rendered corgis/edit.html.erb within layouts/application (13.3ms)
+Completed 500 Internal Server Error in 151ms (ActiveRecord: 10.5ms)
+
+
+  
+SyntaxError (/Users/vidhi.sharma/Desktop/Lectures/mod2_lec/040119/corgis-app/app/views/corgis/edit.html.erb:4: syntax error, unexpected ',', expecting ')'
+...rm_tag ("/corgis/#{@corgi.id}", method: "delete") do @output...
+...                              ^
+/Users/vidhi.sharma/Desktop/Lectures/mod2_lec/040119/corgis-app/app/views/corgis/edit.html.erb:4: syntax error, unexpected ')', expecting end
+...{@corgi.id}", method: "delete") do @output_buffer.safe_appen...
+...                              ^
+/Users/vidhi.sharma/Desktop/Lectures/mod2_lec/040119/corgis-app/app/views/corgis/edit.html.erb:7: syntax error, unexpected ensure, expecting end-of-input
+          ensure
+          ^~~~~~):
+  
+app/views/corgis/edit.html.erb:4: syntax error, unexpected ',', expecting ')'
+app/views/corgis/edit.html.erb:4: syntax error, unexpected ')', expecting end
+app/views/corgis/edit.html.erb:7: syntax error, unexpected ensure, expecting end-of-input
+  Rendering /Users/vidhi.sharma/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/vidhi.sharma/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/vidhi.sharma/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (421.0ms)
+Started GET "/corgis/4/edit" for ::1 at 2019-04-29 10:28:24 -0500
+  Rendering /Users/vidhi.sharma/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/vidhi.sharma/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (99.5ms)
+Processing by CorgisController#edit as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mCorgi Load (0.9ms)[0m  [1m[34mSELECT  "corgis".* FROM "corgis" WHERE "corgis"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering /Users/vidhi.sharma/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/vidhi.sharma/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (15.5ms)
+  Rendered /Users/vidhi.sharma/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (650.3ms)
+  Rendering corgis/edit.html.erb within layouts/application
+  Rendered corgis/edit.html.erb within layouts/application (2.1ms)
+Completed 500 Internal Server Error in 109ms (ActiveRecord: 0.9ms)
+
+
+  
+SyntaxError (/Users/vidhi.sharma/Desktop/Lectures/mod2_lec/040119/corgis-app/app/views/corgis/edit.html.erb:4: syntax error, unexpected ',', expecting ')'
+...rm_tag ("/corgis/#{@corgi.id}", method: "delete") do @output...
+...                              ^
+/Users/vidhi.sharma/Desktop/Lectures/mod2_lec/040119/corgis-app/app/views/corgis/edit.html.erb:4: syntax error, unexpected ')', expecting end
+...{@corgi.id}", method: "delete") do @output_buffer.safe_appen...
+...                              ^
+/Users/vidhi.sharma/Desktop/Lectures/mod2_lec/040119/corgis-app/app/views/corgis/edit.html.erb:7: syntax error, unexpected ensure, expecting end-of-input
+          ensure
+          ^~~~~~):
+  
+app/views/corgis/edit.html.erb:4: syntax error, unexpected ',', expecting ')'
+app/views/corgis/edit.html.erb:4: syntax error, unexpected ')', expecting end
+app/views/corgis/edit.html.erb:7: syntax error, unexpected ensure, expecting end-of-input
+  Rendering /Users/vidhi.sharma/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/vidhi.sharma/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/vidhi.sharma/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (417.4ms)
+  Rendering /Users/vidhi.sharma/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/vidhi.sharma/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (95.5ms)
+  Rendering /Users/vidhi.sharma/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/vidhi.sharma/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (18.1ms)
+  Rendered /Users/vidhi.sharma/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (592.6ms)
+Started GET "/corgis/4/edit" for ::1 at 2019-04-29 10:29:42 -0500
+Processing by CorgisController#edit as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mCorgi Load (0.5ms)[0m  [1m[34mSELECT  "corgis".* FROM "corgis" WHERE "corgis"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering corgis/edit.html.erb within layouts/application
+  Rendered corgis/edit.html.erb within layouts/application (3.8ms)
+Completed 500 Internal Server Error in 51ms (ActiveRecord: 0.5ms)
+
+
+  
+SyntaxError (/Users/vidhi.sharma/Desktop/Lectures/mod2_lec/040119/corgis-app/app/views/corgis/edit.html.erb:4: syntax error, unexpected ',', expecting ')'
+...rm_tag ("/corgis/#{@corgi.id}", method: "DELETE") do @output...
+...                              ^
+/Users/vidhi.sharma/Desktop/Lectures/mod2_lec/040119/corgis-app/app/views/corgis/edit.html.erb:4: syntax error, unexpected ')', expecting end
+...{@corgi.id}", method: "DELETE") do @output_buffer.safe_appen...
+...                              ^
+/Users/vidhi.sharma/Desktop/Lectures/mod2_lec/040119/corgis-app/app/views/corgis/edit.html.erb:7: syntax error, unexpected ensure, expecting end-of-input
+          ensure
+          ^~~~~~):
+  
+app/views/corgis/edit.html.erb:4: syntax error, unexpected ',', expecting ')'
+app/views/corgis/edit.html.erb:4: syntax error, unexpected ')', expecting end
+app/views/corgis/edit.html.erb:7: syntax error, unexpected ensure, expecting end-of-input
+  Rendering /Users/vidhi.sharma/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/vidhi.sharma/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/vidhi.sharma/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (418.6ms)
+  Rendering /Users/vidhi.sharma/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/vidhi.sharma/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (100.0ms)
+  Rendering /Users/vidhi.sharma/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/vidhi.sharma/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (20.1ms)
+  Rendered /Users/vidhi.sharma/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (586.3ms)
+Started GET "/corgis/4/edit" for ::1 at 2019-04-29 10:30:08 -0500
+Processing by CorgisController#edit as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mCorgi Load (10.4ms)[0m  [1m[34mSELECT  "corgis".* FROM "corgis" WHERE "corgis"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering corgis/edit.html.erb within layouts/application
+  Rendered corgis/_form.html.erb (44.8ms)
+  Rendered corgis/edit.html.erb within layouts/application (57.2ms)
+Completed 200 OK in 501ms (Views: 471.5ms | ActiveRecord: 10.4ms)
+
+
+Started DELETE "/corgis/4" for ::1 at 2019-04-29 10:30:56 -0500
+  
+ActionController::RoutingError (No route matches [DELETE] "/corgis/4"):
+  
+actionpack (5.0.7.2) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.0.7.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.7.2) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.7.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.7.2) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.7.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.7.2) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.7.2) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.7.2) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.7.2) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.7.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.7.2) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.7.2) lib/rails/engine.rb:522:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+  Rendering /Users/vidhi.sharma/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering /Users/vidhi.sharma/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/vidhi.sharma/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (27.8ms)
+  Rendered collection of /Users/vidhi.sharma/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/routes/_route.html.erb [7 times] (91.4ms)
+  Rendered /Users/vidhi.sharma/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/routes/_table.html.erb (21.0ms)
+  Rendering /Users/vidhi.sharma/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/vidhi.sharma/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (36.8ms)
+  Rendered /Users/vidhi.sharma/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (263.7ms)
+Started GET "/corgis/4" for ::1 at 2019-04-29 10:31:38 -0500
+Processing by CorgisController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mCorgi Load (0.9ms)[0m  [1m[34mSELECT  "corgis".* FROM "corgis" WHERE "corgis"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering corgis/show.html.erb within layouts/application
+  Rendered corgis/show.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 543ms (Views: 418.3ms | ActiveRecord: 12.6ms)
+
+
+Started GET "/corgis/new" for ::1 at 2019-04-29 10:31:42 -0500
+Processing by CorgisController#new as HTML
+  Rendering corgis/new.html.erb within layouts/application
+  Rendered corgis/_form.html.erb (40.2ms)
+  Rendered corgis/new.html.erb within layouts/application (47.2ms)
+Completed 200 OK in 406ms (Views: 393.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/corgis" for ::1 at 2019-04-29 10:31:47 -0500
+Processing by CorgisController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"RG2KW9uxH45Uf/OZS4i33795ntnxuYct5tYez/4Va3Fd1AKHc/YVPLxJh0d+Cwr13MeG3Ot3FYOQs04vkUYXKA==", "corgi"=>{"name"=>"Vidhi"}, "commit"=>"Create Corgi"}
+  [1m[35m (0.6ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "corgis" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Vidhi"], ["created_at", "2019-04-29 15:31:47.208617"], ["updated_at", "2019-04-29 15:31:47.208617"]]
+  [1m[35m (2.4ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/corgis/5
+Completed 302 Found in 73ms (ActiveRecord: 3.8ms)
+
+
+Started GET "/corgis/5" for ::1 at 2019-04-29 10:31:47 -0500
+Processing by CorgisController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mCorgi Load (1.0ms)[0m  [1m[34mSELECT  "corgis".* FROM "corgis" WHERE "corgis"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering corgis/show.html.erb within layouts/application
+  Rendered corgis/show.html.erb within layouts/application (13.9ms)
+Completed 200 OK in 481ms (Views: 449.5ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/corgis/5/edit" for ::1 at 2019-04-29 10:31:51 -0500
+Processing by CorgisController#edit as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mCorgi Load (2.1ms)[0m  [1m[34mSELECT  "corgis".* FROM "corgis" WHERE "corgis"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering corgis/edit.html.erb within layouts/application
+  Rendered corgis/_form.html.erb (42.3ms)
+  Rendered corgis/edit.html.erb within layouts/application (53.6ms)
+Completed 200 OK in 498ms (Views: 463.0ms | ActiveRecord: 2.1ms)
+
+
+Started DELETE "/corgis/5" for ::1 at 2019-04-29 10:31:53 -0500
+Processing by CorgisController#destroy as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"UZ2ZBoaEIuY+6yMVAkCYdiLsIesis5gOF0mHX08wXtlIJBHaLsMoVNbdV8s3wyVcQVI57jh9CqBhLNe/IGMigA==", "commit"=>"DELETE CORGI", "id"=>"5"}
+Completed 500 Internal Server Error in 6517ms (ActiveRecord: 0.0ms)
+
+
+  
+SystemExit (exit):
+  
+app/controllers/corgis_controller.rb:32:in `destroy'
+  Rendering /Users/vidhi.sharma/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/vidhi.sharma/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/vidhi.sharma/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (472.2ms)
+  Rendering /Users/vidhi.sharma/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/vidhi.sharma/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (108.5ms)
+  Rendering /Users/vidhi.sharma/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/vidhi.sharma/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (144.5ms)
+  Rendered /Users/vidhi.sharma/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (787.2ms)
+Started GET "/corgis/5/edit" for ::1 at 2019-04-29 10:32:55 -0500
+Processing by CorgisController#edit as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mCorgi Load (1.1ms)[0m  [1m[34mSELECT  "corgis".* FROM "corgis" WHERE "corgis"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering corgis/edit.html.erb within layouts/application
+  Rendered corgis/_form.html.erb (38.8ms)
+  Rendered corgis/edit.html.erb within layouts/application (49.8ms)
+Completed 200 OK in 569ms (Views: 456.8ms | ActiveRecord: 4.0ms)
+
+
+Started DELETE "/corgis/5" for ::1 at 2019-04-29 10:32:58 -0500
+Processing by CorgisController#destroy as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"m2UTsPFoJwdvdxFaR22mkzCOJS4HiOTQbO0hj07JXKCC3JtsWS8ttYdBZYRy7hu5UzA9Kx1Gdn4aiHFvIZog+Q==", "commit"=>"DELETE CORGI", "id"=>"5"}
+  [1m[36mCorgi Load (0.7ms)[0m  [1m[34mSELECT  "corgis".* FROM "corgis" WHERE "corgis"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[31mDELETE FROM "corgis" WHERE "corgis"."id" = ?[0m  [["id", 5]]
+  [1m[35m (2.5ms)[0m  [1m[36mcommit transaction[0m
+No template found for CorgisController#destroy, rendering head :no_content
+Completed 204 No Content in 94ms (ActiveRecord: 4.5ms)
+
+
+Started GET "/corgis/5/edit" for ::1 at 2019-04-29 10:33:20 -0500
+Processing by CorgisController#edit as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mCorgi Load (0.7ms)[0m  [1m[34mSELECT  "corgis".* FROM "corgis" WHERE "corgis"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+Completed 404 Not Found in 76ms (ActiveRecord: 3.8ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Corgi with 'id'=5):
+  
+app/controllers/corgis_controller.rb:21:in `edit'
+  Rendering /Users/vidhi.sharma/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/vidhi.sharma/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/vidhi.sharma/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (320.8ms)
+  Rendering /Users/vidhi.sharma/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/vidhi.sharma/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (59.9ms)
+  Rendering /Users/vidhi.sharma/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/vidhi.sharma/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (18.8ms)
+  Rendered /Users/vidhi.sharma/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (461.3ms)
+Started GET "/corgis" for ::1 at 2019-04-29 10:33:25 -0500
+Processing by CorgisController#index as HTML
+  Rendering corgis/index.html.erb within layouts/application
+  [1m[36mCorgi Load (0.9ms)[0m  [1m[34mSELECT "corgis".* FROM "corgis"[0m
+  Rendered corgis/index.html.erb within layouts/application (53.9ms)
+Completed 200 OK in 512ms (Views: 482.8ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/corgis/new" for ::1 at 2019-04-29 10:33:28 -0500
+Processing by CorgisController#new as HTML
+  Rendering corgis/new.html.erb within layouts/application
+  Rendered corgis/_form.html.erb (35.6ms)
+  Rendered corgis/new.html.erb within layouts/application (51.8ms)
+Completed 200 OK in 400ms (Views: 370.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/corgis/4/edit" for ::1 at 2019-04-29 10:33:28 -0500
+Processing by CorgisController#edit as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mCorgi Load (1.0ms)[0m  [1m[34mSELECT  "corgis".* FROM "corgis" WHERE "corgis"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering corgis/edit.html.erb within layouts/application
+  Rendered corgis/_form.html.erb (32.7ms)
+  Rendered corgis/edit.html.erb within layouts/application (71.7ms)
+Completed 200 OK in 522ms (Views: 472.3ms | ActiveRecord: 1.0ms)
+
+
+Started DELETE "/corgis/4" for ::1 at 2019-04-29 10:33:30 -0500
+Processing by CorgisController#destroy as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"QBxx8veBqnh9yL0VsYt3gMfR1I7INrIIOse4lsmjJ/hZpfkuX8agypX+ycuECMqqpG/Mi9L4IKZMouh2pvBboQ==", "commit"=>"DELETE CORGI", "id"=>"4"}
+  [1m[36mCorgi Load (0.6ms)[0m  [1m[34mSELECT  "corgis".* FROM "corgis" WHERE "corgis"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[35m (0.6ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[31mDELETE FROM "corgis" WHERE "corgis"."id" = ?[0m  [["id", 4]]
+  [1m[35m (2.8ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/corgis
+Completed 302 Found in 65ms (ActiveRecord: 4.8ms)
+
+
+Started GET "/corgis" for ::1 at 2019-04-29 10:33:31 -0500
+Processing by CorgisController#index as HTML
+  Rendering corgis/index.html.erb within layouts/application
+  [1m[36mCorgi Load (0.9ms)[0m  [1m[34mSELECT "corgis".* FROM "corgis"[0m
+  Rendered corgis/index.html.erb within layouts/application (19.8ms)
+Completed 200 OK in 516ms (Views: 503.3ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/corgis" for ::1 at 2019-04-29 10:39:22 -0500
+Processing by CorgisController#index as HTML
+  Rendering corgis/index.html.erb within layouts/application
+  [1m[36mCorgi Load (0.6ms)[0m  [1m[34mSELECT "corgis".* FROM "corgis"[0m
+  Rendered corgis/index.html.erb within layouts/application (20.9ms)
+Completed 500 Internal Server Error in 67ms (ActiveRecord: 0.6ms)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"corgis"} missing required keys: [:id]):
+    1: <% @corgis.each do |corgi| %>
+    2:    <li>
+    3:        <%= link_to "#{corgi.name}", corgi_path %>
+    4:        
+    5:     </li> 
+    6:     <% end %>
+  
+app/views/corgis/index.html.erb:3:in `block in _app_views_corgis_index_html_erb__1260704849064199653_70254542206800'
+app/views/corgis/index.html.erb:1:in `_app_views_corgis_index_html_erb__1260704849064199653_70254542206800'
+  Rendering /Users/vidhi.sharma/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /Users/vidhi.sharma/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/vidhi.sharma/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (420.2ms)
+  Rendering /Users/vidhi.sharma/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/vidhi.sharma/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (100.4ms)
+  Rendering /Users/vidhi.sharma/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/vidhi.sharma/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (6.8ms)
+  Rendered /Users/vidhi.sharma/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (581.0ms)
+Started GET "/corgis" for ::1 at 2019-04-29 10:40:17 -0500
+Processing by CorgisController#index as HTML
+  Rendering corgis/index.html.erb within layouts/application
+  [1m[36mCorgi Load (0.8ms)[0m  [1m[34mSELECT "corgis".* FROM "corgis"[0m
+  Rendered corgis/index.html.erb within layouts/application (23.8ms)
+Completed 200 OK in 460ms (Views: 437.3ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/corgis/1" for ::1 at 2019-04-29 10:40:19 -0500
+Processing by CorgisController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCorgi Load (0.5ms)[0m  [1m[34mSELECT  "corgis".* FROM "corgis" WHERE "corgis"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering corgis/show.html.erb within layouts/application
+  Rendered corgis/show.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 359ms (Views: 324.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/corgis" for ::1 at 2019-04-29 10:40:24 -0500
+Processing by CorgisController#index as HTML
+  Rendering corgis/index.html.erb within layouts/application
+  [1m[36mCorgi Load (1.0ms)[0m  [1m[34mSELECT "corgis".* FROM "corgis"[0m
+  Rendered corgis/index.html.erb within layouts/application (38.9ms)
+Completed 200 OK in 485ms (Views: 458.7ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/corgis" for ::1 at 2019-04-29 10:40:54 -0500
+Processing by CorgisController#index as HTML
+  Rendering corgis/index.html.erb within layouts/application
+  [1m[36mCorgi Load (0.7ms)[0m  [1m[34mSELECT "corgis".* FROM "corgis"[0m
+  Rendered corgis/index.html.erb within layouts/application (30.3ms)
+Completed 200 OK in 459ms (Views: 441.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/corgis/1" for ::1 at 2019-04-29 10:41:00 -0500
+Processing by CorgisController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCorgi Load (0.6ms)[0m  [1m[34mSELECT  "corgis".* FROM "corgis" WHERE "corgis"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering corgis/show.html.erb within layouts/application
+  Rendered corgis/show.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 372ms (Views: 348.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/corgis" for ::1 at 2019-04-29 10:44:02 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by CorgisController#index as HTML
+  Rendering corgis/index.html.erb within layouts/application
+  [1m[36mCorgi Load (0.1ms)[0m  [1m[34mSELECT "corgis".* FROM "corgis"[0m
+  Rendered corgis/index.html.erb within layouts/application (9.1ms)
+Completed 200 OK in 239ms (Views: 225.8ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/corgis/1" for ::1 at 2019-04-29 10:44:04 -0500
+Processing by CorgisController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCorgi Load (0.6ms)[0m  [1m[34mSELECT  "corgis".* FROM "corgis" WHERE "corgis"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering corgis/show.html.erb within layouts/application
+  Rendered corgis/show.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 52ms (Views: 39.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/corgis/1" for ::1 at 2019-04-29 10:46:11 -0500
+Processing by CorgisController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCorgi Load (0.1ms)[0m  [1m[34mSELECT  "corgis".* FROM "corgis" WHERE "corgis"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering corgis/show.html.erb within layouts/application
+  Rendered corgis/show.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 63ms (Views: 52.2ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/corgis/1" for ::1 at 2019-04-29 10:46:33 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by CorgisController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCorgi Load (0.2ms)[0m  [1m[34mSELECT  "corgis".* FROM "corgis" WHERE "corgis"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering corgis/show.html.erb within layouts/application
+  Rendered corgis/show.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 244ms (Views: 220.9ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/1" for ::1 at 2019-04-29 10:46:45 -0500
+Processing by CorgisController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCorgi Load (0.5ms)[0m  [1m[34mSELECT  "corgis".* FROM "corgis" WHERE "corgis"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering corgis/show.html.erb within layouts/application
+  Rendered corgis/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 27ms (Views: 22.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/corgis" for ::1 at 2019-04-29 10:47:58 -0500
+Processing by CorgisController#index as HTML
+  Rendering corgis/index.html.erb within layouts/application
+  [1m[36mCorgi Load (0.2ms)[0m  [1m[34mSELECT "corgis".* FROM "corgis"[0m
+  Rendered corgis/index.html.erb within layouts/application (6.0ms)
+Completed 200 OK in 41ms (Views: 37.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/corgis/3/edit" for ::1 at 2019-04-29 10:50:17 -0500
+Processing by CorgisController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mCorgi Load (0.2ms)[0m  [1m[34mSELECT  "corgis".* FROM "corgis" WHERE "corgis"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 58865ms (ActiveRecord: 1.9ms)
+
+
+  
+SystemExit (exit):
+  
+app/controllers/corgis_controller.rb:24:in `edit'
+  Rendering /Users/vidhi.sharma/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/vidhi.sharma/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/vidhi.sharma/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (302.7ms)
+  Rendering /Users/vidhi.sharma/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/vidhi.sharma/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (82.2ms)
+  Rendering /Users/vidhi.sharma/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/vidhi.sharma/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (49.3ms)
+  Rendered /Users/vidhi.sharma/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (484.1ms)
+Started GET "/corgis/3/edit" for ::1 at 2019-04-29 10:51:19 -0500
+Processing by CorgisController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mCorgi Load (0.6ms)[0m  [1m[34mSELECT  "corgis".* FROM "corgis" WHERE "corgis"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering corgis/edit.html.erb within layouts/application
+  Rendered corgis/_form.html.erb (198.5ms)
+  Rendered corgis/edit.html.erb within layouts/application (216.5ms)
+Completed 200 OK in 626ms (Views: 525.7ms | ActiveRecord: 4.4ms)
+
+
+Started PATCH "/corgis/3" for ::1 at 2019-04-29 10:51:35 -0500
+Processing by CorgisController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"4FRzxKH3oaY17ztJ85WHJ3Ux4JXQKUfYAgh/coY/20j57fsYCbCrFN3ZT5fGFjoNFo/4kMrn1XZ0bS+S6WynEQ==", "corgi"=>{"name"=>"Sam is the coolest"}, "commit"=>"Update Corgi", "id"=>"3"}
+  [1m[36mCorgi Load (2.3ms)[0m  [1m[34mSELECT  "corgis".* FROM "corgis" WHERE "corgis"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.6ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.4ms)[0m  [1m[33mUPDATE "corgis" SET "name" = ?, "updated_at" = ? WHERE "corgis"."id" = ?[0m  [["name", "Sam is the coolest"], ["updated_at", "2019-04-29 15:51:35.324821"], ["id", 3]]
+  [1m[35m (2.5ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/corgis/3
+Completed 302 Found in 94ms (ActiveRecord: 6.7ms)
+
+
+Started GET "/corgis/3" for ::1 at 2019-04-29 10:51:35 -0500
+Processing by CorgisController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mCorgi Load (0.5ms)[0m  [1m[34mSELECT  "corgis".* FROM "corgis" WHERE "corgis"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE (0.4ms)[0m  [1m[34mSELECT  "corgis".* FROM "corgis" WHERE "corgis"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering corgis/show.html.erb within layouts/application
+  Rendered corgis/show.html.erb within layouts/application (10.3ms)
+Completed 200 OK in 506ms (Views: 472.5ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/corgis/4/edit" for ::1 at 2019-04-29 10:51:42 -0500
+Processing by CorgisController#edit as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mCorgi Load (0.5ms)[0m  [1m[34mSELECT  "corgis".* FROM "corgis" WHERE "corgis"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+Completed 404 Not Found in 35ms (ActiveRecord: 0.5ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Corgi with 'id'=4):
+  
+app/controllers/corgis_controller.rb:45:in `current_corgi'
+  Rendering /Users/vidhi.sharma/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/vidhi.sharma/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/vidhi.sharma/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (292.3ms)
+  Rendering /Users/vidhi.sharma/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/vidhi.sharma/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (65.6ms)
+  Rendering /Users/vidhi.sharma/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/vidhi.sharma/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (15.6ms)
+  Rendered /Users/vidhi.sharma/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (408.1ms)
+Started GET "/corgis/new" for ::1 at 2019-04-29 10:51:46 -0500
+Processing by CorgisController#new as HTML
+  [1m[36mCorgi Load (0.4ms)[0m  [1m[34mSELECT  "corgis".* FROM "corgis" WHERE "corgis"."id" = ? LIMIT ?[0m  [["id", nil], ["LIMIT", 1]]
+Completed 404 Not Found in 19ms (ActiveRecord: 0.4ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Corgi with 'id'=):
+  
+app/controllers/corgis_controller.rb:45:in `current_corgi'
+  Rendering /Users/vidhi.sharma/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/vidhi.sharma/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/vidhi.sharma/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (325.7ms)
+  Rendering /Users/vidhi.sharma/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/vidhi.sharma/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (83.4ms)
+  Rendering /Users/vidhi.sharma/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/vidhi.sharma/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (4.7ms)
+  Rendered /Users/vidhi.sharma/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (466.9ms)
+Started GET "/corgis/new" for ::1 at 2019-04-29 10:52:38 -0500
+Processing by CorgisController#new as HTML
+  [1m[36mCorgi Load (0.8ms)[0m  [1m[34mSELECT  "corgis".* FROM "corgis" WHERE "corgis"."id" = ? LIMIT ?[0m  [["id", nil], ["LIMIT", 1]]
+Completed 404 Not Found in 85ms (ActiveRecord: 5.8ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Corgi with 'id'=):
+  
+app/controllers/corgis_controller.rb:45:in `current_corgi'
+  Rendering /Users/vidhi.sharma/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/vidhi.sharma/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/vidhi.sharma/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (260.7ms)
+  Rendering /Users/vidhi.sharma/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/vidhi.sharma/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (57.5ms)
+  Rendering /Users/vidhi.sharma/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/vidhi.sharma/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (16.7ms)
+  Rendered /Users/vidhi.sharma/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (391.3ms)
+Started GET "/corgis/new" for ::1 at 2019-04-29 10:54:02 -0500
+  
+ArgumentError (Before process_action callback :current_corgi has not been defined):
+  
+app/controllers/corgis_controller.rb:3:in `<class:CorgisController>'
+app/controllers/corgis_controller.rb:1:in `<top (required)>'
+  Rendering /Users/vidhi.sharma/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/vidhi.sharma/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/vidhi.sharma/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (307.4ms)
+  Rendering /Users/vidhi.sharma/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/vidhi.sharma/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (74.9ms)
+  Rendering /Users/vidhi.sharma/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/vidhi.sharma/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (21.1ms)
+  Rendered /Users/vidhi.sharma/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (453.6ms)
+Started GET "/corgis/new" for ::1 at 2019-04-29 10:54:18 -0500
+  
+ArgumentError (Before process_action callback :current_corgi has not been defined):
+  
+app/controllers/corgis_controller.rb:3:in `<class:CorgisController>'
+app/controllers/corgis_controller.rb:1:in `<top (required)>'
+  Rendering /Users/vidhi.sharma/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/vidhi.sharma/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/vidhi.sharma/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (316.9ms)
+  Rendering /Users/vidhi.sharma/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/vidhi.sharma/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (74.8ms)
+  Rendering /Users/vidhi.sharma/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/vidhi.sharma/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (23.8ms)
+  Rendered /Users/vidhi.sharma/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (471.6ms)
+Started GET "/corgis/new" for ::1 at 2019-04-29 10:54:57 -0500
+  
+ArgumentError (Before process_action callback :current_corgi has not been defined):
+  
+app/controllers/corgis_controller.rb:3:in `<class:CorgisController>'
+app/controllers/corgis_controller.rb:1:in `<top (required)>'
+  Rendering /Users/vidhi.sharma/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/vidhi.sharma/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/vidhi.sharma/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (305.2ms)
+  Rendering /Users/vidhi.sharma/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/vidhi.sharma/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (73.5ms)
+  Rendering /Users/vidhi.sharma/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/vidhi.sharma/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (16.5ms)
+  Rendered /Users/vidhi.sharma/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (442.1ms)
+Started GET "/corgis/3/edit" for ::1 at 2019-04-29 10:55:19 -0500
+  
+ArgumentError (Before process_action callback :current_corgi has not been defined):
+  
+app/controllers/corgis_controller.rb:3:in `<class:CorgisController>'
+app/controllers/corgis_controller.rb:1:in `<top (required)>'
+  Rendering /Users/vidhi.sharma/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/vidhi.sharma/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/vidhi.sharma/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (306.9ms)
+  Rendering /Users/vidhi.sharma/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/vidhi.sharma/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (72.1ms)
+  Rendering /Users/vidhi.sharma/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/vidhi.sharma/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (19.9ms)
+  Rendered /Users/vidhi.sharma/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (460.8ms)
+Started GET "/corgis/new" for ::1 at 2019-04-29 10:56:02 -0500
+  
+ArgumentError (Before process_action callback :current_corgi has not been defined):
+  
+app/controllers/corgis_controller.rb:3:in `<class:CorgisController>'
+app/controllers/corgis_controller.rb:1:in `<top (required)>'
+  Rendering /Users/vidhi.sharma/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/vidhi.sharma/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/vidhi.sharma/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (294.6ms)
+  Rendering /Users/vidhi.sharma/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/vidhi.sharma/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (75.8ms)
+  Rendering /Users/vidhi.sharma/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/vidhi.sharma/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (18.5ms)
+  Rendered /Users/vidhi.sharma/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (437.1ms)
+Started GET "/corgis/new" for ::1 at 2019-04-29 10:56:17 -0500
+Processing by CorgisController#new as HTML
+  [1m[36mCorgi Load (0.6ms)[0m  [1m[34mSELECT  "corgis".* FROM "corgis" WHERE "corgis"."id" = ? LIMIT ?[0m  [["id", nil], ["LIMIT", 1]]
+Completed 404 Not Found in 72ms (ActiveRecord: 12.8ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Corgi with 'id'=):
+  
+app/controllers/corgis_controller.rb:45:in `current_corgi'
+  Rendering /Users/vidhi.sharma/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/vidhi.sharma/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/vidhi.sharma/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (254.5ms)
+  Rendering /Users/vidhi.sharma/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/vidhi.sharma/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (53.0ms)
+  Rendering /Users/vidhi.sharma/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/vidhi.sharma/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (18.8ms)
+  Rendered /Users/vidhi.sharma/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (379.6ms)
+Started GET "/corgis/new" for ::1 at 2019-04-29 10:56:34 -0500
+Processing by CorgisController#new as HTML
+  Rendering corgis/new.html.erb within layouts/application
+  Rendered corgis/_form.html.erb (40.4ms)
+  Rendered corgis/new.html.erb within layouts/application (55.5ms)
+Completed 200 OK in 531ms (Views: 433.3ms | ActiveRecord: 4.1ms)
+
+
+Started GET "/corgis" for ::1 at 2019-04-29 10:57:18 -0500
+Processing by CorgisController#index as HTML
+  Rendering corgis/index.html.erb within layouts/application
+  [1m[36mCorgi Load (0.7ms)[0m  [1m[34mSELECT "corgis".* FROM "corgis"[0m
+  Rendered corgis/index.html.erb within layouts/application (79.4ms)
+Completed 200 OK in 484ms (Views: 438.2ms | ActiveRecord: 21.0ms)
+
+
+Started GET "/corgis/1" for ::1 at 2019-04-29 10:57:21 -0500
+Processing by CorgisController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCorgi Load (0.6ms)[0m  [1m[34mSELECT  "corgis".* FROM "corgis" WHERE "corgis"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering corgis/show.html.erb within layouts/application
+  Rendered corgis/show.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 354ms (Views: 315.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/corgis/1/edit" for ::1 at 2019-04-29 10:57:25 -0500
+Processing by CorgisController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCorgi Load (1.1ms)[0m  [1m[34mSELECT  "corgis".* FROM "corgis" WHERE "corgis"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering corgis/edit.html.erb within layouts/application
+  Rendered corgis/_form.html.erb (48.0ms)
+  Rendered corgis/edit.html.erb within layouts/application (63.6ms)
+Completed 200 OK in 522ms (Views: 479.8ms | ActiveRecord: 1.1ms)
+
+
+Started DELETE "/corgis/1" for ::1 at 2019-04-29 10:57:28 -0500
+Processing by CorgisController#destroy as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"JuURdh9iXaT3qAhgr2Y6QSQJB33Diw5+jWayRTojcIA/XJmqtyVXFh+efL6a5YdrR7cfeNlFnND7A+KlVXAM2Q==", "commit"=>"DELETE CORGI", "id"=>"1"}
+  [1m[36mCorgi Load (1.3ms)[0m  [1m[34mSELECT  "corgis".* FROM "corgis" WHERE "corgis"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.5ms)[0m  [1m[31mDELETE FROM "corgis" WHERE "corgis"."id" = ?[0m  [["id", 1]]
+  [1m[35m (3.5ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/corgis
+Completed 302 Found in 73ms (ActiveRecord: 6.8ms)
+
+
+Started GET "/corgis" for ::1 at 2019-04-29 10:57:28 -0500
+Processing by CorgisController#index as HTML
+  Rendering corgis/index.html.erb within layouts/application
+  [1m[36mCorgi Load (1.2ms)[0m  [1m[34mSELECT "corgis".* FROM "corgis"[0m
+  Rendered corgis/index.html.erb within layouts/application (25.0ms)
+Completed 200 OK in 482ms (Views: 461.2ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/" for ::1 at 2019-04-29 11:57:31 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Rails::WelcomeController#index as HTML
+  Parameters: {"internal"=>true}
+  Rendering /Users/vidhi.sharma/.rvm/gems/ruby-2.6.1/gems/railties-5.0.7.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/vidhi.sharma/.rvm/gems/ruby-2.6.1/gems/railties-5.0.7.2/lib/rails/templates/rails/welcome/index.html.erb (2.8ms)
+Completed 200 OK in 12ms (Views: 6.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/corgis/new" for ::1 at 2019-04-29 11:57:39 -0500
+  
+ArgumentError (Before process_action callback :current_corgi has not been defined):
+  
+app/controllers/corgis_controller.rb:3:in `<class:CorgisController>'
+app/controllers/corgis_controller.rb:1:in `<top (required)>'
+  Rendering /Users/vidhi.sharma/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/vidhi.sharma/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/vidhi.sharma/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (2.3ms)
+  Rendering /Users/vidhi.sharma/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/vidhi.sharma/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.4ms)
+  Rendering /Users/vidhi.sharma/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/vidhi.sharma/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /Users/vidhi.sharma/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (19.0ms)
+Started GET "/corgis/new" for ::1 at 2019-04-29 11:57:58 -0500
+  
+ActionController::RoutingError (undefined local variable or method `current_corgi' for CorgisController:Class):
+  
+app/controllers/corgis_controller.rb:3:in `<class:CorgisController>'
+app/controllers/corgis_controller.rb:1:in `<top (required)>'
+  Rendering /Users/vidhi.sharma/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering /Users/vidhi.sharma/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/vidhi.sharma/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.9ms)
+  Rendered collection of /Users/vidhi.sharma/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/routes/_route.html.erb [8 times] (3.4ms)
+  Rendered /Users/vidhi.sharma/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/routes/_table.html.erb (6.9ms)
+  Rendering /Users/vidhi.sharma/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/vidhi.sharma/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /Users/vidhi.sharma/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (33.1ms)
+Started GET "/corgis/new" for ::1 at 2019-04-29 12:33:46 -0500
+  
+ArgumentError (Before process_action callback :current_corgi has not been defined):
+  
+app/controllers/corgis_controller.rb:3:in `<class:CorgisController>'
+app/controllers/corgis_controller.rb:1:in `<top (required)>'
+  Rendering /Users/vidhi.sharma/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/vidhi.sharma/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/vidhi.sharma/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (3.6ms)
+  Rendering /Users/vidhi.sharma/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/vidhi.sharma/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.6ms)
+  Rendering /Users/vidhi.sharma/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/vidhi.sharma/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/vidhi.sharma/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (26.5ms)
+Started GET "/corgis/new" for ::1 at 2019-04-29 12:34:50 -0500
+  
+ArgumentError (Before process_action callback :current_corgi has not been defined):
+  
+app/controllers/corgis_controller.rb:6:in `<class:CorgisController>'
+app/controllers/corgis_controller.rb:1:in `<top (required)>'
+  Rendering /Users/vidhi.sharma/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/vidhi.sharma/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/vidhi.sharma/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (2.0ms)
+  Rendering /Users/vidhi.sharma/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/vidhi.sharma/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (0.9ms)
+  Rendering /Users/vidhi.sharma/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/vidhi.sharma/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/vidhi.sharma/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (14.7ms)
+Started GET "/corgis/new" for ::1 at 2019-04-29 12:35:24 -0500
+  
+ArgumentError (Before process_action callback :current_corgi has not been defined):
+  
+app/controllers/corgis_controller.rb:3:in `<class:CorgisController>'
+app/controllers/corgis_controller.rb:1:in `<top (required)>'
+  Rendering /Users/vidhi.sharma/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/vidhi.sharma/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/vidhi.sharma/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (1.9ms)
+  Rendering /Users/vidhi.sharma/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/vidhi.sharma/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (0.9ms)
+  Rendering /Users/vidhi.sharma/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/vidhi.sharma/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/vidhi.sharma/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (15.4ms)
+Started GET "/corgis/3/edit" for ::1 at 2019-04-29 12:35:44 -0500
+  
+ArgumentError (Before process_action callback :current_corgi has not been defined):
+  
+app/controllers/corgis_controller.rb:3:in `<class:CorgisController>'
+app/controllers/corgis_controller.rb:1:in `<top (required)>'
+  Rendering /Users/vidhi.sharma/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/vidhi.sharma/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/vidhi.sharma/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (1.8ms)
+  Rendering /Users/vidhi.sharma/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/vidhi.sharma/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (0.9ms)
+  Rendering /Users/vidhi.sharma/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/vidhi.sharma/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/vidhi.sharma/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (16.1ms)
+Started GET "/corgis/3" for ::1 at 2019-04-29 12:35:48 -0500
+  
+ArgumentError (Before process_action callback :current_corgi has not been defined):
+  
+app/controllers/corgis_controller.rb:3:in `<class:CorgisController>'
+app/controllers/corgis_controller.rb:1:in `<top (required)>'
+  Rendering /Users/vidhi.sharma/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/vidhi.sharma/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/vidhi.sharma/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (2.9ms)
+  Rendering /Users/vidhi.sharma/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/vidhi.sharma/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.7ms)
+  Rendering /Users/vidhi.sharma/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/vidhi.sharma/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /Users/vidhi.sharma/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (16.9ms)
+Started GET "/corgis/new" for ::1 at 2019-04-29 12:40:37 -0500
+  
+ArgumentError (Before process_action callback :current_corgi has not been defined):
+  
+app/controllers/corgis_controller.rb:3:in `<class:CorgisController>'
+app/controllers/corgis_controller.rb:1:in `<top (required)>'
+  Rendering /Users/vidhi.sharma/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/vidhi.sharma/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/vidhi.sharma/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (2.2ms)
+  Rendering /Users/vidhi.sharma/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/vidhi.sharma/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.1ms)
+  Rendering /Users/vidhi.sharma/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/vidhi.sharma/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/vidhi.sharma/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (21.3ms)
+Started GET "/corgis/new" for ::1 at 2019-04-29 12:41:12 -0500
+Processing by CorgisController#new as HTML
+  Rendering corgis/new.html.erb within layouts/application
+  Rendered corgis/_form.html.erb (5.9ms)
+  Rendered corgis/new.html.erb within layouts/application (6.6ms)
+Completed 200 OK in 205ms (Views: 189.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for ::1 at 2019-04-29 16:16:53 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Rails::WelcomeController#index as HTML
+  Parameters: {"internal"=>true}
+  Rendering /Users/vidhi.sharma/.rvm/gems/ruby-2.6.1/gems/railties-5.0.7.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/vidhi.sharma/.rvm/gems/ruby-2.6.1/gems/railties-5.0.7.2/lib/rails/templates/rails/welcome/index.html.erb (3.8ms)
+Completed 200 OK in 22ms (Views: 13.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2019-04-29 16:17:05 -0500
+Processing by Rails::WelcomeController#index as HTML
+  Parameters: {"internal"=>true}
+  Rendering /Users/vidhi.sharma/.rvm/gems/ruby-2.6.1/gems/railties-5.0.7.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/vidhi.sharma/.rvm/gems/ruby-2.6.1/gems/railties-5.0.7.2/lib/rails/templates/rails/welcome/index.html.erb (3.6ms)
+Completed 200 OK in 8ms (Views: 5.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/corgis" for ::1 at 2019-04-29 16:17:09 -0500
+  
+ArgumentError (Before process_action callback :current_corgi has not been defined):
+  
+app/controllers/corgis_controller.rb:4:in `<class:CorgisController>'
+app/controllers/corgis_controller.rb:1:in `<top (required)>'
+  Rendering /Users/vidhi.sharma/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/vidhi.sharma/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/vidhi.sharma/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (2.1ms)
+  Rendering /Users/vidhi.sharma/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/vidhi.sharma/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.2ms)
+  Rendering /Users/vidhi.sharma/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/vidhi.sharma/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/vidhi.sharma/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (28.6ms)
+Started GET "/corgis/new" for ::1 at 2019-04-29 16:17:10 -0500
+  
+ArgumentError (Before process_action callback :current_corgi has not been defined):
+  
+app/controllers/corgis_controller.rb:4:in `<class:CorgisController>'
+app/controllers/corgis_controller.rb:1:in `<top (required)>'
+  Rendering /Users/vidhi.sharma/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/vidhi.sharma/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/vidhi.sharma/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (2.1ms)
+  Rendering /Users/vidhi.sharma/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/vidhi.sharma/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (0.9ms)
+  Rendering /Users/vidhi.sharma/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/vidhi.sharma/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /Users/vidhi.sharma/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (15.2ms)
+Started GET "/corgis/new" for ::1 at 2019-04-29 16:18:04 -0500
+Processing by CorgisController#new as HTML
+  Rendering corgis/new.html.erb within layouts/application
+  Rendered corgis/_form.html.erb (22.9ms)
+  Rendered corgis/new.html.erb within layouts/application (25.3ms)
+Completed 200 OK in 265ms (Views: 256.0ms | ActiveRecord: 1.0ms)
+
+
+  [1m[35m (2.7ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateCorgis (20190429143523)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TABLE "corgis" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190429143523"]]
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateOwners (20190430161613)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "owners" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190430161613"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateFriendships (20190430161657)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "friendships" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "owner_id" integer, "corgi_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190430161657"]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2019-04-30 16:17:31.006446"], ["updated_at", "2019-04-30 16:17:31.006446"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mCorgi Load (2.6ms)[0m  [1m[34mSELECT "corgis".* FROM "corgis"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "corgis" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "pooky"], ["created_at", "2019-04-30 16:22:43.194502"], ["updated_at", "2019-04-30 16:22:43.194502"]]
+  [1m[35m (2.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "corgis" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "fluffy"], ["created_at", "2019-04-30 16:22:52.252319"], ["updated_at", "2019-04-30 16:22:52.252319"]]
+  [1m[35m (2.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "corgis" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "princess"], ["created_at", "2019-04-30 16:23:02.676923"], ["updated_at", "2019-04-30 16:23:02.676923"]]
+  [1m[35m (2.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "owners" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Sam"], ["created_at", "2019-04-30 16:23:26.176069"], ["updated_at", "2019-04-30 16:23:26.176069"]]
+  [1m[35m (2.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "owners" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Pratikshya"], ["created_at", "2019-04-30 16:23:38.631418"], ["updated_at", "2019-04-30 16:23:38.631418"]]
+  [1m[35m (2.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "owners" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Luis"], ["created_at", "2019-04-30 16:23:44.382955"], ["updated_at", "2019-04-30 16:23:44.382955"]]
+  [1m[35m (2.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mOwner Load (0.2ms)[0m  [1m[34mSELECT  "owners".* FROM "owners" WHERE "owners"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCorgi Load (0.1ms)[0m  [1m[34mSELECT  "corgis".* FROM "corgis" WHERE "corgis"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "friendships" ("owner_id", "corgi_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["owner_id", 1], ["corgi_id", 1], ["created_at", "2019-04-30 16:24:12.238469"], ["updated_at", "2019-04-30 16:24:12.238469"]]
+  [1m[35m (2.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mOwner Load (0.3ms)[0m  [1m[34mSELECT  "owners".* FROM "owners" WHERE "owners"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCorgi Load (0.1ms)[0m  [1m[34mSELECT  "corgis".* FROM "corgis" WHERE "corgis"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (1.2ms)[0m  [1m[32mINSERT INTO "friendships" ("owner_id", "corgi_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["owner_id", 2], ["corgi_id", 1], ["created_at", "2019-04-30 16:24:17.070019"], ["updated_at", "2019-04-30 16:24:17.070019"]]
+  [1m[35m (2.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mOwner Load (0.3ms)[0m  [1m[34mSELECT  "owners".* FROM "owners" WHERE "owners"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCorgi Load (0.1ms)[0m  [1m[34mSELECT  "corgis".* FROM "corgis" WHERE "corgis"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "friendships" ("owner_id", "corgi_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["owner_id", 2], ["corgi_id", 2], ["created_at", "2019-04-30 16:24:20.510488"], ["updated_at", "2019-04-30 16:24:20.510488"]]
+  [1m[35m (2.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mOwner Load (0.3ms)[0m  [1m[34mSELECT  "owners".* FROM "owners" WHERE "owners"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCorgi Load (0.1ms)[0m  [1m[34mSELECT  "corgis".* FROM "corgis" WHERE "corgis"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "friendships" ("owner_id", "corgi_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["owner_id", 2], ["corgi_id", 3], ["created_at", "2019-04-30 16:24:23.571734"], ["updated_at", "2019-04-30 16:24:23.571734"]]
+  [1m[35m (2.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mOwner Load (0.3ms)[0m  [1m[34mSELECT  "owners".* FROM "owners" WHERE "owners"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCorgi Load (1.2ms)[0m  [1m[34mSELECT  "corgis".* FROM "corgis" WHERE "corgis"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "friendships" ("owner_id", "corgi_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["owner_id", 1], ["corgi_id", 3], ["created_at", "2019-04-30 16:24:26.706164"], ["updated_at", "2019-04-30 16:24:26.706164"]]
+  [1m[35m (2.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mOwner Load (0.1ms)[0m  [1m[34mSELECT  "owners".* FROM "owners" WHERE "owners"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCorgi Load (0.1ms)[0m  [1m[34mSELECT  "corgis".* FROM "corgis" WHERE "corgis"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "friendships" ("owner_id", "corgi_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["owner_id", 3], ["corgi_id", 3], ["created_at", "2019-04-30 16:24:30.241202"], ["updated_at", "2019-04-30 16:24:30.241202"]]
+  [1m[35m (2.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mCorgi Load (0.4ms)[0m  [1m[34mSELECT  "corgis".* FROM "corgis" ORDER BY "corgis"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mCorgi Load (0.2ms)[0m  [1m[34mSELECT  "corgis".* FROM "corgis" ORDER BY "corgis"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mOwner Load (0.2ms)[0m  [1m[34mSELECT "owners".* FROM "owners" INNER JOIN "friendships" ON "owners"."id" = "friendships"."owner_id" WHERE "friendships"."corgi_id" = ?[0m  [["corgi_id", 1]]
+  [1m[36mOwner Load (0.3ms)[0m  [1m[34mSELECT  "owners".* FROM "owners" ORDER BY "owners"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mCorgi Load (0.9ms)[0m  [1m[34mSELECT "corgis".* FROM "corgis" INNER JOIN "friendships" ON "corgis"."id" = "friendships"."corgi_id" WHERE "friendships"."owner_id" = ?[0m  [["owner_id", 1]]
+  [1m[36mOwner Load (0.3ms)[0m  [1m[34mSELECT  "owners".* FROM "owners" ORDER BY "owners"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mFriendship Load (0.3ms)[0m  [1m[34mSELECT "friendships".* FROM "friendships" WHERE "friendships"."owner_id" = ?[0m  [["owner_id", 1]]
+Started GET "/corgis" for ::1 at 2019-04-30 11:31:22 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by CorgisController#index as HTML
+  Rendering corgis/index.html.erb within layouts/application
+  [1m[36mCorgi Load (0.3ms)[0m  [1m[34mSELECT "corgis".* FROM "corgis"[0m
+  Rendered corgis/index.html.erb within layouts/application (13.5ms)
+Completed 200 OK in 460ms (Views: 444.1ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/corgis/new" for ::1 at 2019-04-30 11:31:28 -0500
+Processing by CorgisController#new as HTML
+  Rendering corgis/new.html.erb within layouts/application
+  [1m[36mOwner Load (0.4ms)[0m  [1m[34mSELECT "owners".* FROM "owners"[0m
+  Rendered corgis/_form.html.erb (214.9ms)
+  Rendered corgis/new.html.erb within layouts/application (216.6ms)
+Completed 200 OK in 242ms (Views: 233.8ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/corgis/new" for ::1 at 2019-04-30 11:32:28 -0500
+Processing by CorgisController#new as HTML
+  Rendering corgis/new.html.erb within layouts/application
+  [1m[36mOwner Load (0.1ms)[0m  [1m[34mSELECT "owners".* FROM "owners"[0m
+  Rendered corgis/_form.html.erb (3.9ms)
+  Rendered corgis/new.html.erb within layouts/application (5.5ms)
+Completed 200 OK in 25ms (Views: 23.2ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/corgis" for ::1 at 2019-04-30 11:33:13 -0500
+Processing by CorgisController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"qzVKWe+UGhutyKSKaBcFCD/S20h45bSD76gwDu3FT3eyjMKFR9MQqUX+0FRdlLgiXGzDTWIrJi2ZzWDugpYzLg==", "corgi"=>{"name"=>"Nice", "owner_ids"=>["", "1", "3"]}, "commit"=>"Create Corgi"}
+Unpermitted parameter: owner_ids
+Completed 500 Internal Server Error in 16446ms (ActiveRecord: 0.0ms)
+
+
+  
+SystemExit (exit):
+  
+app/controllers/corgis_controller.rb:24:in `create'
+  Rendering /Users/vidhi.sharma/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/vidhi.sharma/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/vidhi.sharma/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (111.1ms)
+  Rendering /Users/vidhi.sharma/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/vidhi.sharma/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (54.3ms)
+  Rendering /Users/vidhi.sharma/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/vidhi.sharma/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (21.1ms)
+  Rendered /Users/vidhi.sharma/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (213.0ms)
+Started GET "/corgis/new" for ::1 at 2019-04-30 11:33:34 -0500
+Processing by CorgisController#new as HTML
+  Rendering corgis/new.html.erb within layouts/application
+  [1m[36mOwner Load (0.4ms)[0m  [1m[34mSELECT "owners".* FROM "owners"[0m
+  Rendered corgis/_form.html.erb (127.9ms)
+  Rendered corgis/new.html.erb within layouts/application (131.5ms)
+Completed 200 OK in 505ms (Views: 353.9ms | ActiveRecord: 6.5ms)
+
+
+Started GET "/corgis/new" for ::1 at 2019-04-30 11:33:49 -0500
+Processing by CorgisController#new as HTML
+  Rendering corgis/new.html.erb within layouts/application
+  [1m[36mOwner Load (0.7ms)[0m  [1m[34mSELECT "owners".* FROM "owners"[0m
+  Rendered corgis/_form.html.erb (254.3ms)
+  Rendered corgis/new.html.erb within layouts/application (271.9ms)
+Completed 200 OK in 991ms (Views: 760.1ms | ActiveRecord: 8.5ms)
+
+
+Started POST "/corgis" for ::1 at 2019-04-30 11:33:57 -0500
+Processing by CorgisController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"zeidKiDtqioPiriumnvMMrtbQkHofJ6M/oumQKEt1OXUURX2iKqgmOe8zHCv+HEY2OVaRPKyDCKI7vagzn6ovA==", "corgi"=>{"name"=>"Nice", "owner_ids"=>["", "1", "3"]}, "commit"=>"Create Corgi"}
+Unpermitted parameter: owner_ids
+  [1m[35m (0.4ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.3ms)[0m  [1m[32mINSERT INTO "corgis" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Nice"], ["created_at", "2019-04-30 16:33:57.676407"], ["updated_at", "2019-04-30 16:33:57.676407"]]
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/corgis/4
+Completed 302 Found in 68ms (ActiveRecord: 3.0ms)
+
+
+Started GET "/corgis/4" for ::1 at 2019-04-30 11:33:57 -0500
+Processing by CorgisController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mCorgi Load (0.8ms)[0m  [1m[34mSELECT  "corgis".* FROM "corgis" WHERE "corgis"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering corgis/show.html.erb within layouts/application
+  Rendered corgis/show.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 528ms (Views: 479.4ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/corgis" for ::1 at 2019-04-30 11:34:01 -0500
+Processing by CorgisController#index as HTML
+  Rendering corgis/index.html.erb within layouts/application
+  [1m[36mCorgi Load (0.6ms)[0m  [1m[34mSELECT "corgis".* FROM "corgis"[0m
+  Rendered corgis/index.html.erb within layouts/application (22.1ms)
+Completed 200 OK in 369ms (Views: 358.4ms | ActiveRecord: 0.6ms)
+
+
+  [1m[36mOwner Load (1.4ms)[0m  [1m[34mSELECT "owners".* FROM "owners"[0m
+  [1m[36mOwner Load (0.4ms)[0m  [1m[34mSELECT  "owners".* FROM "owners" ORDER BY "owners"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mOwner Load (0.2ms)[0m  [1m[34mSELECT  "owners".* FROM "owners" ORDER BY "owners"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mCorgi Load (0.2ms)[0m  [1m[34mSELECT "corgis".* FROM "corgis" INNER JOIN "friendships" ON "corgis"."id" = "friendships"."corgi_id" WHERE "friendships"."owner_id" = ?[0m  [["owner_id", 1]]
+  [1m[36mFriendship Load (1.5ms)[0m  [1m[34mSELECT "friendships".* FROM "friendships"[0m
+Started GET "/corgis/new" for ::1 at 2019-04-30 11:36:50 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by CorgisController#new as HTML
+  Rendering corgis/new.html.erb within layouts/application
+  [1m[36mOwner Load (0.2ms)[0m  [1m[34mSELECT "owners".* FROM "owners"[0m
+  Rendered corgis/_form.html.erb (108.6ms)
+  Rendered corgis/new.html.erb within layouts/application (110.6ms)
+Completed 200 OK in 286ms (Views: 267.7ms | ActiveRecord: 1.1ms)
+
+
+Started POST "/corgis" for ::1 at 2019-04-30 11:36:58 -0500
+Processing by CorgisController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"zwt1EqxNeHSNiv1m6NYrgX++pEG4OYbFHrxTTdmRSsnWsv3OBApyxmW8ibjdVZarHAC8RKL3FGto2QOttsI2kA==", "corgi"=>{"name"=>"Nicest", "owner_ids"=>["", "1", "3"]}, "commit"=>"Create Corgi"}
+  [1m[36mOwner Load (0.4ms)[0m  [1m[34mSELECT "owners".* FROM "owners" WHERE "owners"."id" IN (1, 3)[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "corgis" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Nicest"], ["created_at", "2019-04-30 16:36:58.216555"], ["updated_at", "2019-04-30 16:36:58.216555"]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "friendships" ("owner_id", "corgi_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["owner_id", 1], ["corgi_id", 5], ["created_at", "2019-04-30 16:36:58.219559"], ["updated_at", "2019-04-30 16:36:58.219559"]]
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "friendships" ("owner_id", "corgi_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["owner_id", 3], ["corgi_id", 5], ["created_at", "2019-04-30 16:36:58.221534"], ["updated_at", "2019-04-30 16:36:58.221534"]]
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/corgis/5
+Completed 302 Found in 31ms (ActiveRecord: 3.8ms)
+
+
+Started GET "/corgis/5" for ::1 at 2019-04-30 11:36:58 -0500
+Processing by CorgisController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mCorgi Load (0.2ms)[0m  [1m[34mSELECT  "corgis".* FROM "corgis" WHERE "corgis"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering corgis/show.html.erb within layouts/application
+  Rendered corgis/show.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 29ms (Views: 21.3ms | ActiveRecord: 0.2ms)
+
+
+  [1m[36mFriendship Load (1.4ms)[0m  [1m[34mSELECT "friendships".* FROM "friendships"[0m
+  [1m[36mCorgi Load (0.2ms)[0m  [1m[34mSELECT  "corgis".* FROM "corgis" ORDER BY "corgis"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mCorgi Load (0.3ms)[0m  [1m[34mSELECT  "corgis".* FROM "corgis" ORDER BY "corgis"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mOwner Load (0.2ms)[0m  [1m[34mSELECT "owners".* FROM "owners" INNER JOIN "friendships" ON "owners"."id" = "friendships"."owner_id" WHERE "friendships"."corgi_id" = ?[0m  [["corgi_id", 5]]
+Started GET "/corgis/new" for ::1 at 2019-04-30 11:39:52 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by CorgisController#new as HTML
+  Rendering corgis/new.html.erb within layouts/application
+  [1m[36mOwner Load (0.1ms)[0m  [1m[34mSELECT "owners".* FROM "owners"[0m
+  Rendered corgis/_form.html.erb (98.6ms)
+  Rendered corgis/new.html.erb within layouts/application (100.3ms)
+Completed 200 OK in 365ms (Views: 348.5ms | ActiveRecord: 1.2ms)
+
+
+Started POST "/corgis" for ::1 at 2019-04-30 11:40:08 -0500
+Processing by CorgisController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"UFkU5+n5JDTjqt2F0OMY+OQfKD70tvWyf3eoHG4pPodJ4Jw7Qb4uhgucqVvlYKXSh6EwO+54ZxwJEvj8AXpC3g==", "corgi"=>{"name"=>"awesome", "owner_ids"=>["", "1", "2", "3"]}, "commit"=>"Create Corgi"}
+Completed 500 Internal Server Error in 25724ms (ActiveRecord: 0.0ms)
+
+
+  
+SystemExit (exit):
+  
+app/controllers/corgis_controller.rb:24:in `create'
+  Rendering /Users/vidhi.sharma/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/vidhi.sharma/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/vidhi.sharma/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (133.3ms)
+  Rendering /Users/vidhi.sharma/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/vidhi.sharma/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (29.7ms)
+  Rendering /Users/vidhi.sharma/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/vidhi.sharma/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (24.4ms)
+  Rendered /Users/vidhi.sharma/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (217.2ms)
+Started GET "/corgis/new" for ::1 at 2019-04-30 11:40:57 -0500
+Started GET "/corgis/new" for ::1 at 2019-04-30 11:41:08 -0500
+Processing by CorgisController#new as HTML
+  Rendering corgis/new.html.erb within layouts/application
+  [1m[36mOwner Load (1.6ms)[0m  [1m[34mSELECT "owners".* FROM "owners"[0m
+  Rendered corgis/_form.html.erb (253.0ms)
+  Rendered corgis/new.html.erb within layouts/application (264.5ms)
+Completed 200 OK in 1039ms (Views: 884.9ms | ActiveRecord: 8.8ms)
+
+
+Processing by CorgisController#new as HTML
+  Rendering corgis/new.html.erb within layouts/application
+  [1m[36mOwner Load (1.1ms)[0m  [1m[34mSELECT "owners".* FROM "owners"[0m
+  Rendered corgis/_form.html.erb (323.2ms)
+  Rendered corgis/new.html.erb within layouts/application (327.3ms)
+Completed 200 OK in 903ms (Views: 708.5ms | ActiveRecord: 42.2ms)
+
+
+Started POST "/corgis" for ::1 at 2019-04-30 11:41:20 -0500
+Processing by CorgisController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"f4apYyb2zkv0tt5/U8CvSlKtS8BOK/aKxOqIzx1ytdRmPyG/jrHE+RyAqqFmQxJgMRNTxVTlZCSyj9gvciHJjQ==", "corgi"=>{"name"=>"awesome", "owner_ids"=>["", "1", "2", "3"]}, "commit"=>"Create Corgi"}
+  [1m[36mOwner Load (0.8ms)[0m  [1m[34mSELECT "owners".* FROM "owners" WHERE "owners"."id" IN (1, 2, 3)[0m
+  [1m[35m (0.5ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.3ms)[0m  [1m[32mINSERT INTO "corgis" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "awesome"], ["created_at", "2019-04-30 16:41:22.418986"], ["updated_at", "2019-04-30 16:41:22.418986"]]
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "friendships" ("owner_id", "corgi_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["owner_id", 1], ["corgi_id", 6], ["created_at", "2019-04-30 16:41:22.469442"], ["updated_at", "2019-04-30 16:41:22.469442"]]
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "friendships" ("owner_id", "corgi_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["owner_id", 2], ["corgi_id", 6], ["created_at", "2019-04-30 16:41:22.505141"], ["updated_at", "2019-04-30 16:41:22.505141"]]
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "friendships" ("owner_id", "corgi_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["owner_id", 3], ["corgi_id", 6], ["created_at", "2019-04-30 16:41:22.544320"], ["updated_at", "2019-04-30 16:41:22.544320"]]
+  [1m[35m (3.2ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/corgis/6
+Completed 302 Found in 894ms (ActiveRecord: 26.1ms)
+
+
+Started GET "/corgis/6" for ::1 at 2019-04-30 11:41:22 -0500
+Processing by CorgisController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mCorgi Load (1.4ms)[0m  [1m[34mSELECT  "corgis".* FROM "corgis" WHERE "corgis"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering corgis/show.html.erb within layouts/application
+  Rendered corgis/show.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 701ms (Views: 572.1ms | ActiveRecord: 1.4ms)
+
+
+  [1m[36mFriendship Load (1.5ms)[0m  [1m[34mSELECT "friendships".* FROM "friendships"[0m
+Started GET "/corgis/6" for ::1 at 2019-04-30 11:43:44 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by CorgisController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mCorgi Load (0.1ms)[0m  [1m[34mSELECT  "corgis".* FROM "corgis" WHERE "corgis"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering corgis/show.html.erb within layouts/application
+  [1m[36mOwner Load (0.4ms)[0m  [1m[34mSELECT "owners".* FROM "owners" INNER JOIN "friendships" ON "owners"."id" = "friendships"."owner_id" WHERE "friendships"."corgi_id" = ?[0m  [["corgi_id", 6]]
+  Rendered corgis/show.html.erb within layouts/application (43.8ms)
+Completed 200 OK in 303ms (Views: 283.7ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/corgis/6/edit" for ::1 at 2019-04-30 11:44:53 -0500
+Processing by CorgisController#edit as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mCorgi Load (0.5ms)[0m  [1m[34mSELECT  "corgis".* FROM "corgis" WHERE "corgis"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering corgis/edit.html.erb within layouts/application
+  [1m[36mOwner Load (0.7ms)[0m  [1m[34mSELECT "owners".* FROM "owners"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "owners".id FROM "owners" INNER JOIN "friendships" ON "owners"."id" = "friendships"."owner_id" WHERE "friendships"."corgi_id" = ?[0m  [["corgi_id", 6]]
+  Rendered corgis/_form.html.erb (208.6ms)
+  Rendered corgis/edit.html.erb within layouts/application (210.3ms)
+Completed 200 OK in 237ms (Views: 231.8ms | ActiveRecord: 1.5ms)
+
+
+Started PATCH "/corgis/6" for ::1 at 2019-04-30 11:45:04 -0500
+Processing by CorgisController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"5mnaw1anWf5qXLB8XLBzdZDsU86oFhMStlD5CrJUIEP/0FIf/uBTTIJqxKJpM85f81JLy7LYgbzANanq3QdcGg==", "corgi"=>{"name"=>"awesome", "owner_ids"=>["", "1"]}, "commit"=>"Update Corgi", "id"=>"6"}
+  [1m[36mCorgi Load (0.3ms)[0m  [1m[34mSELECT  "corgis".* FROM "corgis" WHERE "corgis"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mOwner Load (0.2ms)[0m  [1m[34mSELECT "owners".* FROM "owners" WHERE "owners"."id" = 1[0m
+  [1m[36mOwner Load (0.1ms)[0m  [1m[34mSELECT "owners".* FROM "owners" INNER JOIN "friendships" ON "owners"."id" = "friendships"."owner_id" WHERE "friendships"."corgi_id" = ?[0m  [["corgi_id", 6]]
+  [1m[35mSQL (0.6ms)[0m  [1m[31mDELETE FROM "friendships" WHERE "friendships"."corgi_id" = ? AND "friendships"."owner_id" IN (2, 3)[0m  [["corgi_id", 6]]
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/corgis/6
+Completed 302 Found in 15ms (ActiveRecord: 2.8ms)
+
+
+Started GET "/corgis/6" for ::1 at 2019-04-30 11:45:04 -0500
+Processing by CorgisController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mCorgi Load (0.2ms)[0m  [1m[34mSELECT  "corgis".* FROM "corgis" WHERE "corgis"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering corgis/show.html.erb within layouts/application
+  [1m[36mOwner Load (0.1ms)[0m  [1m[34mSELECT "owners".* FROM "owners" INNER JOIN "friendships" ON "owners"."id" = "friendships"."owner_id" WHERE "friendships"."corgi_id" = ?[0m  [["corgi_id", 6]]
+  Rendered corgis/show.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 32ms (Views: 30.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/corgis/6/edit" for ::1 at 2019-04-30 11:45:12 -0500
+Processing by CorgisController#edit as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mCorgi Load (0.1ms)[0m  [1m[34mSELECT  "corgis".* FROM "corgis" WHERE "corgis"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering corgis/edit.html.erb within layouts/application
+  [1m[36mOwner Load (0.1ms)[0m  [1m[34mSELECT "owners".* FROM "owners"[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "owners".id FROM "owners" INNER JOIN "friendships" ON "owners"."id" = "friendships"."owner_id" WHERE "friendships"."corgi_id" = ?[0m  [["corgi_id", 6]]
+  Rendered corgis/_form.html.erb (6.2ms)
+  Rendered corgis/edit.html.erb within layouts/application (8.6ms)
+Completed 200 OK in 45ms (Views: 41.8ms | ActiveRecord: 0.4ms)
+
+
+  [1m[36mFriendship Load (1.5ms)[0m  [1m[34mSELECT "friendships".* FROM "friendships"[0m
+Started GET "/corgis/6/edit" for ::1 at 2019-04-30 11:45:58 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by CorgisController#edit as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mCorgi Load (0.2ms)[0m  [1m[34mSELECT  "corgis".* FROM "corgis" WHERE "corgis"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering corgis/edit.html.erb within layouts/application
+  [1m[36mOwner Load (0.2ms)[0m  [1m[34mSELECT "owners".* FROM "owners"[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "owners".id FROM "owners" INNER JOIN "friendships" ON "owners"."id" = "friendships"."owner_id" WHERE "friendships"."corgi_id" = ?[0m  [["corgi_id", 6]]
+  Rendered corgis/_form.html.erb (127.3ms)
+  Rendered corgis/edit.html.erb within layouts/application (130.5ms)
+Completed 200 OK in 378ms (Views: 352.1ms | ActiveRecord: 2.1ms)
+
+
+Started PATCH "/corgis/6" for ::1 at 2019-04-30 11:46:03 -0500
+Processing by CorgisController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"uNGXlL91OM+ngz611JU+xRu/xtUleo0HOtmmtSYU/OqhaB9IFzIyfU+1SmvhFoPveAHe0D+0H6lMvPZVSUeAsw==", "corgi"=>{"name"=>"awesome", "owner_ids"=>["", "1", "2", "3"]}, "commit"=>"Update Corgi", "id"=>"6"}
+  [1m[36mCorgi Load (0.8ms)[0m  [1m[34mSELECT  "corgis".* FROM "corgis" WHERE "corgis"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mOwner Load (0.5ms)[0m  [1m[34mSELECT "owners".* FROM "owners" WHERE "owners"."id" IN (1, 2, 3)[0m
+  [1m[36mOwner Load (0.3ms)[0m  [1m[34mSELECT "owners".* FROM "owners" INNER JOIN "friendships" ON "owners"."id" = "friendships"."owner_id" WHERE "friendships"."corgi_id" = ?[0m  [["corgi_id", 6]]
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "friendships" ("owner_id", "corgi_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["owner_id", 2], ["corgi_id", 6], ["created_at", "2019-04-30 16:46:03.428374"], ["updated_at", "2019-04-30 16:46:03.428374"]]
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "friendships" ("owner_id", "corgi_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["owner_id", 3], ["corgi_id", 6], ["created_at", "2019-04-30 16:46:03.432565"], ["updated_at", "2019-04-30 16:46:03.432565"]]
+  [1m[35m (2.6ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/corgis/6
+Completed 302 Found in 33ms (ActiveRecord: 5.4ms)
+
+
+Started GET "/corgis/6" for ::1 at 2019-04-30 11:46:03 -0500
+Processing by CorgisController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mCorgi Load (0.2ms)[0m  [1m[34mSELECT  "corgis".* FROM "corgis" WHERE "corgis"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering corgis/show.html.erb within layouts/application
+  [1m[36mOwner Load (0.2ms)[0m  [1m[34mSELECT "owners".* FROM "owners" INNER JOIN "friendships" ON "owners"."id" = "friendships"."owner_id" WHERE "friendships"."corgi_id" = ?[0m  [["corgi_id", 6]]
+  Rendered corgis/show.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 27ms (Views: 24.1ms | ActiveRecord: 0.4ms)
+
+
+  [1m[36mFriendship Load (1.7ms)[0m  [1m[34mSELECT "friendships".* FROM "friendships"[0m
+  [1m[36mFriendship Load (0.1ms)[0m  [1m[34mSELECT  "friendships".* FROM "friendships" ORDER BY "friendships"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
