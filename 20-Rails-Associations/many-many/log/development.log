@@ -1525,3 +1525,200 @@ Completed 200 OK in 27ms (Views: 24.1ms | ActiveRecord: 0.4ms)
 
   [1m[36mFriendship Load (1.7ms)[0m  [1m[34mSELECT "friendships".* FROM "friendships"[0m
   [1m[36mFriendship Load (0.1ms)[0m  [1m[34mSELECT  "friendships".* FROM "friendships" ORDER BY "friendships"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+Started GET "/" for ::1 at 2019-04-30 14:14:57 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Rails::WelcomeController#index as HTML
+  Parameters: {"internal"=>true}
+  Rendering /Users/vidhi.sharma/.rvm/gems/ruby-2.6.1/gems/railties-5.0.7.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/vidhi.sharma/.rvm/gems/ruby-2.6.1/gems/railties-5.0.7.2/lib/rails/templates/rails/welcome/index.html.erb (3.2ms)
+Completed 200 OK in 16ms (Views: 7.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/corgis" for ::1 at 2019-04-30 14:15:02 -0500
+Processing by CorgisController#index as HTML
+  Rendering corgis/index.html.erb within layouts/application
+  [1m[36mCorgi Load (0.4ms)[0m  [1m[34mSELECT "corgis".* FROM "corgis"[0m
+  Rendered corgis/index.html.erb within layouts/application (12.2ms)
+Completed 200 OK in 203ms (Views: 190.5ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/corgis/new" for ::1 at 2019-04-30 14:15:04 -0500
+Processing by CorgisController#new as HTML
+  Rendering corgis/new.html.erb within layouts/application
+  [1m[36mOwner Load (0.2ms)[0m  [1m[34mSELECT "owners".* FROM "owners"[0m
+  Rendered corgis/_form.html.erb (97.6ms)
+  Rendered corgis/new.html.erb within layouts/application (99.0ms)
+Completed 200 OK in 123ms (Views: 114.1ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/owners" for ::1 at 2019-04-30 14:15:12 -0500
+Processing by OwnersController#index as HTML
+  Rendering owners/index.html.erb within layouts/application
+  [1m[36mOwner Load (0.2ms)[0m  [1m[34mSELECT "owners".* FROM "owners"[0m
+  Rendered owners/index.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 29ms (Views: 26.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/owners/new" for ::1 at 2019-04-30 14:15:14 -0500
+Processing by OwnersController#new as HTML
+  Rendering owners/new.html.erb within layouts/application
+  [1m[36mCorgi Load (0.3ms)[0m  [1m[34mSELECT "corgis".* FROM "corgis"[0m
+  Rendered owners/_form.html.erb (6.2ms)
+  Rendered owners/new.html.erb within layouts/application (9.1ms)
+Completed 200 OK in 33ms (Views: 31.2ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/owners" for ::1 at 2019-04-30 14:15:26 -0500
+Processing by OwnersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"g/gc2SJYvZXkySp9QPbZhCO56D9yiZD6repTGO1BzpGaQZQFih+3Jwz/XqN1dWSuQAfwOmhHAlTbjwP4ghKyyA==", "owner"=>{"name"=>"Vidhi", "corgi_ids"=>["", "1", "2", "3", "6"]}, "commit"=>"Create Owner"}
+  [1m[36mCorgi Load (0.3ms)[0m  [1m[34mSELECT "corgis".* FROM "corgis" WHERE "corgis"."id" IN (1, 2, 3, 6)[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "owners" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Vidhi"], ["created_at", "2019-04-30 19:15:26.619776"], ["updated_at", "2019-04-30 19:15:26.619776"]]
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "friendships" ("owner_id", "corgi_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["owner_id", 4], ["corgi_id", 1], ["created_at", "2019-04-30 19:15:26.622182"], ["updated_at", "2019-04-30 19:15:26.622182"]]
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "friendships" ("owner_id", "corgi_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["owner_id", 4], ["corgi_id", 2], ["created_at", "2019-04-30 19:15:26.623151"], ["updated_at", "2019-04-30 19:15:26.623151"]]
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "friendships" ("owner_id", "corgi_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["owner_id", 4], ["corgi_id", 3], ["created_at", "2019-04-30 19:15:26.624195"], ["updated_at", "2019-04-30 19:15:26.624195"]]
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "friendships" ("owner_id", "corgi_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["owner_id", 4], ["corgi_id", 6], ["created_at", "2019-04-30 19:15:26.625211"], ["updated_at", "2019-04-30 19:15:26.625211"]]
+  [1m[35m (2.9ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/owners/4
+Completed 302 Found in 28ms (ActiveRecord: 4.7ms)
+
+
+Started GET "/owners/4" for ::1 at 2019-04-30 14:15:26 -0500
+Processing by OwnersController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mOwner Load (0.1ms)[0m  [1m[34mSELECT  "owners".* FROM "owners" WHERE "owners"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering owners/show.html.erb within layouts/application
+  Rendered owners/show.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 20ms (Views: 17.1ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/owners" for ::1 at 2019-04-30 14:15:30 -0500
+Processing by OwnersController#index as HTML
+  Rendering owners/index.html.erb within layouts/application
+  [1m[36mOwner Load (0.2ms)[0m  [1m[34mSELECT "owners".* FROM "owners"[0m
+  Rendered owners/index.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 27ms (Views: 25.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/owners" for ::1 at 2019-04-30 14:16:18 -0500
+Processing by OwnersController#index as HTML
+  Rendering owners/index.html.erb within layouts/application
+  [1m[36mOwner Load (0.2ms)[0m  [1m[34mSELECT "owners".* FROM "owners"[0m
+  Rendered owners/index.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 23ms (Views: 21.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/owners/4" for ::1 at 2019-04-30 14:16:20 -0500
+Processing by OwnersController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mOwner Load (0.2ms)[0m  [1m[34mSELECT  "owners".* FROM "owners" WHERE "owners"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering owners/show.html.erb within layouts/application
+  [1m[36mCorgi Load (0.3ms)[0m  [1m[34mSELECT "corgis".* FROM "corgis" INNER JOIN "friendships" ON "corgis"."id" = "friendships"."corgi_id" WHERE "friendships"."owner_id" = ?[0m  [["owner_id", 4]]
+  Rendered owners/show.html.erb within layouts/application (10.1ms)
+Completed 200 OK in 41ms (Views: 36.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/owners" for ::1 at 2019-04-30 14:16:23 -0500
+Processing by OwnersController#index as HTML
+  Rendering owners/index.html.erb within layouts/application
+  [1m[36mOwner Load (0.2ms)[0m  [1m[34mSELECT "owners".* FROM "owners"[0m
+  Rendered owners/index.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 27ms (Views: 24.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/owners/2" for ::1 at 2019-04-30 14:16:24 -0500
+Processing by OwnersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mOwner Load (0.1ms)[0m  [1m[34mSELECT  "owners".* FROM "owners" WHERE "owners"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering owners/show.html.erb within layouts/application
+  [1m[36mCorgi Load (0.1ms)[0m  [1m[34mSELECT "corgis".* FROM "corgis" INNER JOIN "friendships" ON "corgis"."id" = "friendships"."corgi_id" WHERE "friendships"."owner_id" = ?[0m  [["owner_id", 2]]
+  Rendered owners/show.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 31ms (Views: 28.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/owners" for ::1 at 2019-04-30 14:16:27 -0500
+Processing by OwnersController#index as HTML
+  Rendering owners/index.html.erb within layouts/application
+  [1m[36mOwner Load (0.2ms)[0m  [1m[34mSELECT "owners".* FROM "owners"[0m
+  Rendered owners/index.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 51ms (Views: 47.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/owners/3" for ::1 at 2019-04-30 14:16:28 -0500
+Processing by OwnersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mOwner Load (0.2ms)[0m  [1m[34mSELECT  "owners".* FROM "owners" WHERE "owners"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering owners/show.html.erb within layouts/application
+  [1m[36mCorgi Load (0.1ms)[0m  [1m[34mSELECT "corgis".* FROM "corgis" INNER JOIN "friendships" ON "corgis"."id" = "friendships"."corgi_id" WHERE "friendships"."owner_id" = ?[0m  [["owner_id", 3]]
+  Rendered owners/show.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 32ms (Views: 29.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/owners" for ::1 at 2019-04-30 14:16:31 -0500
+Processing by OwnersController#index as HTML
+  Rendering owners/index.html.erb within layouts/application
+  [1m[36mOwner Load (0.3ms)[0m  [1m[34mSELECT "owners".* FROM "owners"[0m
+  Rendered owners/index.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 26ms (Views: 23.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/owners/1" for ::1 at 2019-04-30 14:16:32 -0500
+Processing by OwnersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mOwner Load (0.2ms)[0m  [1m[34mSELECT  "owners".* FROM "owners" WHERE "owners"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering owners/show.html.erb within layouts/application
+  [1m[36mCorgi Load (0.1ms)[0m  [1m[34mSELECT "corgis".* FROM "corgis" INNER JOIN "friendships" ON "corgis"."id" = "friendships"."corgi_id" WHERE "friendships"."owner_id" = ?[0m  [["owner_id", 1]]
+  Rendered owners/show.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 33ms (Views: 28.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/owners/1" for ::1 at 2019-04-30 14:18:34 -0500
+Processing by OwnersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mOwner Load (0.1ms)[0m  [1m[34mSELECT  "owners".* FROM "owners" WHERE "owners"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering owners/show.html.erb within layouts/application
+  [1m[36mCorgi Load (0.3ms)[0m  [1m[34mSELECT "corgis".* FROM "corgis" INNER JOIN "friendships" ON "corgis"."id" = "friendships"."corgi_id" WHERE "friendships"."owner_id" = ?[0m  [["owner_id", 1]]
+  Rendered owners/show.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 24ms (Views: 21.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/corgis/1" for ::1 at 2019-04-30 14:18:35 -0500
+Processing by CorgisController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCorgi Load (0.2ms)[0m  [1m[34mSELECT  "corgis".* FROM "corgis" WHERE "corgis"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering corgis/show.html.erb within layouts/application
+  [1m[36mOwner Load (0.2ms)[0m  [1m[34mSELECT "owners".* FROM "owners" INNER JOIN "friendships" ON "owners"."id" = "friendships"."owner_id" WHERE "friendships"."corgi_id" = ?[0m  [["corgi_id", 1]]
+  Rendered corgis/show.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 35ms (Views: 30.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/owners/1" for ::1 at 2019-04-30 14:18:37 -0500
+Processing by OwnersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mOwner Load (0.1ms)[0m  [1m[34mSELECT  "owners".* FROM "owners" WHERE "owners"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering owners/show.html.erb within layouts/application
+  [1m[36mCorgi Load (0.1ms)[0m  [1m[34mSELECT "corgis".* FROM "corgis" INNER JOIN "friendships" ON "corgis"."id" = "friendships"."corgi_id" WHERE "friendships"."owner_id" = ?[0m  [["owner_id", 1]]
+  Rendered owners/show.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 33ms (Views: 29.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/corgis/3" for ::1 at 2019-04-30 14:18:38 -0500
+Processing by CorgisController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mCorgi Load (0.8ms)[0m  [1m[34mSELECT  "corgis".* FROM "corgis" WHERE "corgis"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering corgis/show.html.erb within layouts/application
+  [1m[36mOwner Load (0.1ms)[0m  [1m[34mSELECT "owners".* FROM "owners" INNER JOIN "friendships" ON "owners"."id" = "friendships"."owner_id" WHERE "friendships"."corgi_id" = ?[0m  [["corgi_id", 3]]
+  Rendered corgis/show.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 35ms (Views: 29.3ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/owners/3" for ::1 at 2019-04-30 14:18:39 -0500
+Processing by OwnersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mOwner Load (0.1ms)[0m  [1m[34mSELECT  "owners".* FROM "owners" WHERE "owners"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering owners/show.html.erb within layouts/application
+  [1m[36mCorgi Load (0.4ms)[0m  [1m[34mSELECT "corgis".* FROM "corgis" INNER JOIN "friendships" ON "corgis"."id" = "friendships"."corgi_id" WHERE "friendships"."owner_id" = ?[0m  [["owner_id", 3]]
+  Rendered owners/show.html.erb within layouts/application (21.1ms)
+Completed 200 OK in 48ms (Views: 44.4ms | ActiveRecord: 0.5ms)
+
+

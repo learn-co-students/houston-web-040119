@@ -11,6 +11,7 @@ class OwnersController < ApplicationController
 
     def new
         @owner = Owner.new
+        @corgis = Corgi.all
     end
 
     def create
@@ -20,13 +21,12 @@ class OwnersController < ApplicationController
     end
 
     def edit
-    
+        @corgis = Corgi.all
     end
 
     def update
         @owner.update(owner_params)
         redirect_to @owner
-
     end
 
     def destroy
@@ -41,6 +41,6 @@ class OwnersController < ApplicationController
     end
 
     def owner_params
-        params.require(:owner).permit(:name)
+        params.require(:owner).permit(:name, corgi_ids: [])
     end
 end

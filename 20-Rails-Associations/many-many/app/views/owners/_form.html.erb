@@ -1,5 +1,9 @@
 <%= form_for @owner do |f| %>
-<%= f.label :name %>
+<%= f.label "Name" %>
 <%= f.text_field :name %>
+<br />
+<%= f.label "Corgis:" %>
+<%= f.collection_check_boxes :corgi_ids, @corgis, :id , :name %> 
+<br/>
 <%= f.submit %>
 <% end %> 
