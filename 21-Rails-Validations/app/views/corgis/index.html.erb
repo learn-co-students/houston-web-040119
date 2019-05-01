@@ -1,0 +1,6 @@
+<% @corgis.each do |corgi| %>
+   <li>
+       <%= link_to corgi.name, corgi_path(corgi) %> | <%= corgi.age %>
+       
+    </li> 
+    <% end %>

@@ -1,0 +1,6 @@
+<% @owners.each do |owner| %>
+   <li>
+     <%= link_to  owner.name, owner_path(owner) %>
+       
+    </li> 
+    <% end %>

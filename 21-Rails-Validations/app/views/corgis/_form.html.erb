@@ -1,0 +1,18 @@
+<% if flash[:error] %>
+<% flash[:error].each do |e| %>
+<p><%= e %></p>
+<%end%>
+<%end%>
+
+<%= form_for @corgi do |f| %>
+<%= f.label "Name:" %>
+<%= f.text_field :name %>
+<br />
+<%= f.label "Age:" %>
+<%= f.text_field :age %>
+<br />
+<%= f.label "Owners:" %>
+<%= f.collection_check_boxes :owner_ids, @owners, :id , :name %> 
+<br/>
+<%= f.submit %>
+<% end %> 

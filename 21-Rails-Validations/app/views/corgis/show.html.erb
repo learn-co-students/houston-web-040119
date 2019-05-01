@@ -1,0 +1,9 @@
+<h1><%=@corgi.name%></h1>
+<h3>Age: <%=@corgi.age%></h3>
+
+<p>Owners:</p>
+<% @corgi.owners.each do |owner| %>
+<li>
+    <%= link_to  owner.name, owner_path(owner) %>
+</li>
+<%end%>
