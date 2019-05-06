@@ -1,0 +1,1605 @@
+Started GET "/" for ::1 at 2019-05-06 11:26:01 -0500
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate RAILS_ENV=development
+
+):
+  
+activerecord (5.2.2.1) lib/active_record/migration.rb:579:in `check_pending!'
+activerecord (5.2.2.1) lib/active_record/migration.rb:556:in `call'
+actionpack (5.2.2.1) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.2.1) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.2.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.2.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.2.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.2.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/method_override.rb:22:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.2.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "answers"[0m
+  ↳ db/schema.rb:15
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ db/schema.rb:15
+  [1m[35m (3.1ms)[0m  [1m[35mCREATE TABLE "answers" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "content" varchar, "question_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:15
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "questions"[0m
+  ↳ db/schema.rb:22
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE TABLE "questions" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "content" varchar, "correct_answer_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:22
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "responses"[0m
+  ↳ db/schema.rb:29
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE TABLE "responses" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "question_id" integer, "answer_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:29
+  [1m[35m (1.4ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ db/schema.rb:13
+  [1m[35m (1.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20180925154838)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (1.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20180925154745),
+(20180925154813);
+
+[0m
+  ↳ db/schema.rb:13
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ db/schema.rb:13
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Create (0.5ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2019-05-06 16:27:14.591608"], ["updated_at", "2019-05-06 16:27:14.591608"]]
+  ↳ db/schema.rb:13
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "answers"[0m
+  ↳ db/schema.rb:15
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ db/schema.rb:15
+  [1m[35m (1.5ms)[0m  [1m[35mCREATE TABLE "answers" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "content" varchar, "question_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:15
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "questions"[0m
+  ↳ db/schema.rb:22
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE TABLE "questions" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "content" varchar, "correct_answer_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:22
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "responses"[0m
+  ↳ db/schema.rb:29
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE TABLE "responses" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "question_id" integer, "answer_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:29
+  [1m[35m (1.4ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ db/schema.rb:13
+  [1m[35m (1.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20180925154838)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (1.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20180925154745),
+(20180925154813);
+
+[0m
+  ↳ db/schema.rb:13
+  [1m[35m (1.8ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ db/schema.rb:13
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Create (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2019-05-06 16:27:14.617105"], ["updated_at", "2019-05-06 16:27:14.617105"]]
+  ↳ db/schema.rb:13
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Update (0.3ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = ?, "updated_at" = ? WHERE "ar_internal_metadata"."key" = ?[0m  [["value", "test"], ["updated_at", "2019-05-06 16:27:14.619804"], ["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions"[0m
+  ↳ db/seeds.rb:5
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT "answers".* FROM "answers"[0m
+  ↳ db/seeds.rb:6
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[36mQuestion Create (0.5ms)[0m  [1m[32mINSERT INTO "questions" ("content", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["content", "What was the name of the sea witch in the 1989 Disney film \"The Little Mermaid\"?"], ["created_at", "2019-05-06 16:27:14.652334"], ["updated_at", "2019-05-06 16:27:14.652334"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[36mAnswer Create (0.4ms)[0m  [1m[32mINSERT INTO "answers" ("content", "question_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "Ursula"], ["question_id", 1], ["created_at", "2019-05-06 16:27:14.668556"], ["updated_at", "2019-05-06 16:27:14.668556"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:14
+  [1m[36mQuestion Update (0.3ms)[0m  [1m[33mUPDATE "questions" SET "correct_answer_id" = ?, "updated_at" = ? WHERE "questions"."id" = ?[0m  [["correct_answer_id", 1], ["updated_at", "2019-05-06 16:27:14.672169"], ["id", 1]]
+  ↳ db/seeds.rb:14
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:16
+  [1m[36mAnswer Create (0.3ms)[0m  [1m[32mINSERT INTO "answers" ("content", "question_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "Madam Mim"], ["question_id", 1], ["created_at", "2019-05-06 16:27:14.675262"], ["updated_at", "2019-05-06 16:27:14.675262"]]
+  ↳ db/seeds.rb:16
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:16
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:16
+  [1m[36mAnswer Create (0.5ms)[0m  [1m[32mINSERT INTO "answers" ("content", "question_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "Maleficent"], ["question_id", 1], ["created_at", "2019-05-06 16:27:14.678588"], ["updated_at", "2019-05-06 16:27:14.678588"]]
+  ↳ db/seeds.rb:16
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:16
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:16
+  [1m[36mAnswer Create (0.3ms)[0m  [1m[32mINSERT INTO "answers" ("content", "question_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "Lady Tremaine"], ["question_id", 1], ["created_at", "2019-05-06 16:27:14.681505"], ["updated_at", "2019-05-06 16:27:14.681505"]]
+  ↳ db/seeds.rb:16
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:16
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[36mQuestion Create (0.3ms)[0m  [1m[32mINSERT INTO "questions" ("content", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["content", "What is the first book of the Old Testament?"], ["created_at", "2019-05-06 16:27:14.683986"], ["updated_at", "2019-05-06 16:27:14.683986"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[36mAnswer Create (0.3ms)[0m  [1m[32mINSERT INTO "answers" ("content", "question_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "Genesis"], ["question_id", 2], ["created_at", "2019-05-06 16:27:14.687190"], ["updated_at", "2019-05-06 16:27:14.687190"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:14
+  [1m[36mQuestion Update (0.3ms)[0m  [1m[33mUPDATE "questions" SET "correct_answer_id" = ?, "updated_at" = ? WHERE "questions"."id" = ?[0m  [["correct_answer_id", 5], ["updated_at", "2019-05-06 16:27:14.689610"], ["id", 2]]
+  ↳ db/seeds.rb:14
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:16
+  [1m[36mAnswer Create (0.3ms)[0m  [1m[32mINSERT INTO "answers" ("content", "question_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "Exodus"], ["question_id", 2], ["created_at", "2019-05-06 16:27:14.692660"], ["updated_at", "2019-05-06 16:27:14.692660"]]
+  ↳ db/seeds.rb:16
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:16
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:16
+  [1m[36mAnswer Create (0.3ms)[0m  [1m[32mINSERT INTO "answers" ("content", "question_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "Leviticus"], ["question_id", 2], ["created_at", "2019-05-06 16:27:14.695187"], ["updated_at", "2019-05-06 16:27:14.695187"]]
+  ↳ db/seeds.rb:16
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:16
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:16
+  [1m[36mAnswer Create (0.3ms)[0m  [1m[32mINSERT INTO "answers" ("content", "question_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "Numbers"], ["question_id", 2], ["created_at", "2019-05-06 16:27:14.697921"], ["updated_at", "2019-05-06 16:27:14.697921"]]
+  ↳ db/seeds.rb:16
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:16
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[36mQuestion Create (0.3ms)[0m  [1m[32mINSERT INTO "questions" ("content", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["content", "What is the largest organ of the human body?"], ["created_at", "2019-05-06 16:27:14.700542"], ["updated_at", "2019-05-06 16:27:14.700542"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[36mAnswer Create (0.3ms)[0m  [1m[32mINSERT INTO "answers" ("content", "question_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "Skin"], ["question_id", 3], ["created_at", "2019-05-06 16:27:14.702987"], ["updated_at", "2019-05-06 16:27:14.702987"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:14
+  [1m[36mQuestion Update (0.3ms)[0m  [1m[33mUPDATE "questions" SET "correct_answer_id" = ?, "updated_at" = ? WHERE "questions"."id" = ?[0m  [["correct_answer_id", 9], ["updated_at", "2019-05-06 16:27:14.706327"], ["id", 3]]
+  ↳ db/seeds.rb:14
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:16
+  [1m[36mAnswer Create (0.4ms)[0m  [1m[32mINSERT INTO "answers" ("content", "question_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "Heart"], ["question_id", 3], ["created_at", "2019-05-06 16:27:14.709818"], ["updated_at", "2019-05-06 16:27:14.709818"]]
+  ↳ db/seeds.rb:16
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:16
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:16
+  [1m[36mAnswer Create (0.4ms)[0m  [1m[32mINSERT INTO "answers" ("content", "question_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "large Intestine"], ["question_id", 3], ["created_at", "2019-05-06 16:27:14.714106"], ["updated_at", "2019-05-06 16:27:14.714106"]]
+  ↳ db/seeds.rb:16
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:16
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:16
+  [1m[36mAnswer Create (0.3ms)[0m  [1m[32mINSERT INTO "answers" ("content", "question_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "Liver"], ["question_id", 3], ["created_at", "2019-05-06 16:27:14.717003"], ["updated_at", "2019-05-06 16:27:14.717003"]]
+  ↳ db/seeds.rb:16
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:16
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[36mQuestion Create (0.3ms)[0m  [1m[32mINSERT INTO "questions" ("content", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["content", "Who is the lead singer of the band Coldplay?"], ["created_at", "2019-05-06 16:27:14.719856"], ["updated_at", "2019-05-06 16:27:14.719856"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[36mAnswer Create (0.4ms)[0m  [1m[32mINSERT INTO "answers" ("content", "question_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "Chris Martin"], ["question_id", 4], ["created_at", "2019-05-06 16:27:14.722966"], ["updated_at", "2019-05-06 16:27:14.722966"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:14
+  [1m[36mQuestion Update (0.3ms)[0m  [1m[33mUPDATE "questions" SET "correct_answer_id" = ?, "updated_at" = ? WHERE "questions"."id" = ?[0m  [["correct_answer_id", 13], ["updated_at", "2019-05-06 16:27:14.725811"], ["id", 4]]
+  ↳ db/seeds.rb:14
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:16
+  [1m[36mAnswer Create (0.3ms)[0m  [1m[32mINSERT INTO "answers" ("content", "question_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "Chris Isaak"], ["question_id", 4], ["created_at", "2019-05-06 16:27:14.728577"], ["updated_at", "2019-05-06 16:27:14.728577"]]
+  ↳ db/seeds.rb:16
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:16
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:16
+  [1m[36mAnswer Create (0.7ms)[0m  [1m[32mINSERT INTO "answers" ("content", "question_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "Chris Wallace"], ["question_id", 4], ["created_at", "2019-05-06 16:27:14.734134"], ["updated_at", "2019-05-06 16:27:14.734134"]]
+  ↳ db/seeds.rb:16
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:16
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:16
+  [1m[36mAnswer Create (0.3ms)[0m  [1m[32mINSERT INTO "answers" ("content", "question_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "Chris Connelly"], ["question_id", 4], ["created_at", "2019-05-06 16:27:14.737015"], ["updated_at", "2019-05-06 16:27:14.737015"]]
+  ↳ db/seeds.rb:16
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:16
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[36mQuestion Create (0.3ms)[0m  [1m[32mINSERT INTO "questions" ("content", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["content", "The element involved in making human blood red is which of the following?"], ["created_at", "2019-05-06 16:27:14.739995"], ["updated_at", "2019-05-06 16:27:14.739995"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[36mAnswer Create (0.3ms)[0m  [1m[32mINSERT INTO "answers" ("content", "question_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "Iron"], ["question_id", 5], ["created_at", "2019-05-06 16:27:14.742500"], ["updated_at", "2019-05-06 16:27:14.742500"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:14
+  [1m[36mQuestion Update (0.4ms)[0m  [1m[33mUPDATE "questions" SET "correct_answer_id" = ?, "updated_at" = ? WHERE "questions"."id" = ?[0m  [["correct_answer_id", 17], ["updated_at", "2019-05-06 16:27:14.745524"], ["id", 5]]
+  ↳ db/seeds.rb:14
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:16
+  [1m[36mAnswer Create (0.3ms)[0m  [1m[32mINSERT INTO "answers" ("content", "question_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "Copper"], ["question_id", 5], ["created_at", "2019-05-06 16:27:14.748437"], ["updated_at", "2019-05-06 16:27:14.748437"]]
+  ↳ db/seeds.rb:16
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:16
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:16
+  [1m[36mAnswer Create (0.3ms)[0m  [1m[32mINSERT INTO "answers" ("content", "question_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "Iridium"], ["question_id", 5], ["created_at", "2019-05-06 16:27:14.751542"], ["updated_at", "2019-05-06 16:27:14.751542"]]
+  ↳ db/seeds.rb:16
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:16
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:16
+  [1m[36mAnswer Create (0.3ms)[0m  [1m[32mINSERT INTO "answers" ("content", "question_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "Cobalt"], ["question_id", 5], ["created_at", "2019-05-06 16:27:14.754561"], ["updated_at", "2019-05-06 16:27:14.754561"]]
+  ↳ db/seeds.rb:16
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:16
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[36mQuestion Create (0.3ms)[0m  [1m[32mINSERT INTO "questions" ("content", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["content", "What is the capital of India?"], ["created_at", "2019-05-06 16:27:14.757419"], ["updated_at", "2019-05-06 16:27:14.757419"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[36mAnswer Create (0.3ms)[0m  [1m[32mINSERT INTO "answers" ("content", "question_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "New Delhi"], ["question_id", 6], ["created_at", "2019-05-06 16:27:14.760493"], ["updated_at", "2019-05-06 16:27:14.760493"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:14
+  [1m[36mQuestion Update (0.2ms)[0m  [1m[33mUPDATE "questions" SET "correct_answer_id" = ?, "updated_at" = ? WHERE "questions"."id" = ?[0m  [["correct_answer_id", 21], ["updated_at", "2019-05-06 16:27:14.762784"], ["id", 6]]
+  ↳ db/seeds.rb:14
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:16
+  [1m[36mAnswer Create (0.3ms)[0m  [1m[32mINSERT INTO "answers" ("content", "question_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "Bejing"], ["question_id", 6], ["created_at", "2019-05-06 16:27:14.765775"], ["updated_at", "2019-05-06 16:27:14.765775"]]
+  ↳ db/seeds.rb:16
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:16
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:16
+  [1m[36mAnswer Create (0.3ms)[0m  [1m[32mINSERT INTO "answers" ("content", "question_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "Montreal"], ["question_id", 6], ["created_at", "2019-05-06 16:27:14.768284"], ["updated_at", "2019-05-06 16:27:14.768284"]]
+  ↳ db/seeds.rb:16
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:16
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:16
+  [1m[36mAnswer Create (0.3ms)[0m  [1m[32mINSERT INTO "answers" ("content", "question_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "Tithi"], ["question_id", 6], ["created_at", "2019-05-06 16:27:14.771229"], ["updated_at", "2019-05-06 16:27:14.771229"]]
+  ↳ db/seeds.rb:16
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:16
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[36mQuestion Create (0.3ms)[0m  [1m[32mINSERT INTO "questions" ("content", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["content", "What year was Super Mario Bros. released?"], ["created_at", "2019-05-06 16:27:14.773736"], ["updated_at", "2019-05-06 16:27:14.773736"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[36mAnswer Create (0.3ms)[0m  [1m[32mINSERT INTO "answers" ("content", "question_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "1985"], ["question_id", 7], ["created_at", "2019-05-06 16:27:14.775941"], ["updated_at", "2019-05-06 16:27:14.775941"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:14
+  [1m[36mQuestion Update (0.2ms)[0m  [1m[33mUPDATE "questions" SET "correct_answer_id" = ?, "updated_at" = ? WHERE "questions"."id" = ?[0m  [["correct_answer_id", 25], ["updated_at", "2019-05-06 16:27:14.778105"], ["id", 7]]
+  ↳ db/seeds.rb:14
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:16
+  [1m[36mAnswer Create (0.3ms)[0m  [1m[32mINSERT INTO "answers" ("content", "question_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "1983"], ["question_id", 7], ["created_at", "2019-05-06 16:27:14.780623"], ["updated_at", "2019-05-06 16:27:14.780623"]]
+  ↳ db/seeds.rb:16
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:16
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:16
+  [1m[36mAnswer Create (0.3ms)[0m  [1m[32mINSERT INTO "answers" ("content", "question_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "1987"], ["question_id", 7], ["created_at", "2019-05-06 16:27:14.783629"], ["updated_at", "2019-05-06 16:27:14.783629"]]
+  ↳ db/seeds.rb:16
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:16
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:16
+  [1m[36mAnswer Create (0.3ms)[0m  [1m[32mINSERT INTO "answers" ("content", "question_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "1986"], ["question_id", 7], ["created_at", "2019-05-06 16:27:14.786163"], ["updated_at", "2019-05-06 16:27:14.786163"]]
+  ↳ db/seeds.rb:16
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:16
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[36mQuestion Create (0.3ms)[0m  [1m[32mINSERT INTO "questions" ("content", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["content", "When was the iPhone released?"], ["created_at", "2019-05-06 16:27:14.789110"], ["updated_at", "2019-05-06 16:27:14.789110"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[36mAnswer Create (0.3ms)[0m  [1m[32mINSERT INTO "answers" ("content", "question_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "2007"], ["question_id", 8], ["created_at", "2019-05-06 16:27:14.791629"], ["updated_at", "2019-05-06 16:27:14.791629"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:14
+  [1m[36mQuestion Update (0.3ms)[0m  [1m[33mUPDATE "questions" SET "correct_answer_id" = ?, "updated_at" = ? WHERE "questions"."id" = ?[0m  [["correct_answer_id", 29], ["updated_at", "2019-05-06 16:27:14.794381"], ["id", 8]]
+  ↳ db/seeds.rb:14
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:16
+  [1m[36mAnswer Create (0.3ms)[0m  [1m[32mINSERT INTO "answers" ("content", "question_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "2005"], ["question_id", 8], ["created_at", "2019-05-06 16:27:14.796766"], ["updated_at", "2019-05-06 16:27:14.796766"]]
+  ↳ db/seeds.rb:16
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:16
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:16
+  [1m[36mAnswer Create (0.3ms)[0m  [1m[32mINSERT INTO "answers" ("content", "question_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "2006"], ["question_id", 8], ["created_at", "2019-05-06 16:27:14.799273"], ["updated_at", "2019-05-06 16:27:14.799273"]]
+  ↳ db/seeds.rb:16
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:16
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:16
+  [1m[36mAnswer Create (0.3ms)[0m  [1m[32mINSERT INTO "answers" ("content", "question_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "2004"], ["question_id", 8], ["created_at", "2019-05-06 16:27:14.802141"], ["updated_at", "2019-05-06 16:27:14.802141"]]
+  ↳ db/seeds.rb:16
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:16
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[36mQuestion Create (0.3ms)[0m  [1m[32mINSERT INTO "questions" ("content", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["content", "These two countries held a commonwealth from the 16th to 18th century."], ["created_at", "2019-05-06 16:27:14.804535"], ["updated_at", "2019-05-06 16:27:14.804535"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[36mAnswer Create (0.3ms)[0m  [1m[32mINSERT INTO "answers" ("content", "question_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "Poland and Lithuania"], ["question_id", 9], ["created_at", "2019-05-06 16:27:14.807276"], ["updated_at", "2019-05-06 16:27:14.807276"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:14
+  [1m[36mQuestion Update (0.2ms)[0m  [1m[33mUPDATE "questions" SET "correct_answer_id" = ?, "updated_at" = ? WHERE "questions"."id" = ?[0m  [["correct_answer_id", 33], ["updated_at", "2019-05-06 16:27:14.809748"], ["id", 9]]
+  ↳ db/seeds.rb:14
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:16
+  [1m[36mAnswer Create (0.3ms)[0m  [1m[32mINSERT INTO "answers" ("content", "question_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "Hutu and Rwanda"], ["question_id", 9], ["created_at", "2019-05-06 16:27:14.812602"], ["updated_at", "2019-05-06 16:27:14.812602"]]
+  ↳ db/seeds.rb:16
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:16
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:16
+  [1m[36mAnswer Create (0.2ms)[0m  [1m[32mINSERT INTO "answers" ("content", "question_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "North Korea and South Korea"], ["question_id", 9], ["created_at", "2019-05-06 16:27:14.814829"], ["updated_at", "2019-05-06 16:27:14.814829"]]
+  ↳ db/seeds.rb:16
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:16
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:16
+  [1m[36mAnswer Create (0.3ms)[0m  [1m[32mINSERT INTO "answers" ("content", "question_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "Bangladesh and Bhutan"], ["question_id", 9], ["created_at", "2019-05-06 16:27:14.817461"], ["updated_at", "2019-05-06 16:27:14.817461"]]
+  ↳ db/seeds.rb:16
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:16
+Started GET "/" for ::1 at 2019-05-06 11:27:21 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/vidhi.sharma/.rvm/gems/ruby-2.3.7/gems/activerecord-5.2.2.1/lib/active_record/log_subscriber.rb:98
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/vidhi.sharma/.rvm/gems/ruby-2.3.7/gems/railties-5.2.2.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/vidhi.sharma/.rvm/gems/ruby-2.3.7/gems/railties-5.2.2.1/lib/rails/templates/rails/welcome/index.html.erb (3.0ms)
+Completed 200 OK in 17ms (Views: 7.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/responces" for ::1 at 2019-05-06 11:28:18 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/vidhi.sharma/.rvm/gems/ruby-2.3.7/gems/activerecord-5.2.2.1/lib/active_record/log_subscriber.rb:98
+  
+ActionController::RoutingError (No route matches [GET] "/responces"):
+  
+actionpack (5.2.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.2.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.2.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.2.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/method_override.rb:22:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.2.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/responses" for ::1 at 2019-05-06 11:28:28 -0500
+  
+AbstractController::ActionNotFound (The action 'index' could not be found for ResponsesController):
+  
+actionpack (5.2.2.1) lib/abstract_controller/base.rb:129:in `process'
+actionview (5.2.2.1) lib/action_view/rendering.rb:32:in `process'
+actionpack (5.2.2.1) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.2.1) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.2.1) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.2.1) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.2.1) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.2.1) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.2.1) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.2.1) lib/action_dispatch/routing/route_set.rb:840:in `call'
+rack (2.0.6) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.0.6) lib/rack/etag.rb:25:in `call'
+rack (2.0.6) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.6) lib/rack/head.rb:12:in `call'
+actionpack (5.2.2.1) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.0.6) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.6) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.2.2.1) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+activerecord (5.2.2.1) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.2.1) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.2.1) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.2.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.2.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.2.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.2.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/method_override.rb:22:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.2.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/responses/new" for ::1 at 2019-05-06 11:28:47 -0500
+Processing by ResponsesController#new as HTML
+DEPRECATION WARNING: Dangerous query method (method whose arguments are used as raw SQL) called with non-attribute argument(s): "RANDOM()". Non-attribute arguments will be disallowed in Rails 6.0. This method should not be called with user-provided values, such as request parameters or model attributes. Known-safe values can be passed by wrapping them in Arel.sql(). (called from define_question at /Users/vidhi.sharma/Desktop/Lectures/mod2_lec/040119/sessions-cookies-beta/app/controllers/responses_controller.rb:10)
+  [1m[36mQuestion Load (1.2ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/responses_controller.rb:10
+  Rendering responses/new.html.erb within layouts/application
+DEPRECATION WARNING: Dangerous query method (method whose arguments are used as raw SQL) called with non-attribute argument(s): "RANDOM()". Non-attribute arguments will be disallowed in Rails 6.0. This method should not be called with user-provided values, such as request parameters or model attributes. Known-safe values can be passed by wrapping them in Arel.sql(). (called from random_answers at /Users/vidhi.sharma/Desktop/Lectures/mod2_lec/040119/sessions-cookies-beta/app/models/question.rb:7)
+  [1m[36mAnswer Load (0.8ms)[0m  [1m[34mSELECT "answers".* FROM "answers" WHERE "answers"."question_id" = ? ORDER BY RANDOM()[0m  [["question_id", 9]]
+  ↳ app/views/responses/new.html.erb:7
+  Rendered responses/new.html.erb within layouts/application (148.5ms)
+Completed 200 OK in 704ms (Views: 659.9ms | ActiveRecord: 3.9ms)
+
+
+Started POST "/responses" for ::1 at 2019-05-06 11:28:54 -0500
+Processing by ResponsesController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"iusxrDyVjrkNN06hZJGw0P6NsgTfXIcZdSJZ9NkZrl3FfZzCnmeshHqoS//AS7wUK4ZmMd3sBjUUO+p9f2jukw==", "response"=>{"question_id"=>"9", "answer_id"=>"34"}, "commit"=>"Submit"}
+DEPRECATION WARNING: Dangerous query method (method whose arguments are used as raw SQL) called with non-attribute argument(s): "RANDOM()". Non-attribute arguments will be disallowed in Rails 6.0. This method should not be called with user-provided values, such as request parameters or model attributes. Known-safe values can be passed by wrapping them in Arel.sql(). (called from define_question at /Users/vidhi.sharma/Desktop/Lectures/mod2_lec/040119/sessions-cookies-beta/app/controllers/responses_controller.rb:10)
+  [1m[36mQuestion Load (0.3ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/responses_controller.rb:10
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/responses_controller.rb:19
+  [1m[36mQuestion Load (0.1ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/responses_controller.rb:19
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."id" = ? LIMIT ?[0m  [["id", 34], ["LIMIT", 1]]
+  ↳ app/controllers/responses_controller.rb:19
+  [1m[36mResponse Create (0.4ms)[0m  [1m[32mINSERT INTO "responses" ("question_id", "answer_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["question_id", 9], ["answer_id", 34], ["created_at", "2019-05-06 16:28:54.106899"], ["updated_at", "2019-05-06 16:28:54.106899"]]
+  ↳ app/controllers/responses_controller.rb:19
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/responses_controller.rb:19
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."id" = ? LIMIT ?[0m  [["id", 33], ["LIMIT", 1]]
+  ↳ app/controllers/responses_controller.rb:20
+Redirected to http://localhost:3000/random-question
+Completed 200 OK in 15ms (ActiveRecord: 2.3ms)
+
+
+Started GET "/random-question" for ::1 at 2019-05-06 11:28:54 -0500
+Processing by ResponsesController#new as HTML
+DEPRECATION WARNING: Dangerous query method (method whose arguments are used as raw SQL) called with non-attribute argument(s): "RANDOM()". Non-attribute arguments will be disallowed in Rails 6.0. This method should not be called with user-provided values, such as request parameters or model attributes. Known-safe values can be passed by wrapping them in Arel.sql(). (called from define_question at /Users/vidhi.sharma/Desktop/Lectures/mod2_lec/040119/sessions-cookies-beta/app/controllers/responses_controller.rb:10)
+  [1m[36mQuestion Load (0.5ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/responses_controller.rb:10
+  Rendering responses/new.html.erb within layouts/application
+DEPRECATION WARNING: Dangerous query method (method whose arguments are used as raw SQL) called with non-attribute argument(s): "RANDOM()". Non-attribute arguments will be disallowed in Rails 6.0. This method should not be called with user-provided values, such as request parameters or model attributes. Known-safe values can be passed by wrapping them in Arel.sql(). (called from random_answers at /Users/vidhi.sharma/Desktop/Lectures/mod2_lec/040119/sessions-cookies-beta/app/models/question.rb:7)
+  [1m[36mAnswer Load (0.2ms)[0m  [1m[34mSELECT "answers".* FROM "answers" WHERE "answers"."question_id" = ? ORDER BY RANDOM()[0m  [["question_id", 8]]
+  ↳ app/views/responses/new.html.erb:7
+  Rendered responses/new.html.erb within layouts/application (6.3ms)
+Completed 200 OK in 52ms (Views: 44.7ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/responses" for ::1 at 2019-05-06 11:28:57 -0500
+Processing by ResponsesController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"MdpHK19/+Q7rl8k7IgDwW0UAPy9E0z9PKSGxGwEeAYi1JsmaMVn791RnkRvl/FAXfx3/qJhqyndi8mdUkdGzvA==", "response"=>{"question_id"=>"8", "answer_id"=>"29"}, "commit"=>"Submit"}
+DEPRECATION WARNING: Dangerous query method (method whose arguments are used as raw SQL) called with non-attribute argument(s): "RANDOM()". Non-attribute arguments will be disallowed in Rails 6.0. This method should not be called with user-provided values, such as request parameters or model attributes. Known-safe values can be passed by wrapping them in Arel.sql(). (called from define_question at /Users/vidhi.sharma/Desktop/Lectures/mod2_lec/040119/sessions-cookies-beta/app/controllers/responses_controller.rb:10)
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/responses_controller.rb:10
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/responses_controller.rb:19
+  [1m[36mQuestion Load (0.1ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/responses_controller.rb:19
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."id" = ? LIMIT ?[0m  [["id", 29], ["LIMIT", 1]]
+  ↳ app/controllers/responses_controller.rb:19
+  [1m[36mResponse Create (0.4ms)[0m  [1m[32mINSERT INTO "responses" ("question_id", "answer_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["question_id", 8], ["answer_id", 29], ["created_at", "2019-05-06 16:28:57.684413"], ["updated_at", "2019-05-06 16:28:57.684413"]]
+  ↳ app/controllers/responses_controller.rb:19
+  [1m[35m (2.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/responses_controller.rb:19
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."id" = ? LIMIT ?[0m  [["id", 29], ["LIMIT", 1]]
+  ↳ app/controllers/responses_controller.rb:20
+Redirected to http://localhost:3000/random-question
+Completed 200 OK in 13ms (ActiveRecord: 3.1ms)
+
+
+Started GET "/random-question" for ::1 at 2019-05-06 11:28:57 -0500
+Processing by ResponsesController#new as HTML
+DEPRECATION WARNING: Dangerous query method (method whose arguments are used as raw SQL) called with non-attribute argument(s): "RANDOM()". Non-attribute arguments will be disallowed in Rails 6.0. This method should not be called with user-provided values, such as request parameters or model attributes. Known-safe values can be passed by wrapping them in Arel.sql(). (called from define_question at /Users/vidhi.sharma/Desktop/Lectures/mod2_lec/040119/sessions-cookies-beta/app/controllers/responses_controller.rb:10)
+  [1m[36mQuestion Load (0.3ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/responses_controller.rb:10
+  Rendering responses/new.html.erb within layouts/application
+DEPRECATION WARNING: Dangerous query method (method whose arguments are used as raw SQL) called with non-attribute argument(s): "RANDOM()". Non-attribute arguments will be disallowed in Rails 6.0. This method should not be called with user-provided values, such as request parameters or model attributes. Known-safe values can be passed by wrapping them in Arel.sql(). (called from random_answers at /Users/vidhi.sharma/Desktop/Lectures/mod2_lec/040119/sessions-cookies-beta/app/models/question.rb:7)
+  [1m[36mAnswer Load (0.3ms)[0m  [1m[34mSELECT "answers".* FROM "answers" WHERE "answers"."question_id" = ? ORDER BY RANDOM()[0m  [["question_id", 2]]
+  ↳ app/views/responses/new.html.erb:7
+  Rendered responses/new.html.erb within layouts/application (6.6ms)
+Completed 200 OK in 53ms (Views: 45.5ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/responses" for ::1 at 2019-05-06 11:29:00 -0500
+Processing by ResponsesController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"PIfrnJfmxvoXOJV+cwcU1JRq5gvT0YMwF253i+8zlyC4e2Ut+cDEA6jIzV60+7SYrncmjA9odghcvaHEf/wlFA==", "response"=>{"question_id"=>"2", "answer_id"=>"7"}, "commit"=>"Submit"}
+DEPRECATION WARNING: Dangerous query method (method whose arguments are used as raw SQL) called with non-attribute argument(s): "RANDOM()". Non-attribute arguments will be disallowed in Rails 6.0. This method should not be called with user-provided values, such as request parameters or model attributes. Known-safe values can be passed by wrapping them in Arel.sql(). (called from define_question at /Users/vidhi.sharma/Desktop/Lectures/mod2_lec/040119/sessions-cookies-beta/app/controllers/responses_controller.rb:10)
+  [1m[36mQuestion Load (0.3ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/responses_controller.rb:10
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/responses_controller.rb:19
+  [1m[36mQuestion Load (0.1ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/responses_controller.rb:19
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/responses_controller.rb:19
+  [1m[36mResponse Create (0.5ms)[0m  [1m[32mINSERT INTO "responses" ("question_id", "answer_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["question_id", 2], ["answer_id", 7], ["created_at", "2019-05-06 16:29:00.480201"], ["updated_at", "2019-05-06 16:29:00.480201"]]
+  ↳ app/controllers/responses_controller.rb:19
+  [1m[35m (2.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/responses_controller.rb:19
+  [1m[36mAnswer Load (0.4ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/responses_controller.rb:20
+Redirected to http://localhost:3000/random-question
+Completed 200 OK in 11ms (ActiveRecord: 3.8ms)
+
+
+Started GET "/random-question" for ::1 at 2019-05-06 11:29:00 -0500
+Processing by ResponsesController#new as HTML
+DEPRECATION WARNING: Dangerous query method (method whose arguments are used as raw SQL) called with non-attribute argument(s): "RANDOM()". Non-attribute arguments will be disallowed in Rails 6.0. This method should not be called with user-provided values, such as request parameters or model attributes. Known-safe values can be passed by wrapping them in Arel.sql(). (called from define_question at /Users/vidhi.sharma/Desktop/Lectures/mod2_lec/040119/sessions-cookies-beta/app/controllers/responses_controller.rb:10)
+  [1m[36mQuestion Load (1.0ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/responses_controller.rb:10
+  Rendering responses/new.html.erb within layouts/application
+DEPRECATION WARNING: Dangerous query method (method whose arguments are used as raw SQL) called with non-attribute argument(s): "RANDOM()". Non-attribute arguments will be disallowed in Rails 6.0. This method should not be called with user-provided values, such as request parameters or model attributes. Known-safe values can be passed by wrapping them in Arel.sql(). (called from random_answers at /Users/vidhi.sharma/Desktop/Lectures/mod2_lec/040119/sessions-cookies-beta/app/models/question.rb:7)
+  [1m[36mAnswer Load (0.5ms)[0m  [1m[34mSELECT "answers".* FROM "answers" WHERE "answers"."question_id" = ? ORDER BY RANDOM()[0m  [["question_id", 5]]
+  ↳ app/views/responses/new.html.erb:7
+  Rendered responses/new.html.erb within layouts/application (5.5ms)
+Completed 200 OK in 46ms (Views: 37.5ms | ActiveRecord: 1.5ms)
+
+
+Started POST "/responses" for ::1 at 2019-05-06 11:29:03 -0500
+Processing by ResponsesController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"mL0rfbZgH5RpzDxR9Vlen7tMN3zXb0wAkBvCk9twe3UcQaXM2EYdbdY8ZHEypf7TgVH3+wvWuTjbyBTcS7/JQQ==", "response"=>{"question_id"=>"5", "answer_id"=>"17"}, "commit"=>"Submit"}
+DEPRECATION WARNING: Dangerous query method (method whose arguments are used as raw SQL) called with non-attribute argument(s): "RANDOM()". Non-attribute arguments will be disallowed in Rails 6.0. This method should not be called with user-provided values, such as request parameters or model attributes. Known-safe values can be passed by wrapping them in Arel.sql(). (called from define_question at /Users/vidhi.sharma/Desktop/Lectures/mod2_lec/040119/sessions-cookies-beta/app/controllers/responses_controller.rb:10)
+  [1m[36mQuestion Load (0.3ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/responses_controller.rb:10
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/responses_controller.rb:19
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/responses_controller.rb:19
+  [1m[36mAnswer Load (0.5ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."id" = ? LIMIT ?[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/controllers/responses_controller.rb:19
+  [1m[36mResponse Create (0.5ms)[0m  [1m[32mINSERT INTO "responses" ("question_id", "answer_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["question_id", 5], ["answer_id", 17], ["created_at", "2019-05-06 16:29:03.282006"], ["updated_at", "2019-05-06 16:29:03.282006"]]
+  ↳ app/controllers/responses_controller.rb:19
+  [1m[35m (2.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/responses_controller.rb:19
+  [1m[36mAnswer Load (0.2ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."id" = ? LIMIT ?[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/controllers/responses_controller.rb:20
+Redirected to http://localhost:3000/random-question
+Completed 200 OK in 20ms (ActiveRecord: 4.1ms)
+
+
+Started GET "/random-question" for ::1 at 2019-05-06 11:29:03 -0500
+Processing by ResponsesController#new as HTML
+DEPRECATION WARNING: Dangerous query method (method whose arguments are used as raw SQL) called with non-attribute argument(s): "RANDOM()". Non-attribute arguments will be disallowed in Rails 6.0. This method should not be called with user-provided values, such as request parameters or model attributes. Known-safe values can be passed by wrapping them in Arel.sql(). (called from define_question at /Users/vidhi.sharma/Desktop/Lectures/mod2_lec/040119/sessions-cookies-beta/app/controllers/responses_controller.rb:10)
+  [1m[36mQuestion Load (1.9ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/responses_controller.rb:10
+  Rendering responses/new.html.erb within layouts/application
+DEPRECATION WARNING: Dangerous query method (method whose arguments are used as raw SQL) called with non-attribute argument(s): "RANDOM()". Non-attribute arguments will be disallowed in Rails 6.0. This method should not be called with user-provided values, such as request parameters or model attributes. Known-safe values can be passed by wrapping them in Arel.sql(). (called from random_answers at /Users/vidhi.sharma/Desktop/Lectures/mod2_lec/040119/sessions-cookies-beta/app/models/question.rb:7)
+  [1m[36mAnswer Load (0.3ms)[0m  [1m[34mSELECT "answers".* FROM "answers" WHERE "answers"."question_id" = ? ORDER BY RANDOM()[0m  [["question_id", 1]]
+  ↳ app/views/responses/new.html.erb:7
+  Rendered responses/new.html.erb within layouts/application (4.9ms)
+Completed 200 OK in 56ms (Views: 47.5ms | ActiveRecord: 2.2ms)
+
+
+Started POST "/responses" for ::1 at 2019-05-06 11:32:24 -0500
+Processing by ResponsesController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"7+oh1cEOFSEeQA6OPZn5Obwx3JVOTN6y79eSxDQCtPBrFq9krygX2KGwVq76ZVl1hiwcEpL1K4qkBESLpM0GxA==", "response"=>{"question_id"=>"1", "answer_id"=>"1"}, "commit"=>"Submit"}
+DEPRECATION WARNING: Dangerous query method (method whose arguments are used as raw SQL) called with non-attribute argument(s): "RANDOM()". Non-attribute arguments will be disallowed in Rails 6.0. This method should not be called with user-provided values, such as request parameters or model attributes. Known-safe values can be passed by wrapping them in Arel.sql(). (called from define_question at /Users/vidhi.sharma/Desktop/Lectures/mod2_lec/040119/sessions-cookies-beta/app/controllers/responses_controller.rb:10)
+  [1m[36mQuestion Load (0.4ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/responses_controller.rb:10
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/responses_controller.rb:19
+  [1m[36mQuestion Load (0.1ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/responses_controller.rb:19
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/responses_controller.rb:19
+  [1m[36mResponse Create (0.3ms)[0m  [1m[32mINSERT INTO "responses" ("question_id", "answer_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["question_id", 1], ["answer_id", 1], ["created_at", "2019-05-06 16:32:24.631330"], ["updated_at", "2019-05-06 16:32:24.631330"]]
+  ↳ app/controllers/responses_controller.rb:19
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/responses_controller.rb:19
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/responses_controller.rb:20
+Redirected to http://localhost:3000/random-question
+Completed 200 OK in 9ms (ActiveRecord: 2.4ms)
+
+
+Started GET "/random-question" for ::1 at 2019-05-06 11:32:24 -0500
+Processing by ResponsesController#new as HTML
+DEPRECATION WARNING: Dangerous query method (method whose arguments are used as raw SQL) called with non-attribute argument(s): "RANDOM()". Non-attribute arguments will be disallowed in Rails 6.0. This method should not be called with user-provided values, such as request parameters or model attributes. Known-safe values can be passed by wrapping them in Arel.sql(). (called from define_question at /Users/vidhi.sharma/Desktop/Lectures/mod2_lec/040119/sessions-cookies-beta/app/controllers/responses_controller.rb:10)
+  [1m[36mQuestion Load (0.3ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/responses_controller.rb:10
+  Rendering responses/new.html.erb within layouts/application
+DEPRECATION WARNING: Dangerous query method (method whose arguments are used as raw SQL) called with non-attribute argument(s): "RANDOM()". Non-attribute arguments will be disallowed in Rails 6.0. This method should not be called with user-provided values, such as request parameters or model attributes. Known-safe values can be passed by wrapping them in Arel.sql(). (called from random_answers at /Users/vidhi.sharma/Desktop/Lectures/mod2_lec/040119/sessions-cookies-beta/app/models/question.rb:7)
+  [1m[36mAnswer Load (0.3ms)[0m  [1m[34mSELECT "answers".* FROM "answers" WHERE "answers"."question_id" = ? ORDER BY RANDOM()[0m  [["question_id", 3]]
+  ↳ app/views/responses/new.html.erb:7
+  Rendered responses/new.html.erb within layouts/application (4.3ms)
+Completed 200 OK in 42ms (Views: 34.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/random-question" for ::1 at 2019-05-06 11:39:46 -0500
+Processing by ResponsesController#new as HTML
+DEPRECATION WARNING: Dangerous query method (method whose arguments are used as raw SQL) called with non-attribute argument(s): "RANDOM()". Non-attribute arguments will be disallowed in Rails 6.0. This method should not be called with user-provided values, such as request parameters or model attributes. Known-safe values can be passed by wrapping them in Arel.sql(). (called from define_question at /Users/vidhi.sharma/Desktop/Lectures/mod2_lec/040119/sessions-cookies-beta/app/controllers/responses_controller.rb:10)
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/responses_controller.rb:10
+  Rendering responses/new.html.erb within layouts/application
+DEPRECATION WARNING: Dangerous query method (method whose arguments are used as raw SQL) called with non-attribute argument(s): "RANDOM()". Non-attribute arguments will be disallowed in Rails 6.0. This method should not be called with user-provided values, such as request parameters or model attributes. Known-safe values can be passed by wrapping them in Arel.sql(). (called from random_answers at /Users/vidhi.sharma/Desktop/Lectures/mod2_lec/040119/sessions-cookies-beta/app/models/question.rb:7)
+  [1m[36mAnswer Load (0.2ms)[0m  [1m[34mSELECT "answers".* FROM "answers" WHERE "answers"."question_id" = ? ORDER BY RANDOM()[0m  [["question_id", 6]]
+  ↳ app/views/responses/new.html.erb:7
+  Rendered responses/new.html.erb within layouts/application (11.3ms)
+Completed 200 OK in 48ms (Views: 28.8ms | ActiveRecord: 1.6ms)
+
+
+Started POST "/responses" for ::1 at 2019-05-06 11:39:49 -0500
+Processing by ResponsesController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"7N2io/2eBzw3CTx4E+A6dlWoghX37lX5rbnAtpapsOajSw/NX2wlAUCWOSa3OjaygKNWIPVe1NXMoHM/MNjwKA==", "response"=>{"question_id"=>"6", "answer_id"=>"21"}, "commit"=>"Submit"}
+DEPRECATION WARNING: Dangerous query method (method whose arguments are used as raw SQL) called with non-attribute argument(s): "RANDOM()". Non-attribute arguments will be disallowed in Rails 6.0. This method should not be called with user-provided values, such as request parameters or model attributes. Known-safe values can be passed by wrapping them in Arel.sql(). (called from define_question at /Users/vidhi.sharma/Desktop/Lectures/mod2_lec/040119/sessions-cookies-beta/app/controllers/responses_controller.rb:10)
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/responses_controller.rb:10
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/responses_controller.rb:21
+  [1m[36mQuestion Load (0.1ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/responses_controller.rb:21
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."id" = ? LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/controllers/responses_controller.rb:21
+  [1m[36mResponse Create (0.3ms)[0m  [1m[32mINSERT INTO "responses" ("question_id", "answer_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["question_id", 6], ["answer_id", 21], ["created_at", "2019-05-06 16:39:49.700419"], ["updated_at", "2019-05-06 16:39:49.700419"]]
+  ↳ app/controllers/responses_controller.rb:21
+  [1m[35m (2.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/responses_controller.rb:21
+  [1m[36mAnswer Load (0.2ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."id" = ? LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/controllers/responses_controller.rb:22
+Redirected to http://localhost:3000/random-question
+Completed 200 OK in 13ms (ActiveRecord: 3.4ms)
+
+
+Started GET "/random-question" for ::1 at 2019-05-06 11:39:49 -0500
+Processing by ResponsesController#new as HTML
+DEPRECATION WARNING: Dangerous query method (method whose arguments are used as raw SQL) called with non-attribute argument(s): "RANDOM()". Non-attribute arguments will be disallowed in Rails 6.0. This method should not be called with user-provided values, such as request parameters or model attributes. Known-safe values can be passed by wrapping them in Arel.sql(). (called from define_question at /Users/vidhi.sharma/Desktop/Lectures/mod2_lec/040119/sessions-cookies-beta/app/controllers/responses_controller.rb:10)
+  [1m[36mQuestion Load (0.3ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/responses_controller.rb:10
+  Rendering responses/new.html.erb within layouts/application
+DEPRECATION WARNING: Dangerous query method (method whose arguments are used as raw SQL) called with non-attribute argument(s): "RANDOM()". Non-attribute arguments will be disallowed in Rails 6.0. This method should not be called with user-provided values, such as request parameters or model attributes. Known-safe values can be passed by wrapping them in Arel.sql(). (called from random_answers at /Users/vidhi.sharma/Desktop/Lectures/mod2_lec/040119/sessions-cookies-beta/app/models/question.rb:7)
+  [1m[36mAnswer Load (0.2ms)[0m  [1m[34mSELECT "answers".* FROM "answers" WHERE "answers"."question_id" = ? ORDER BY RANDOM()[0m  [["question_id", 8]]
+  ↳ app/views/responses/new.html.erb:7
+  Rendered responses/new.html.erb within layouts/application (4.4ms)
+Completed 200 OK in 42ms (Views: 32.7ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/responses" for ::1 at 2019-05-06 11:39:52 -0500
+Processing by ResponsesController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"4H5R2AUf83g3pKg8E7v5Y8HFxJUmpzvAQfCNt3fpIDVkgt9paznxgYhU8BzUR1kv+9gEEvoezvgKI1v45yaSAQ==", "response"=>{"question_id"=>"8", "answer_id"=>"29"}, "commit"=>"Submit"}
+DEPRECATION WARNING: Dangerous query method (method whose arguments are used as raw SQL) called with non-attribute argument(s): "RANDOM()". Non-attribute arguments will be disallowed in Rails 6.0. This method should not be called with user-provided values, such as request parameters or model attributes. Known-safe values can be passed by wrapping them in Arel.sql(). (called from define_question at /Users/vidhi.sharma/Desktop/Lectures/mod2_lec/040119/sessions-cookies-beta/app/controllers/responses_controller.rb:10)
+  [1m[36mQuestion Load (0.3ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/responses_controller.rb:10
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/responses_controller.rb:21
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/responses_controller.rb:21
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."id" = ? LIMIT ?[0m  [["id", 29], ["LIMIT", 1]]
+  ↳ app/controllers/responses_controller.rb:21
+  [1m[36mResponse Create (0.4ms)[0m  [1m[32mINSERT INTO "responses" ("question_id", "answer_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["question_id", 8], ["answer_id", 29], ["created_at", "2019-05-06 16:39:52.017578"], ["updated_at", "2019-05-06 16:39:52.017578"]]
+  ↳ app/controllers/responses_controller.rb:21
+  [1m[35m (2.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/responses_controller.rb:21
+  [1m[36mAnswer Load (0.5ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."id" = ? LIMIT ?[0m  [["id", 29], ["LIMIT", 1]]
+  ↳ app/controllers/responses_controller.rb:22
+Redirected to http://localhost:3000/random-question
+Completed 200 OK in 12ms (ActiveRecord: 3.8ms)
+
+
+Started GET "/random-question" for ::1 at 2019-05-06 11:39:52 -0500
+Processing by ResponsesController#new as HTML
+DEPRECATION WARNING: Dangerous query method (method whose arguments are used as raw SQL) called with non-attribute argument(s): "RANDOM()". Non-attribute arguments will be disallowed in Rails 6.0. This method should not be called with user-provided values, such as request parameters or model attributes. Known-safe values can be passed by wrapping them in Arel.sql(). (called from define_question at /Users/vidhi.sharma/Desktop/Lectures/mod2_lec/040119/sessions-cookies-beta/app/controllers/responses_controller.rb:10)
+  [1m[36mQuestion Load (0.3ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/responses_controller.rb:10
+  Rendering responses/new.html.erb within layouts/application
+DEPRECATION WARNING: Dangerous query method (method whose arguments are used as raw SQL) called with non-attribute argument(s): "RANDOM()". Non-attribute arguments will be disallowed in Rails 6.0. This method should not be called with user-provided values, such as request parameters or model attributes. Known-safe values can be passed by wrapping them in Arel.sql(). (called from random_answers at /Users/vidhi.sharma/Desktop/Lectures/mod2_lec/040119/sessions-cookies-beta/app/models/question.rb:7)
+  [1m[36mAnswer Load (0.3ms)[0m  [1m[34mSELECT "answers".* FROM "answers" WHERE "answers"."question_id" = ? ORDER BY RANDOM()[0m  [["question_id", 8]]
+  ↳ app/views/responses/new.html.erb:7
+  Rendered responses/new.html.erb within layouts/application (4.7ms)
+Completed 200 OK in 47ms (Views: 38.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/random-question" for ::1 at 2019-05-06 11:40:42 -0500
+Processing by ResponsesController#new as HTML
+DEPRECATION WARNING: Dangerous query method (method whose arguments are used as raw SQL) called with non-attribute argument(s): "RANDOM()". Non-attribute arguments will be disallowed in Rails 6.0. This method should not be called with user-provided values, such as request parameters or model attributes. Known-safe values can be passed by wrapping them in Arel.sql(). (called from define_question at /Users/vidhi.sharma/Desktop/Lectures/mod2_lec/040119/sessions-cookies-beta/app/controllers/responses_controller.rb:10)
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/responses_controller.rb:10
+  Rendering responses/new.html.erb within layouts/application
+DEPRECATION WARNING: Dangerous query method (method whose arguments are used as raw SQL) called with non-attribute argument(s): "RANDOM()". Non-attribute arguments will be disallowed in Rails 6.0. This method should not be called with user-provided values, such as request parameters or model attributes. Known-safe values can be passed by wrapping them in Arel.sql(). (called from random_answers at /Users/vidhi.sharma/Desktop/Lectures/mod2_lec/040119/sessions-cookies-beta/app/models/question.rb:7)
+  [1m[36mAnswer Load (0.2ms)[0m  [1m[34mSELECT "answers".* FROM "answers" WHERE "answers"."question_id" = ? ORDER BY RANDOM()[0m  [["question_id", 5]]
+  ↳ app/views/responses/new.html.erb:7
+  Rendered responses/new.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 26ms (Views: 21.9ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/responses" for ::1 at 2019-05-06 11:40:45 -0500
+Processing by ResponsesController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"jSo1o/jVKGVpXBN75WTp/Br45uWLG7xQDrE5sil3etDCvJjNWicKWB7DFiVBvuU4z/My0ImrPXxvqIo7jwY6Hg==", "response"=>{"question_id"=>"5", "answer_id"=>"17"}, "commit"=>"Submit"}
+DEPRECATION WARNING: Dangerous query method (method whose arguments are used as raw SQL) called with non-attribute argument(s): "RANDOM()". Non-attribute arguments will be disallowed in Rails 6.0. This method should not be called with user-provided values, such as request parameters or model attributes. Known-safe values can be passed by wrapping them in Arel.sql(). (called from define_question at /Users/vidhi.sharma/Desktop/Lectures/mod2_lec/040119/sessions-cookies-beta/app/controllers/responses_controller.rb:10)
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/responses_controller.rb:10
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/responses_controller.rb:21
+  [1m[36mQuestion Load (0.1ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/responses_controller.rb:21
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."id" = ? LIMIT ?[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/controllers/responses_controller.rb:21
+  [1m[36mResponse Create (0.4ms)[0m  [1m[32mINSERT INTO "responses" ("question_id", "answer_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["question_id", 5], ["answer_id", 17], ["created_at", "2019-05-06 16:40:45.453182"], ["updated_at", "2019-05-06 16:40:45.453182"]]
+  ↳ app/controllers/responses_controller.rb:21
+  [1m[35m (2.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/responses_controller.rb:21
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."id" = ? LIMIT ?[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/controllers/responses_controller.rb:22
+Redirected to http://localhost:3000/random-question
+Completed 200 OK in 9ms (ActiveRecord: 2.9ms)
+
+
+Started GET "/random-question" for ::1 at 2019-05-06 11:40:45 -0500
+Processing by ResponsesController#new as HTML
+DEPRECATION WARNING: Dangerous query method (method whose arguments are used as raw SQL) called with non-attribute argument(s): "RANDOM()". Non-attribute arguments will be disallowed in Rails 6.0. This method should not be called with user-provided values, such as request parameters or model attributes. Known-safe values can be passed by wrapping them in Arel.sql(). (called from define_question at /Users/vidhi.sharma/Desktop/Lectures/mod2_lec/040119/sessions-cookies-beta/app/controllers/responses_controller.rb:10)
+  [1m[36mQuestion Load (0.4ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/responses_controller.rb:10
+  Rendering responses/new.html.erb within layouts/application
+DEPRECATION WARNING: Dangerous query method (method whose arguments are used as raw SQL) called with non-attribute argument(s): "RANDOM()". Non-attribute arguments will be disallowed in Rails 6.0. This method should not be called with user-provided values, such as request parameters or model attributes. Known-safe values can be passed by wrapping them in Arel.sql(). (called from random_answers at /Users/vidhi.sharma/Desktop/Lectures/mod2_lec/040119/sessions-cookies-beta/app/models/question.rb:7)
+  [1m[36mAnswer Load (0.3ms)[0m  [1m[34mSELECT "answers".* FROM "answers" WHERE "answers"."question_id" = ? ORDER BY RANDOM()[0m  [["question_id", 7]]
+  ↳ app/views/responses/new.html.erb:7
+  Rendered responses/new.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 51ms (Views: 42.3ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/responses" for ::1 at 2019-05-06 11:40:54 -0500
+Processing by ResponsesController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"C9Zyy169pOIIFRHpZodLhopx28dcN2CnepG+HQlu5oiPKvx6MJumG7flScmhe+vKsGwbQICOlZ8xQmhSmaFUvA==", "response"=>{"question_id"=>"7", "answer_id"=>"27"}, "commit"=>"Submit"}
+DEPRECATION WARNING: Dangerous query method (method whose arguments are used as raw SQL) called with non-attribute argument(s): "RANDOM()". Non-attribute arguments will be disallowed in Rails 6.0. This method should not be called with user-provided values, such as request parameters or model attributes. Known-safe values can be passed by wrapping them in Arel.sql(). (called from define_question at /Users/vidhi.sharma/Desktop/Lectures/mod2_lec/040119/sessions-cookies-beta/app/controllers/responses_controller.rb:10)
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/responses_controller.rb:10
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/responses_controller.rb:21
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/responses_controller.rb:21
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."id" = ? LIMIT ?[0m  [["id", 27], ["LIMIT", 1]]
+  ↳ app/controllers/responses_controller.rb:21
+  [1m[36mResponse Create (0.3ms)[0m  [1m[32mINSERT INTO "responses" ("question_id", "answer_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["question_id", 7], ["answer_id", 27], ["created_at", "2019-05-06 16:40:54.694760"], ["updated_at", "2019-05-06 16:40:54.694760"]]
+  ↳ app/controllers/responses_controller.rb:21
+  [1m[35m (2.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/responses_controller.rb:21
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."id" = ? LIMIT ?[0m  [["id", 25], ["LIMIT", 1]]
+  ↳ app/controllers/responses_controller.rb:22
+Redirected to http://localhost:3000/random-question
+Completed 200 OK in 11ms (ActiveRecord: 3.4ms)
+
+
+Started GET "/random-question" for ::1 at 2019-05-06 11:40:54 -0500
+Processing by ResponsesController#new as HTML
+DEPRECATION WARNING: Dangerous query method (method whose arguments are used as raw SQL) called with non-attribute argument(s): "RANDOM()". Non-attribute arguments will be disallowed in Rails 6.0. This method should not be called with user-provided values, such as request parameters or model attributes. Known-safe values can be passed by wrapping them in Arel.sql(). (called from define_question at /Users/vidhi.sharma/Desktop/Lectures/mod2_lec/040119/sessions-cookies-beta/app/controllers/responses_controller.rb:10)
+  [1m[36mQuestion Load (1.2ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/responses_controller.rb:10
+  Rendering responses/new.html.erb within layouts/application
+DEPRECATION WARNING: Dangerous query method (method whose arguments are used as raw SQL) called with non-attribute argument(s): "RANDOM()". Non-attribute arguments will be disallowed in Rails 6.0. This method should not be called with user-provided values, such as request parameters or model attributes. Known-safe values can be passed by wrapping them in Arel.sql(). (called from random_answers at /Users/vidhi.sharma/Desktop/Lectures/mod2_lec/040119/sessions-cookies-beta/app/models/question.rb:7)
+  [1m[36mAnswer Load (0.3ms)[0m  [1m[34mSELECT "answers".* FROM "answers" WHERE "answers"."question_id" = ? ORDER BY RANDOM()[0m  [["question_id", 1]]
+  ↳ app/views/responses/new.html.erb:7
+  Rendered responses/new.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 38ms (Views: 29.5ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/random-question" for ::1 at 2019-05-06 11:52:44 -0500
+Processing by ResponsesController#new as HTML
+DEPRECATION WARNING: Dangerous query method (method whose arguments are used as raw SQL) called with non-attribute argument(s): "RANDOM()". Non-attribute arguments will be disallowed in Rails 6.0. This method should not be called with user-provided values, such as request parameters or model attributes. Known-safe values can be passed by wrapping them in Arel.sql(). (called from define_question at /Users/vidhi.sharma/Desktop/Lectures/mod2_lec/040119/sessions-cookies-beta/app/controllers/responses_controller.rb:10)
+  [1m[36mQuestion Load (0.3ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/responses_controller.rb:10
+  Rendering responses/new.html.erb within layouts/application
+DEPRECATION WARNING: Dangerous query method (method whose arguments are used as raw SQL) called with non-attribute argument(s): "RANDOM()". Non-attribute arguments will be disallowed in Rails 6.0. This method should not be called with user-provided values, such as request parameters or model attributes. Known-safe values can be passed by wrapping them in Arel.sql(). (called from random_answers at /Users/vidhi.sharma/Desktop/Lectures/mod2_lec/040119/sessions-cookies-beta/app/models/question.rb:7)
+  [1m[36mAnswer Load (0.2ms)[0m  [1m[34mSELECT "answers".* FROM "answers" WHERE "answers"."question_id" = ? ORDER BY RANDOM()[0m  [["question_id", 7]]
+  ↳ app/views/responses/new.html.erb:7
+  Rendered responses/new.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 29ms (Views: 21.7ms | ActiveRecord: 1.4ms)
+
+
+Started POST "/responses" for ::1 at 2019-05-06 11:52:47 -0500
+Processing by ResponsesController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"8cwEVmRb511S7B73DPqhvdKSY6IA24rzjcsGEQOdPM6+Wqk4xqnFYCVzG6moIK15B5m3lwJrC9/s0rWYpex8AA==", "response"=>{"question_id"=>"7", "answer_id"=>"26"}, "commit"=>"Submit"}
+DEPRECATION WARNING: Dangerous query method (method whose arguments are used as raw SQL) called with non-attribute argument(s): "RANDOM()". Non-attribute arguments will be disallowed in Rails 6.0. This method should not be called with user-provided values, such as request parameters or model attributes. Known-safe values can be passed by wrapping them in Arel.sql(). (called from define_question at /Users/vidhi.sharma/Desktop/Lectures/mod2_lec/040119/sessions-cookies-beta/app/controllers/responses_controller.rb:10)
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/responses_controller.rb:10
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/responses_controller.rb:21
+  [1m[36mQuestion Load (0.1ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/responses_controller.rb:21
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."id" = ? LIMIT ?[0m  [["id", 26], ["LIMIT", 1]]
+  ↳ app/controllers/responses_controller.rb:21
+  [1m[36mResponse Create (0.5ms)[0m  [1m[32mINSERT INTO "responses" ("question_id", "answer_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["question_id", 7], ["answer_id", 26], ["created_at", "2019-05-06 16:52:47.634594"], ["updated_at", "2019-05-06 16:52:47.634594"]]
+  ↳ app/controllers/responses_controller.rb:21
+  [1m[35m (2.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/responses_controller.rb:21
+  [1m[36mAnswer Load (0.2ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."id" = ? LIMIT ?[0m  [["id", 25], ["LIMIT", 1]]
+  ↳ app/controllers/responses_controller.rb:22
+Redirected to http://localhost:3000/random-question
+Completed 200 OK in 11ms (ActiveRecord: 3.5ms)
+
+
+Started GET "/random-question" for ::1 at 2019-05-06 11:52:47 -0500
+Processing by ResponsesController#new as HTML
+DEPRECATION WARNING: Dangerous query method (method whose arguments are used as raw SQL) called with non-attribute argument(s): "RANDOM()". Non-attribute arguments will be disallowed in Rails 6.0. This method should not be called with user-provided values, such as request parameters or model attributes. Known-safe values can be passed by wrapping them in Arel.sql(). (called from define_question at /Users/vidhi.sharma/Desktop/Lectures/mod2_lec/040119/sessions-cookies-beta/app/controllers/responses_controller.rb:10)
+  [1m[36mQuestion Load (0.3ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/responses_controller.rb:10
+  Rendering responses/new.html.erb within layouts/application
+DEPRECATION WARNING: Dangerous query method (method whose arguments are used as raw SQL) called with non-attribute argument(s): "RANDOM()". Non-attribute arguments will be disallowed in Rails 6.0. This method should not be called with user-provided values, such as request parameters or model attributes. Known-safe values can be passed by wrapping them in Arel.sql(). (called from random_answers at /Users/vidhi.sharma/Desktop/Lectures/mod2_lec/040119/sessions-cookies-beta/app/models/question.rb:7)
+  [1m[36mAnswer Load (0.3ms)[0m  [1m[34mSELECT "answers".* FROM "answers" WHERE "answers"."question_id" = ? ORDER BY RANDOM()[0m  [["question_id", 4]]
+  ↳ app/views/responses/new.html.erb:7
+  Rendered responses/new.html.erb within layouts/application (4.6ms)
+Completed 200 OK in 38ms (Views: 31.2ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/responses" for ::1 at 2019-05-06 11:52:49 -0500
+Processing by ResponsesController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"2fVJ6AFq5yf5ndfAFkz6zFqqH3uMBo0xHt6fj67lufBdCcdZb0zl3kZtj+DRsFqAYLff/FC/eAlVDUnAPioLxA==", "response"=>{"question_id"=>"4", "answer_id"=>"14"}, "commit"=>"Submit"}
+DEPRECATION WARNING: Dangerous query method (method whose arguments are used as raw SQL) called with non-attribute argument(s): "RANDOM()". Non-attribute arguments will be disallowed in Rails 6.0. This method should not be called with user-provided values, such as request parameters or model attributes. Known-safe values can be passed by wrapping them in Arel.sql(). (called from define_question at /Users/vidhi.sharma/Desktop/Lectures/mod2_lec/040119/sessions-cookies-beta/app/controllers/responses_controller.rb:10)
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/responses_controller.rb:10
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/responses_controller.rb:21
+  [1m[36mQuestion Load (0.1ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/responses_controller.rb:21
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/responses_controller.rb:21
+  [1m[36mResponse Create (0.3ms)[0m  [1m[32mINSERT INTO "responses" ("question_id", "answer_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["question_id", 4], ["answer_id", 14], ["created_at", "2019-05-06 16:52:49.574751"], ["updated_at", "2019-05-06 16:52:49.574751"]]
+  ↳ app/controllers/responses_controller.rb:21
+  [1m[35m (2.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/responses_controller.rb:21
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/responses_controller.rb:22
+Redirected to http://localhost:3000/random-question
+Completed 200 OK in 9ms (ActiveRecord: 2.9ms)
+
+
+Started GET "/random-question" for ::1 at 2019-05-06 11:52:49 -0500
+Processing by ResponsesController#new as HTML
+DEPRECATION WARNING: Dangerous query method (method whose arguments are used as raw SQL) called with non-attribute argument(s): "RANDOM()". Non-attribute arguments will be disallowed in Rails 6.0. This method should not be called with user-provided values, such as request parameters or model attributes. Known-safe values can be passed by wrapping them in Arel.sql(). (called from define_question at /Users/vidhi.sharma/Desktop/Lectures/mod2_lec/040119/sessions-cookies-beta/app/controllers/responses_controller.rb:10)
+  [1m[36mQuestion Load (0.3ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/responses_controller.rb:10
+  Rendering responses/new.html.erb within layouts/application
+DEPRECATION WARNING: Dangerous query method (method whose arguments are used as raw SQL) called with non-attribute argument(s): "RANDOM()". Non-attribute arguments will be disallowed in Rails 6.0. This method should not be called with user-provided values, such as request parameters or model attributes. Known-safe values can be passed by wrapping them in Arel.sql(). (called from random_answers at /Users/vidhi.sharma/Desktop/Lectures/mod2_lec/040119/sessions-cookies-beta/app/models/question.rb:7)
+  [1m[36mAnswer Load (0.4ms)[0m  [1m[34mSELECT "answers".* FROM "answers" WHERE "answers"."question_id" = ? ORDER BY RANDOM()[0m  [["question_id", 6]]
+  ↳ app/views/responses/new.html.erb:7
+  Rendered responses/new.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 46ms (Views: 38.7ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/responses" for ::1 at 2019-05-06 11:52:51 -0500
+Processing by ResponsesController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"v8/jyNobkr1PoDol5VGzGuP7rNyEbNQ5VQLkUxkz/YU7M215tD2QRPBQYgUirRNW2eZsW1jVIQEe0TIcifxPsQ==", "response"=>{"question_id"=>"6", "answer_id"=>"23"}, "commit"=>"Submit"}
+DEPRECATION WARNING: Dangerous query method (method whose arguments are used as raw SQL) called with non-attribute argument(s): "RANDOM()". Non-attribute arguments will be disallowed in Rails 6.0. This method should not be called with user-provided values, such as request parameters or model attributes. Known-safe values can be passed by wrapping them in Arel.sql(). (called from define_question at /Users/vidhi.sharma/Desktop/Lectures/mod2_lec/040119/sessions-cookies-beta/app/controllers/responses_controller.rb:10)
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/responses_controller.rb:10
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/responses_controller.rb:21
+  [1m[36mQuestion Load (0.1ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/responses_controller.rb:21
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."id" = ? LIMIT ?[0m  [["id", 23], ["LIMIT", 1]]
+  ↳ app/controllers/responses_controller.rb:21
+  [1m[36mResponse Create (0.3ms)[0m  [1m[32mINSERT INTO "responses" ("question_id", "answer_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["question_id", 6], ["answer_id", 23], ["created_at", "2019-05-06 16:52:51.800128"], ["updated_at", "2019-05-06 16:52:51.800128"]]
+  ↳ app/controllers/responses_controller.rb:21
+  [1m[35m (2.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/responses_controller.rb:21
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."id" = ? LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/controllers/responses_controller.rb:22
+Redirected to http://localhost:3000/random-question
+Completed 200 OK in 11ms (ActiveRecord: 3.5ms)
+
+
+Started GET "/random-question" for ::1 at 2019-05-06 11:52:51 -0500
+Processing by ResponsesController#new as HTML
+DEPRECATION WARNING: Dangerous query method (method whose arguments are used as raw SQL) called with non-attribute argument(s): "RANDOM()". Non-attribute arguments will be disallowed in Rails 6.0. This method should not be called with user-provided values, such as request parameters or model attributes. Known-safe values can be passed by wrapping them in Arel.sql(). (called from define_question at /Users/vidhi.sharma/Desktop/Lectures/mod2_lec/040119/sessions-cookies-beta/app/controllers/responses_controller.rb:10)
+  [1m[36mQuestion Load (1.2ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/responses_controller.rb:10
+  Rendering responses/new.html.erb within layouts/application
+DEPRECATION WARNING: Dangerous query method (method whose arguments are used as raw SQL) called with non-attribute argument(s): "RANDOM()". Non-attribute arguments will be disallowed in Rails 6.0. This method should not be called with user-provided values, such as request parameters or model attributes. Known-safe values can be passed by wrapping them in Arel.sql(). (called from random_answers at /Users/vidhi.sharma/Desktop/Lectures/mod2_lec/040119/sessions-cookies-beta/app/models/question.rb:7)
+  [1m[36mAnswer Load (0.3ms)[0m  [1m[34mSELECT "answers".* FROM "answers" WHERE "answers"."question_id" = ? ORDER BY RANDOM()[0m  [["question_id", 8]]
+  ↳ app/views/responses/new.html.erb:7
+  Rendered responses/new.html.erb within layouts/application (4.3ms)
+Completed 200 OK in 39ms (Views: 31.5ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/random-question" for ::1 at 2019-05-06 11:54:03 -0500
+Processing by ResponsesController#new as HTML
+DEPRECATION WARNING: Dangerous query method (method whose arguments are used as raw SQL) called with non-attribute argument(s): "RANDOM()". Non-attribute arguments will be disallowed in Rails 6.0. This method should not be called with user-provided values, such as request parameters or model attributes. Known-safe values can be passed by wrapping them in Arel.sql(). (called from define_question at /Users/vidhi.sharma/Desktop/Lectures/mod2_lec/040119/sessions-cookies-beta/app/controllers/responses_controller.rb:15)
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/responses_controller.rb:15
+  Rendering responses/new.html.erb within layouts/application
+DEPRECATION WARNING: Dangerous query method (method whose arguments are used as raw SQL) called with non-attribute argument(s): "RANDOM()". Non-attribute arguments will be disallowed in Rails 6.0. This method should not be called with user-provided values, such as request parameters or model attributes. Known-safe values can be passed by wrapping them in Arel.sql(). (called from random_answers at /Users/vidhi.sharma/Desktop/Lectures/mod2_lec/040119/sessions-cookies-beta/app/models/question.rb:7)
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT "answers".* FROM "answers" WHERE "answers"."question_id" = ? ORDER BY RANDOM()[0m  [["question_id", 4]]
+  ↳ app/views/responses/new.html.erb:7
+  Rendered responses/new.html.erb within layouts/application (10.9ms)
+Completed 200 OK in 44ms (Views: 26.3ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/random-question" for ::1 at 2019-05-06 11:54:52 -0500
+Processing by ResponsesController#new as HTML
+DEPRECATION WARNING: Dangerous query method (method whose arguments are used as raw SQL) called with non-attribute argument(s): "RANDOM()". Non-attribute arguments will be disallowed in Rails 6.0. This method should not be called with user-provided values, such as request parameters or model attributes. Known-safe values can be passed by wrapping them in Arel.sql(). (called from define_question at /Users/vidhi.sharma/Desktop/Lectures/mod2_lec/040119/sessions-cookies-beta/app/controllers/responses_controller.rb:15)
+  [1m[36mQuestion Load (0.3ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/responses_controller.rb:15
+  Rendering responses/new.html.erb within layouts/application
+DEPRECATION WARNING: Dangerous query method (method whose arguments are used as raw SQL) called with non-attribute argument(s): "RANDOM()". Non-attribute arguments will be disallowed in Rails 6.0. This method should not be called with user-provided values, such as request parameters or model attributes. Known-safe values can be passed by wrapping them in Arel.sql(). (called from random_answers at /Users/vidhi.sharma/Desktop/Lectures/mod2_lec/040119/sessions-cookies-beta/app/models/question.rb:7)
+  [1m[36mAnswer Load (0.2ms)[0m  [1m[34mSELECT "answers".* FROM "answers" WHERE "answers"."question_id" = ? ORDER BY RANDOM()[0m  [["question_id", 9]]
+  ↳ app/views/responses/new.html.erb:7
+  Rendered responses/new.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 29ms (Views: 22.9ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/responses" for ::1 at 2019-05-06 11:54:56 -0500
+Processing by ResponsesController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"dEE2GmjXgdVYD/bq3byvozbCljShK3fuWtrOoTW0xbUT5DYXq1HCPvwggIhTqNDTXwiTiITatJMQdVVeNHEOXQ==", "response"=>{"question_id"=>"9", "answer_id"=>"34"}, "commit"=>"Submit"}
+DEPRECATION WARNING: Dangerous query method (method whose arguments are used as raw SQL) called with non-attribute argument(s): "RANDOM()". Non-attribute arguments will be disallowed in Rails 6.0. This method should not be called with user-provided values, such as request parameters or model attributes. Known-safe values can be passed by wrapping them in Arel.sql(). (called from define_question at /Users/vidhi.sharma/Desktop/Lectures/mod2_lec/040119/sessions-cookies-beta/app/controllers/responses_controller.rb:15)
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/responses_controller.rb:15
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/responses_controller.rb:26
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/responses_controller.rb:26
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."id" = ? LIMIT ?[0m  [["id", 34], ["LIMIT", 1]]
+  ↳ app/controllers/responses_controller.rb:26
+  [1m[36mResponse Create (0.3ms)[0m  [1m[32mINSERT INTO "responses" ("question_id", "answer_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["question_id", 9], ["answer_id", 34], ["created_at", "2019-05-06 16:54:56.488303"], ["updated_at", "2019-05-06 16:54:56.488303"]]
+  ↳ app/controllers/responses_controller.rb:26
+  [1m[35m (2.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/responses_controller.rb:26
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."id" = ? LIMIT ?[0m  [["id", 33], ["LIMIT", 1]]
+  ↳ app/controllers/responses_controller.rb:27
+Redirected to http://localhost:3000/random-question
+Completed 200 OK in 13ms (ActiveRecord: 3.7ms)
+
+
+Started GET "/random-question" for ::1 at 2019-05-06 11:54:56 -0500
+Processing by ResponsesController#new as HTML
+DEPRECATION WARNING: Dangerous query method (method whose arguments are used as raw SQL) called with non-attribute argument(s): "RANDOM()". Non-attribute arguments will be disallowed in Rails 6.0. This method should not be called with user-provided values, such as request parameters or model attributes. Known-safe values can be passed by wrapping them in Arel.sql(). (called from define_question at /Users/vidhi.sharma/Desktop/Lectures/mod2_lec/040119/sessions-cookies-beta/app/controllers/responses_controller.rb:15)
+  [1m[36mQuestion Load (0.9ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/responses_controller.rb:15
+  Rendering responses/new.html.erb within layouts/application
+DEPRECATION WARNING: Dangerous query method (method whose arguments are used as raw SQL) called with non-attribute argument(s): "RANDOM()". Non-attribute arguments will be disallowed in Rails 6.0. This method should not be called with user-provided values, such as request parameters or model attributes. Known-safe values can be passed by wrapping them in Arel.sql(). (called from random_answers at /Users/vidhi.sharma/Desktop/Lectures/mod2_lec/040119/sessions-cookies-beta/app/models/question.rb:7)
+  [1m[36mAnswer Load (0.3ms)[0m  [1m[34mSELECT "answers".* FROM "answers" WHERE "answers"."question_id" = ? ORDER BY RANDOM()[0m  [["question_id", 4]]
+  ↳ app/views/responses/new.html.erb:7
+  Rendered responses/new.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 41ms (Views: 33.3ms | ActiveRecord: 1.2ms)
+
+
+Started POST "/responses" for ::1 at 2019-05-06 11:54:58 -0500
+Processing by ResponsesController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"WUqtxzvL+nFE4sdH0qsxU5jYUJc1A41kuHs6pjFeacDtcnj/eUwEMnmWBVpRnkrCPsvq7Q+5e9aQuxHdvJDeLw==", "response"=>{"question_id"=>"4", "answer_id"=>"13"}, "commit"=>"Submit"}
+DEPRECATION WARNING: Dangerous query method (method whose arguments are used as raw SQL) called with non-attribute argument(s): "RANDOM()". Non-attribute arguments will be disallowed in Rails 6.0. This method should not be called with user-provided values, such as request parameters or model attributes. Known-safe values can be passed by wrapping them in Arel.sql(). (called from define_question at /Users/vidhi.sharma/Desktop/Lectures/mod2_lec/040119/sessions-cookies-beta/app/controllers/responses_controller.rb:15)
+  [1m[36mQuestion Load (0.3ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/responses_controller.rb:15
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/responses_controller.rb:26
+  [1m[36mQuestion Load (0.1ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/responses_controller.rb:26
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/responses_controller.rb:26
+  [1m[36mResponse Create (0.3ms)[0m  [1m[32mINSERT INTO "responses" ("question_id", "answer_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["question_id", 4], ["answer_id", 13], ["created_at", "2019-05-06 16:54:58.748785"], ["updated_at", "2019-05-06 16:54:58.748785"]]
+  ↳ app/controllers/responses_controller.rb:26
+  [1m[35m (2.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/responses_controller.rb:26
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/responses_controller.rb:27
+Redirected to http://localhost:3000/random-question
+Completed 200 OK in 9ms (ActiveRecord: 3.2ms)
+
+
+Started GET "/random-question" for ::1 at 2019-05-06 11:54:58 -0500
+Processing by ResponsesController#new as HTML
+DEPRECATION WARNING: Dangerous query method (method whose arguments are used as raw SQL) called with non-attribute argument(s): "RANDOM()". Non-attribute arguments will be disallowed in Rails 6.0. This method should not be called with user-provided values, such as request parameters or model attributes. Known-safe values can be passed by wrapping them in Arel.sql(). (called from define_question at /Users/vidhi.sharma/Desktop/Lectures/mod2_lec/040119/sessions-cookies-beta/app/controllers/responses_controller.rb:15)
+  [1m[36mQuestion Load (0.4ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/responses_controller.rb:15
+  Rendering responses/new.html.erb within layouts/application
+DEPRECATION WARNING: Dangerous query method (method whose arguments are used as raw SQL) called with non-attribute argument(s): "RANDOM()". Non-attribute arguments will be disallowed in Rails 6.0. This method should not be called with user-provided values, such as request parameters or model attributes. Known-safe values can be passed by wrapping them in Arel.sql(). (called from random_answers at /Users/vidhi.sharma/Desktop/Lectures/mod2_lec/040119/sessions-cookies-beta/app/models/question.rb:7)
+  [1m[36mAnswer Load (0.4ms)[0m  [1m[34mSELECT "answers".* FROM "answers" WHERE "answers"."question_id" = ? ORDER BY RANDOM()[0m  [["question_id", 9]]
+  ↳ app/views/responses/new.html.erb:7
+  Rendered responses/new.html.erb within layouts/application (5.8ms)
+Completed 200 OK in 47ms (Views: 39.1ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/responses/new" for ::1 at 2019-05-06 13:11:33 -0500
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/vidhi.sharma/.rvm/gems/ruby-2.3.7/gems/activerecord-5.2.2.1/lib/active_record/log_subscriber.rb:98
+Processing by ResponsesController#new as HTML
+DEPRECATION WARNING: Dangerous query method (method whose arguments are used as raw SQL) called with non-attribute argument(s): "RANDOM()". Non-attribute arguments will be disallowed in Rails 6.0. This method should not be called with user-provided values, such as request parameters or model attributes. Known-safe values can be passed by wrapping them in Arel.sql(). (called from define_question at /Users/vidhi.sharma/Desktop/Lectures/mod2_lec/040119/sessions-cookies-beta/app/controllers/responses_controller.rb:10)
+  [1m[36mQuestion Load (0.6ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/responses_controller.rb:10
+  Rendering responses/new.html.erb within layouts/application
+DEPRECATION WARNING: Dangerous query method (method whose arguments are used as raw SQL) called with non-attribute argument(s): "RANDOM()". Non-attribute arguments will be disallowed in Rails 6.0. This method should not be called with user-provided values, such as request parameters or model attributes. Known-safe values can be passed by wrapping them in Arel.sql(). (called from random_answers at /Users/vidhi.sharma/Desktop/Lectures/mod2_lec/040119/sessions-cookies-beta/app/models/question.rb:7)
+  [1m[36mAnswer Load (0.4ms)[0m  [1m[34mSELECT "answers".* FROM "answers" WHERE "answers"."question_id" = ? ORDER BY RANDOM()[0m  [["question_id", 4]]
+  ↳ app/views/responses/new.html.erb:7
+  Rendered responses/new.html.erb within layouts/application (230.4ms)
+Completed 200 OK in 723ms (Views: 648.6ms | ActiveRecord: 3.1ms)
+
+
+Started POST "/responses" for ::1 at 2019-05-06 13:13:47 -0500
+Processing by ResponsesController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"sj/6N7SAxUDHMi1ZNUHf11Mjl62gLKTdZdXn7dJD21fVmvo6dwaGq2MdWzu7VaCnOumSEYXdZ6AvenwS04YQvw==", "response"=>{"question_id"=>"4", "answer_id"=>"13"}, "commit"=>"Submit"}
+DEPRECATION WARNING: Dangerous query method (method whose arguments are used as raw SQL) called with non-attribute argument(s): "RANDOM()". Non-attribute arguments will be disallowed in Rails 6.0. This method should not be called with user-provided values, such as request parameters or model attributes. Known-safe values can be passed by wrapping them in Arel.sql(). (called from define_question at /Users/vidhi.sharma/Desktop/Lectures/mod2_lec/040119/sessions-cookies-beta/app/controllers/responses_controller.rb:10)
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/responses_controller.rb:10
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/responses_controller.rb:19
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/responses_controller.rb:19
+  [1m[36mAnswer Load (0.2ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/responses_controller.rb:19
+  [1m[36mResponse Create (0.5ms)[0m  [1m[32mINSERT INTO "responses" ("question_id", "answer_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["question_id", 4], ["answer_id", 13], ["created_at", "2019-05-06 18:13:47.379164"], ["updated_at", "2019-05-06 18:13:47.379164"]]
+  ↳ app/controllers/responses_controller.rb:19
+  [1m[35m (2.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/responses_controller.rb:19
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/responses_controller.rb:20
+Redirected to http://localhost:3000/random-question
+Completed 200 OK in 17ms (ActiveRecord: 3.9ms)
+
+
+Started GET "/random-question" for ::1 at 2019-05-06 13:13:47 -0500
+Processing by ResponsesController#new as HTML
+DEPRECATION WARNING: Dangerous query method (method whose arguments are used as raw SQL) called with non-attribute argument(s): "RANDOM()". Non-attribute arguments will be disallowed in Rails 6.0. This method should not be called with user-provided values, such as request parameters or model attributes. Known-safe values can be passed by wrapping them in Arel.sql(). (called from define_question at /Users/vidhi.sharma/Desktop/Lectures/mod2_lec/040119/sessions-cookies-beta/app/controllers/responses_controller.rb:10)
+  [1m[36mQuestion Load (0.4ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/responses_controller.rb:10
+  Rendering responses/new.html.erb within layouts/application
+DEPRECATION WARNING: Dangerous query method (method whose arguments are used as raw SQL) called with non-attribute argument(s): "RANDOM()". Non-attribute arguments will be disallowed in Rails 6.0. This method should not be called with user-provided values, such as request parameters or model attributes. Known-safe values can be passed by wrapping them in Arel.sql(). (called from random_answers at /Users/vidhi.sharma/Desktop/Lectures/mod2_lec/040119/sessions-cookies-beta/app/models/question.rb:7)
+  [1m[36mAnswer Load (0.3ms)[0m  [1m[34mSELECT "answers".* FROM "answers" WHERE "answers"."question_id" = ? ORDER BY RANDOM()[0m  [["question_id", 8]]
+  ↳ app/views/responses/new.html.erb:7
+  Rendered responses/new.html.erb within layouts/application (5.3ms)
+Completed 200 OK in 46ms (Views: 36.2ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/responses" for ::1 at 2019-05-06 13:14:07 -0500
+Processing by ResponsesController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"1gsnpT2s523keftdniaikqvp7zVy2bu+i1xJAZh/QkBiM/KdfysZLtkNOUAdE9kDDfpVT0hjTQyjnGJ6FbH1rw==", "response"=>{"question_id"=>"8", "answer_id"=>"29"}, "commit"=>"Submit"}
+DEPRECATION WARNING: Dangerous query method (method whose arguments are used as raw SQL) called with non-attribute argument(s): "RANDOM()". Non-attribute arguments will be disallowed in Rails 6.0. This method should not be called with user-provided values, such as request parameters or model attributes. Known-safe values can be passed by wrapping them in Arel.sql(). (called from define_question at /Users/vidhi.sharma/Desktop/Lectures/mod2_lec/040119/sessions-cookies-beta/app/controllers/responses_controller.rb:10)
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/responses_controller.rb:10
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/responses_controller.rb:19
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/responses_controller.rb:19
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."id" = ? LIMIT ?[0m  [["id", 29], ["LIMIT", 1]]
+  ↳ app/controllers/responses_controller.rb:19
+  [1m[36mResponse Create (0.4ms)[0m  [1m[32mINSERT INTO "responses" ("question_id", "answer_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["question_id", 8], ["answer_id", 29], ["created_at", "2019-05-06 18:14:07.301619"], ["updated_at", "2019-05-06 18:14:07.301619"]]
+  ↳ app/controllers/responses_controller.rb:19
+  [1m[35m (2.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/responses_controller.rb:19
+  [1m[36mAnswer Load (0.3ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."id" = ? LIMIT ?[0m  [["id", 29], ["LIMIT", 1]]
+  ↳ app/controllers/responses_controller.rb:20
+Redirected to http://localhost:3000/random-question
+Completed 200 OK in 14ms (ActiveRecord: 3.7ms)
+
+
+Started GET "/random-question" for ::1 at 2019-05-06 13:14:07 -0500
+Processing by ResponsesController#new as HTML
+DEPRECATION WARNING: Dangerous query method (method whose arguments are used as raw SQL) called with non-attribute argument(s): "RANDOM()". Non-attribute arguments will be disallowed in Rails 6.0. This method should not be called with user-provided values, such as request parameters or model attributes. Known-safe values can be passed by wrapping them in Arel.sql(). (called from define_question at /Users/vidhi.sharma/Desktop/Lectures/mod2_lec/040119/sessions-cookies-beta/app/controllers/responses_controller.rb:10)
+  [1m[36mQuestion Load (0.3ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/responses_controller.rb:10
+  Rendering responses/new.html.erb within layouts/application
+DEPRECATION WARNING: Dangerous query method (method whose arguments are used as raw SQL) called with non-attribute argument(s): "RANDOM()". Non-attribute arguments will be disallowed in Rails 6.0. This method should not be called with user-provided values, such as request parameters or model attributes. Known-safe values can be passed by wrapping them in Arel.sql(). (called from random_answers at /Users/vidhi.sharma/Desktop/Lectures/mod2_lec/040119/sessions-cookies-beta/app/models/question.rb:7)
+  [1m[36mAnswer Load (0.3ms)[0m  [1m[34mSELECT "answers".* FROM "answers" WHERE "answers"."question_id" = ? ORDER BY RANDOM()[0m  [["question_id", 4]]
+  ↳ app/views/responses/new.html.erb:7
+  Rendered responses/new.html.erb within layouts/application (5.9ms)
+Completed 200 OK in 88ms (Views: 80.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/random-question" for ::1 at 2019-05-06 13:20:53 -0500
+Processing by ResponsesController#new as HTML
+DEPRECATION WARNING: Dangerous query method (method whose arguments are used as raw SQL) called with non-attribute argument(s): "RANDOM()". Non-attribute arguments will be disallowed in Rails 6.0. This method should not be called with user-provided values, such as request parameters or model attributes. Known-safe values can be passed by wrapping them in Arel.sql(). (called from define_question at /Users/vidhi.sharma/Desktop/Lectures/mod2_lec/040119/sessions-cookies-beta/app/controllers/responses_controller.rb:10)
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/responses_controller.rb:10
+  Rendering responses/new.html.erb within layouts/application
+DEPRECATION WARNING: Dangerous query method (method whose arguments are used as raw SQL) called with non-attribute argument(s): "RANDOM()". Non-attribute arguments will be disallowed in Rails 6.0. This method should not be called with user-provided values, such as request parameters or model attributes. Known-safe values can be passed by wrapping them in Arel.sql(). (called from random_answers at /Users/vidhi.sharma/Desktop/Lectures/mod2_lec/040119/sessions-cookies-beta/app/models/question.rb:7)
+  [1m[36mAnswer Load (0.3ms)[0m  [1m[34mSELECT "answers".* FROM "answers" WHERE "answers"."question_id" = ? ORDER BY RANDOM()[0m  [["question_id", 3]]
+  ↳ app/views/responses/new.html.erb:7
+  Rendered responses/new.html.erb within layouts/application (32.8ms)
+Completed 200 OK in 109ms (Views: 80.2ms | ActiveRecord: 2.7ms)
+
+
+Started POST "/responses" for ::1 at 2019-05-06 13:21:02 -0500
+Processing by ResponsesController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"i6PgYq7aNtfQffu2eB9pmd+wkui/Wi+4tX/eAflQuT3sBuBvbVx1PHRSjdT2CxbptnqXVJqr7MX/0EX++JVy1Q==", "response"=>{"question_id"=>"3", "answer_id"=>"9"}, "commit"=>"Submit"}
+DEPRECATION WARNING: Dangerous query method (method whose arguments are used as raw SQL) called with non-attribute argument(s): "RANDOM()". Non-attribute arguments will be disallowed in Rails 6.0. This method should not be called with user-provided values, such as request parameters or model attributes. Known-safe values can be passed by wrapping them in Arel.sql(). (called from define_question at /Users/vidhi.sharma/Desktop/Lectures/mod2_lec/040119/sessions-cookies-beta/app/controllers/responses_controller.rb:10)
+  [1m[36mQuestion Load (0.3ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/responses_controller.rb:10
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/responses_controller.rb:21
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/responses_controller.rb:21
+  [1m[36mAnswer Load (0.3ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/responses_controller.rb:21
+  [1m[36mResponse Create (0.6ms)[0m  [1m[32mINSERT INTO "responses" ("question_id", "answer_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["question_id", 3], ["answer_id", 9], ["created_at", "2019-05-06 18:21:02.087640"], ["updated_at", "2019-05-06 18:21:02.087640"]]
+  ↳ app/controllers/responses_controller.rb:21
+  [1m[35m (2.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/responses_controller.rb:21
+  [1m[36mAnswer Load (0.5ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/responses_controller.rb:22
+Redirected to http://localhost:3000/random-question
+Completed 200 OK in 20ms (ActiveRecord: 4.6ms)
+
+
+Started GET "/random-question" for ::1 at 2019-05-06 13:21:02 -0500
+Processing by ResponsesController#new as HTML
+DEPRECATION WARNING: Dangerous query method (method whose arguments are used as raw SQL) called with non-attribute argument(s): "RANDOM()". Non-attribute arguments will be disallowed in Rails 6.0. This method should not be called with user-provided values, such as request parameters or model attributes. Known-safe values can be passed by wrapping them in Arel.sql(). (called from define_question at /Users/vidhi.sharma/Desktop/Lectures/mod2_lec/040119/sessions-cookies-beta/app/controllers/responses_controller.rb:10)
+  [1m[36mQuestion Load (0.3ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/responses_controller.rb:10
+  Rendering responses/new.html.erb within layouts/application
+DEPRECATION WARNING: Dangerous query method (method whose arguments are used as raw SQL) called with non-attribute argument(s): "RANDOM()". Non-attribute arguments will be disallowed in Rails 6.0. This method should not be called with user-provided values, such as request parameters or model attributes. Known-safe values can be passed by wrapping them in Arel.sql(). (called from random_answers at /Users/vidhi.sharma/Desktop/Lectures/mod2_lec/040119/sessions-cookies-beta/app/models/question.rb:7)
+  [1m[36mAnswer Load (0.3ms)[0m  [1m[34mSELECT "answers".* FROM "answers" WHERE "answers"."question_id" = ? ORDER BY RANDOM()[0m  [["question_id", 4]]
+  ↳ app/views/responses/new.html.erb:7
+  Rendered responses/new.html.erb within layouts/application (8.1ms)
+Completed 200 OK in 90ms (Views: 73.4ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/responses" for ::1 at 2019-05-06 13:21:22 -0500
+Processing by ResponsesController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"CVx1TKZqdGPlnv0b6K9J8UEgRZfMaW/7/NVj8r9GOAe9ZKB05O2KINjqPwZrmjJg5zP/7fbTmUnUFUiJMoiP6A==", "response"=>{"question_id"=>"4", "answer_id"=>"13"}, "commit"=>"Submit"}
+DEPRECATION WARNING: Dangerous query method (method whose arguments are used as raw SQL) called with non-attribute argument(s): "RANDOM()". Non-attribute arguments will be disallowed in Rails 6.0. This method should not be called with user-provided values, such as request parameters or model attributes. Known-safe values can be passed by wrapping them in Arel.sql(). (called from define_question at /Users/vidhi.sharma/Desktop/Lectures/mod2_lec/040119/sessions-cookies-beta/app/controllers/responses_controller.rb:10)
+  [1m[36mQuestion Load (0.3ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/responses_controller.rb:10
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/responses_controller.rb:21
+  [1m[36mQuestion Load (0.4ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/responses_controller.rb:21
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/responses_controller.rb:21
+  [1m[36mResponse Create (0.5ms)[0m  [1m[32mINSERT INTO "responses" ("question_id", "answer_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["question_id", 4], ["answer_id", 13], ["created_at", "2019-05-06 18:21:22.732664"], ["updated_at", "2019-05-06 18:21:22.732664"]]
+  ↳ app/controllers/responses_controller.rb:21
+  [1m[35m (2.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/responses_controller.rb:21
+  [1m[36mAnswer Load (1.2ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/responses_controller.rb:22
+Redirected to http://localhost:3000/random-question
+Completed 200 OK in 20ms (ActiveRecord: 5.4ms)
+
+
+Started GET "/random-question" for ::1 at 2019-05-06 13:21:22 -0500
+Processing by ResponsesController#new as HTML
+DEPRECATION WARNING: Dangerous query method (method whose arguments are used as raw SQL) called with non-attribute argument(s): "RANDOM()". Non-attribute arguments will be disallowed in Rails 6.0. This method should not be called with user-provided values, such as request parameters or model attributes. Known-safe values can be passed by wrapping them in Arel.sql(). (called from define_question at /Users/vidhi.sharma/Desktop/Lectures/mod2_lec/040119/sessions-cookies-beta/app/controllers/responses_controller.rb:10)
+  [1m[36mQuestion Load (0.3ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/responses_controller.rb:10
+  Rendering responses/new.html.erb within layouts/application
+DEPRECATION WARNING: Dangerous query method (method whose arguments are used as raw SQL) called with non-attribute argument(s): "RANDOM()". Non-attribute arguments will be disallowed in Rails 6.0. This method should not be called with user-provided values, such as request parameters or model attributes. Known-safe values can be passed by wrapping them in Arel.sql(). (called from random_answers at /Users/vidhi.sharma/Desktop/Lectures/mod2_lec/040119/sessions-cookies-beta/app/models/question.rb:7)
+  [1m[36mAnswer Load (0.8ms)[0m  [1m[34mSELECT "answers".* FROM "answers" WHERE "answers"."question_id" = ? ORDER BY RANDOM()[0m  [["question_id", 3]]
+  ↳ app/views/responses/new.html.erb:7
+  Rendered responses/new.html.erb within layouts/application (8.3ms)
+Completed 200 OK in 63ms (Views: 54.4ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/random-question" for ::1 at 2019-05-06 13:23:27 -0500
+Processing by ResponsesController#new as HTML
+DEPRECATION WARNING: Dangerous query method (method whose arguments are used as raw SQL) called with non-attribute argument(s): "RANDOM()". Non-attribute arguments will be disallowed in Rails 6.0. This method should not be called with user-provided values, such as request parameters or model attributes. Known-safe values can be passed by wrapping them in Arel.sql(). (called from define_question at /Users/vidhi.sharma/Desktop/Lectures/mod2_lec/040119/sessions-cookies-beta/app/controllers/responses_controller.rb:10)
+  [1m[36mQuestion Load (0.3ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/responses_controller.rb:10
+  Rendering responses/new.html.erb within layouts/application
+DEPRECATION WARNING: Dangerous query method (method whose arguments are used as raw SQL) called with non-attribute argument(s): "RANDOM()". Non-attribute arguments will be disallowed in Rails 6.0. This method should not be called with user-provided values, such as request parameters or model attributes. Known-safe values can be passed by wrapping them in Arel.sql(). (called from random_answers at /Users/vidhi.sharma/Desktop/Lectures/mod2_lec/040119/sessions-cookies-beta/app/models/question.rb:7)
+  [1m[36mAnswer Load (0.6ms)[0m  [1m[34mSELECT "answers".* FROM "answers" WHERE "answers"."question_id" = ? ORDER BY RANDOM()[0m  [["question_id", 1]]
+  ↳ app/views/responses/new.html.erb:7
+  Rendered responses/new.html.erb within layouts/application (5.5ms)
+Completed 200 OK in 53ms (Views: 43.8ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/responses" for ::1 at 2019-05-06 13:23:37 -0500
+Processing by ResponsesController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"4oXUUrwWtwc1skRPcCJTCJUz90DdCmpiPdhdhej+0Q6FINRff5D07JGdMi3+Nix4/Pny/Pj7qR93d8Z66Tsa5g==", "response"=>{"question_id"=>"1", "answer_id"=>"1"}, "commit"=>"Submit"}
+DEPRECATION WARNING: Dangerous query method (method whose arguments are used as raw SQL) called with non-attribute argument(s): "RANDOM()". Non-attribute arguments will be disallowed in Rails 6.0. This method should not be called with user-provided values, such as request parameters or model attributes. Known-safe values can be passed by wrapping them in Arel.sql(). (called from define_question at /Users/vidhi.sharma/Desktop/Lectures/mod2_lec/040119/sessions-cookies-beta/app/controllers/responses_controller.rb:10)
+  [1m[36mQuestion Load (0.3ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/responses_controller.rb:10
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/responses_controller.rb:21
+  [1m[36mQuestion Load (0.5ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/responses_controller.rb:21
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/responses_controller.rb:21
+  [1m[36mResponse Create (0.4ms)[0m  [1m[32mINSERT INTO "responses" ("question_id", "answer_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["question_id", 1], ["answer_id", 1], ["created_at", "2019-05-06 18:23:37.322999"], ["updated_at", "2019-05-06 18:23:37.322999"]]
+  ↳ app/controllers/responses_controller.rb:21
+  [1m[35m (2.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/responses_controller.rb:21
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/responses_controller.rb:22
+Redirected to http://localhost:3000/random-question
+Completed 200 OK in 21ms (ActiveRecord: 3.6ms)
+
+
+Started GET "/random-question" for ::1 at 2019-05-06 13:23:37 -0500
+Processing by ResponsesController#new as HTML
+DEPRECATION WARNING: Dangerous query method (method whose arguments are used as raw SQL) called with non-attribute argument(s): "RANDOM()". Non-attribute arguments will be disallowed in Rails 6.0. This method should not be called with user-provided values, such as request parameters or model attributes. Known-safe values can be passed by wrapping them in Arel.sql(). (called from define_question at /Users/vidhi.sharma/Desktop/Lectures/mod2_lec/040119/sessions-cookies-beta/app/controllers/responses_controller.rb:10)
+  [1m[36mQuestion Load (0.5ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/responses_controller.rb:10
+  Rendering responses/new.html.erb within layouts/application
+DEPRECATION WARNING: Dangerous query method (method whose arguments are used as raw SQL) called with non-attribute argument(s): "RANDOM()". Non-attribute arguments will be disallowed in Rails 6.0. This method should not be called with user-provided values, such as request parameters or model attributes. Known-safe values can be passed by wrapping them in Arel.sql(). (called from random_answers at /Users/vidhi.sharma/Desktop/Lectures/mod2_lec/040119/sessions-cookies-beta/app/models/question.rb:7)
+  [1m[36mAnswer Load (0.3ms)[0m  [1m[34mSELECT "answers".* FROM "answers" WHERE "answers"."question_id" = ? ORDER BY RANDOM()[0m  [["question_id", 4]]
+  ↳ app/views/responses/new.html.erb:7
+  Rendered responses/new.html.erb within layouts/application (6.4ms)
+Completed 200 OK in 54ms (Views: 46.1ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/random-question" for ::1 at 2019-05-06 13:24:21 -0500
+Processing by ResponsesController#new as HTML
+DEPRECATION WARNING: Dangerous query method (method whose arguments are used as raw SQL) called with non-attribute argument(s): "RANDOM()". Non-attribute arguments will be disallowed in Rails 6.0. This method should not be called with user-provided values, such as request parameters or model attributes. Known-safe values can be passed by wrapping them in Arel.sql(). (called from define_question at /Users/vidhi.sharma/Desktop/Lectures/mod2_lec/040119/sessions-cookies-beta/app/controllers/responses_controller.rb:10)
+  [1m[36mQuestion Load (0.4ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/responses_controller.rb:10
+  Rendering responses/new.html.erb within layouts/application
+DEPRECATION WARNING: Dangerous query method (method whose arguments are used as raw SQL) called with non-attribute argument(s): "RANDOM()". Non-attribute arguments will be disallowed in Rails 6.0. This method should not be called with user-provided values, such as request parameters or model attributes. Known-safe values can be passed by wrapping them in Arel.sql(). (called from random_answers at /Users/vidhi.sharma/Desktop/Lectures/mod2_lec/040119/sessions-cookies-beta/app/models/question.rb:7)
+  [1m[36mAnswer Load (0.3ms)[0m  [1m[34mSELECT "answers".* FROM "answers" WHERE "answers"."question_id" = ? ORDER BY RANDOM()[0m  [["question_id", 2]]
+  ↳ app/views/responses/new.html.erb:7
+  Rendered responses/new.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 55ms (Views: 48.4ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/responses" for ::1 at 2019-05-06 13:24:36 -0500
+Processing by ResponsesController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"oIqfyWOM6fsPGsAY5PXeRuyRQJS5Z1qZel99L6WeXv/21PBU/ZO/kPx5sBDeumG2TznMgG9l3PHXv4zjbtykAg==", "response"=>{"question_id"=>"2", "answer_id"=>"5"}, "commit"=>"Submit"}
+DEPRECATION WARNING: Dangerous query method (method whose arguments are used as raw SQL) called with non-attribute argument(s): "RANDOM()". Non-attribute arguments will be disallowed in Rails 6.0. This method should not be called with user-provided values, such as request parameters or model attributes. Known-safe values can be passed by wrapping them in Arel.sql(). (called from define_question at /Users/vidhi.sharma/Desktop/Lectures/mod2_lec/040119/sessions-cookies-beta/app/controllers/responses_controller.rb:10)
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/responses_controller.rb:10
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/responses_controller.rb:21
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/responses_controller.rb:21
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/responses_controller.rb:21
+  [1m[36mResponse Create (0.4ms)[0m  [1m[32mINSERT INTO "responses" ("question_id", "answer_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["question_id", 2], ["answer_id", 5], ["created_at", "2019-05-06 18:24:36.326772"], ["updated_at", "2019-05-06 18:24:36.326772"]]
+  ↳ app/controllers/responses_controller.rb:21
+  [1m[35m (2.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/responses_controller.rb:21
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/responses_controller.rb:22
+Redirected to http://localhost:3000/random-question
+Completed 200 OK in 30ms (ActiveRecord: 3.1ms)
+
+
+Started GET "/random-question" for ::1 at 2019-05-06 13:24:36 -0500
+Processing by ResponsesController#new as HTML
+DEPRECATION WARNING: Dangerous query method (method whose arguments are used as raw SQL) called with non-attribute argument(s): "RANDOM()". Non-attribute arguments will be disallowed in Rails 6.0. This method should not be called with user-provided values, such as request parameters or model attributes. Known-safe values can be passed by wrapping them in Arel.sql(). (called from define_question at /Users/vidhi.sharma/Desktop/Lectures/mod2_lec/040119/sessions-cookies-beta/app/controllers/responses_controller.rb:10)
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/responses_controller.rb:10
+  Rendering responses/new.html.erb within layouts/application
+DEPRECATION WARNING: Dangerous query method (method whose arguments are used as raw SQL) called with non-attribute argument(s): "RANDOM()". Non-attribute arguments will be disallowed in Rails 6.0. This method should not be called with user-provided values, such as request parameters or model attributes. Known-safe values can be passed by wrapping them in Arel.sql(). (called from random_answers at /Users/vidhi.sharma/Desktop/Lectures/mod2_lec/040119/sessions-cookies-beta/app/models/question.rb:7)
+  [1m[36mAnswer Load (0.7ms)[0m  [1m[34mSELECT "answers".* FROM "answers" WHERE "answers"."question_id" = ? ORDER BY RANDOM()[0m  [["question_id", 4]]
+  ↳ app/views/responses/new.html.erb:7
+  Rendered responses/new.html.erb within layouts/application (11.3ms)
+Completed 200 OK in 58ms (Views: 48.3ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/random-question" for ::1 at 2019-05-06 13:27:33 -0500
+Processing by ResponsesController#new as HTML
+DEPRECATION WARNING: Dangerous query method (method whose arguments are used as raw SQL) called with non-attribute argument(s): "RANDOM()". Non-attribute arguments will be disallowed in Rails 6.0. This method should not be called with user-provided values, such as request parameters or model attributes. Known-safe values can be passed by wrapping them in Arel.sql(). (called from define_question at /Users/vidhi.sharma/Desktop/Lectures/mod2_lec/040119/sessions-cookies-beta/app/controllers/responses_controller.rb:10)
+  [1m[36mQuestion Load (0.3ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/responses_controller.rb:10
+  Rendering responses/new.html.erb within layouts/application
+DEPRECATION WARNING: Dangerous query method (method whose arguments are used as raw SQL) called with non-attribute argument(s): "RANDOM()". Non-attribute arguments will be disallowed in Rails 6.0. This method should not be called with user-provided values, such as request parameters or model attributes. Known-safe values can be passed by wrapping them in Arel.sql(). (called from random_answers at /Users/vidhi.sharma/Desktop/Lectures/mod2_lec/040119/sessions-cookies-beta/app/models/question.rb:7)
+  [1m[36mAnswer Load (0.7ms)[0m  [1m[34mSELECT "answers".* FROM "answers" WHERE "answers"."question_id" = ? ORDER BY RANDOM()[0m  [["question_id", 1]]
+  ↳ app/views/responses/new.html.erb:7
+  Rendered responses/new.html.erb within layouts/application (8.0ms)
+Completed 200 OK in 61ms (Views: 51.5ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/random-question" for ::1 at 2019-05-06 13:29:02 -0500
+Processing by ResponsesController#new as HTML
+DEPRECATION WARNING: Dangerous query method (method whose arguments are used as raw SQL) called with non-attribute argument(s): "RANDOM()". Non-attribute arguments will be disallowed in Rails 6.0. This method should not be called with user-provided values, such as request parameters or model attributes. Known-safe values can be passed by wrapping them in Arel.sql(). (called from define_question at /Users/vidhi.sharma/Desktop/Lectures/mod2_lec/040119/sessions-cookies-beta/app/controllers/responses_controller.rb:14)
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/responses_controller.rb:14
+  Rendering responses/new.html.erb within layouts/application
+DEPRECATION WARNING: Dangerous query method (method whose arguments are used as raw SQL) called with non-attribute argument(s): "RANDOM()". Non-attribute arguments will be disallowed in Rails 6.0. This method should not be called with user-provided values, such as request parameters or model attributes. Known-safe values can be passed by wrapping them in Arel.sql(). (called from random_answers at /Users/vidhi.sharma/Desktop/Lectures/mod2_lec/040119/sessions-cookies-beta/app/models/question.rb:7)
+  [1m[36mAnswer Load (0.5ms)[0m  [1m[34mSELECT "answers".* FROM "answers" WHERE "answers"."question_id" = ? ORDER BY RANDOM()[0m  [["question_id", 9]]
+  ↳ app/views/responses/new.html.erb:7
+  Rendered responses/new.html.erb within layouts/application (18.4ms)
+Completed 200 OK in 71ms (Views: 45.7ms | ActiveRecord: 2.7ms)
+
+
+Started POST "/responses" for ::1 at 2019-05-06 13:29:16 -0500
+Processing by ResponsesController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ndhEghBPshvUR1P8ezuXntawBEfBgODwi4hRNDDE007LhisfjlDkcCckI/RBdChudRiIUxeCZpgmaKD4+4Ypsw==", "response"=>{"question_id"=>"9", "answer_id"=>"33"}, "commit"=>"Submit"}
+DEPRECATION WARNING: Dangerous query method (method whose arguments are used as raw SQL) called with non-attribute argument(s): "RANDOM()". Non-attribute arguments will be disallowed in Rails 6.0. This method should not be called with user-provided values, such as request parameters or model attributes. Known-safe values can be passed by wrapping them in Arel.sql(). (called from define_question at /Users/vidhi.sharma/Desktop/Lectures/mod2_lec/040119/sessions-cookies-beta/app/controllers/responses_controller.rb:14)
+  [1m[36mQuestion Load (0.3ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/responses_controller.rb:14
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/responses_controller.rb:25
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/responses_controller.rb:25
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."id" = ? LIMIT ?[0m  [["id", 33], ["LIMIT", 1]]
+  ↳ app/controllers/responses_controller.rb:25
+  [1m[36mResponse Create (0.4ms)[0m  [1m[32mINSERT INTO "responses" ("question_id", "answer_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["question_id", 9], ["answer_id", 33], ["created_at", "2019-05-06 18:29:16.780468"], ["updated_at", "2019-05-06 18:29:16.780468"]]
+  ↳ app/controllers/responses_controller.rb:25
+  [1m[35m (2.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/responses_controller.rb:25
+  [1m[36mAnswer Load (0.2ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."id" = ? LIMIT ?[0m  [["id", 33], ["LIMIT", 1]]
+  ↳ app/controllers/responses_controller.rb:26
+Redirected to http://localhost:3000/random-question
+Completed 200 OK in 14ms (ActiveRecord: 3.9ms)
+
+
+Started GET "/random-question" for ::1 at 2019-05-06 13:29:16 -0500
+Processing by ResponsesController#new as HTML
+DEPRECATION WARNING: Dangerous query method (method whose arguments are used as raw SQL) called with non-attribute argument(s): "RANDOM()". Non-attribute arguments will be disallowed in Rails 6.0. This method should not be called with user-provided values, such as request parameters or model attributes. Known-safe values can be passed by wrapping them in Arel.sql(). (called from define_question at /Users/vidhi.sharma/Desktop/Lectures/mod2_lec/040119/sessions-cookies-beta/app/controllers/responses_controller.rb:14)
+  [1m[36mQuestion Load (0.3ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/responses_controller.rb:14
+  Rendering responses/new.html.erb within layouts/application
+DEPRECATION WARNING: Dangerous query method (method whose arguments are used as raw SQL) called with non-attribute argument(s): "RANDOM()". Non-attribute arguments will be disallowed in Rails 6.0. This method should not be called with user-provided values, such as request parameters or model attributes. Known-safe values can be passed by wrapping them in Arel.sql(). (called from random_answers at /Users/vidhi.sharma/Desktop/Lectures/mod2_lec/040119/sessions-cookies-beta/app/models/question.rb:7)
+  [1m[36mAnswer Load (0.4ms)[0m  [1m[34mSELECT "answers".* FROM "answers" WHERE "answers"."question_id" = ? ORDER BY RANDOM()[0m  [["question_id", 2]]
+  ↳ app/views/responses/new.html.erb:7
+  Rendered responses/new.html.erb within layouts/application (7.0ms)
+Completed 200 OK in 56ms (Views: 49.1ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/responses" for ::1 at 2019-05-06 13:29:23 -0500
+Processing by ResponsesController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"8dvyY1LHvpB7Llm0mg+zVIvRByVDJEEeEocHxY7oudM5ZIHaEwvr6ORBWdr4wrZ4Jtr8dBCV4X9z1SaS2DzVSw==", "response"=>{"question_id"=>"2", "answer_id"=>"5"}, "commit"=>"Submit"}
+DEPRECATION WARNING: Dangerous query method (method whose arguments are used as raw SQL) called with non-attribute argument(s): "RANDOM()". Non-attribute arguments will be disallowed in Rails 6.0. This method should not be called with user-provided values, such as request parameters or model attributes. Known-safe values can be passed by wrapping them in Arel.sql(). (called from define_question at /Users/vidhi.sharma/Desktop/Lectures/mod2_lec/040119/sessions-cookies-beta/app/controllers/responses_controller.rb:14)
+  [1m[36mQuestion Load (0.3ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/responses_controller.rb:14
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/responses_controller.rb:25
+  [1m[36mQuestion Load (0.5ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/responses_controller.rb:25
+  [1m[36mAnswer Load (0.4ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/responses_controller.rb:25
+  [1m[36mResponse Create (0.5ms)[0m  [1m[32mINSERT INTO "responses" ("question_id", "answer_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["question_id", 2], ["answer_id", 5], ["created_at", "2019-05-06 18:29:23.564343"], ["updated_at", "2019-05-06 18:29:23.564343"]]
+  ↳ app/controllers/responses_controller.rb:25
+  [1m[35m (2.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/responses_controller.rb:25
+  [1m[36mAnswer Load (0.5ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/responses_controller.rb:26
+Redirected to http://localhost:3000/random-question
+Completed 200 OK in 16ms (ActiveRecord: 4.3ms)
+
+
+Started GET "/random-question" for ::1 at 2019-05-06 13:29:23 -0500
+Processing by ResponsesController#new as HTML
+DEPRECATION WARNING: Dangerous query method (method whose arguments are used as raw SQL) called with non-attribute argument(s): "RANDOM()". Non-attribute arguments will be disallowed in Rails 6.0. This method should not be called with user-provided values, such as request parameters or model attributes. Known-safe values can be passed by wrapping them in Arel.sql(). (called from define_question at /Users/vidhi.sharma/Desktop/Lectures/mod2_lec/040119/sessions-cookies-beta/app/controllers/responses_controller.rb:14)
+  [1m[36mQuestion Load (0.3ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/responses_controller.rb:14
+  Rendering responses/new.html.erb within layouts/application
+DEPRECATION WARNING: Dangerous query method (method whose arguments are used as raw SQL) called with non-attribute argument(s): "RANDOM()". Non-attribute arguments will be disallowed in Rails 6.0. This method should not be called with user-provided values, such as request parameters or model attributes. Known-safe values can be passed by wrapping them in Arel.sql(). (called from random_answers at /Users/vidhi.sharma/Desktop/Lectures/mod2_lec/040119/sessions-cookies-beta/app/models/question.rb:7)
+  [1m[36mAnswer Load (0.8ms)[0m  [1m[34mSELECT "answers".* FROM "answers" WHERE "answers"."question_id" = ? ORDER BY RANDOM()[0m  [["question_id", 9]]
+  ↳ app/views/responses/new.html.erb:7
+  Rendered responses/new.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 67ms (Views: 59.8ms | ActiveRecord: 1.1ms)
+
+
+Started POST "/responses" for ::1 at 2019-05-06 13:29:27 -0500
+Processing by ResponsesController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"z1GnbKl7Jf2LP8MA11LXbY1Utn8PRmBfXhSNDoZE/DwH7tTV6LdwhRRQw261n9JBIF9NLlz3wD4/RqxZ0JCQpA==", "response"=>{"question_id"=>"9", "answer_id"=>"36"}, "commit"=>"Submit"}
+DEPRECATION WARNING: Dangerous query method (method whose arguments are used as raw SQL) called with non-attribute argument(s): "RANDOM()". Non-attribute arguments will be disallowed in Rails 6.0. This method should not be called with user-provided values, such as request parameters or model attributes. Known-safe values can be passed by wrapping them in Arel.sql(). (called from define_question at /Users/vidhi.sharma/Desktop/Lectures/mod2_lec/040119/sessions-cookies-beta/app/controllers/responses_controller.rb:14)
+  [1m[36mQuestion Load (0.4ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/responses_controller.rb:14
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/responses_controller.rb:25
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/responses_controller.rb:25
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."id" = ? LIMIT ?[0m  [["id", 36], ["LIMIT", 1]]
+  ↳ app/controllers/responses_controller.rb:25
+  [1m[36mResponse Create (0.7ms)[0m  [1m[32mINSERT INTO "responses" ("question_id", "answer_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["question_id", 9], ["answer_id", 36], ["created_at", "2019-05-06 18:29:27.505681"], ["updated_at", "2019-05-06 18:29:27.505681"]]
+  ↳ app/controllers/responses_controller.rb:25
+  [1m[35m (2.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/responses_controller.rb:25
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."id" = ? LIMIT ?[0m  [["id", 33], ["LIMIT", 1]]
+  ↳ app/controllers/responses_controller.rb:26
+Redirected to http://localhost:3000/random-question
+Completed 200 OK in 13ms (ActiveRecord: 3.8ms)
+
+
+Started GET "/random-question" for ::1 at 2019-05-06 13:29:27 -0500
+Processing by ResponsesController#new as HTML
+DEPRECATION WARNING: Dangerous query method (method whose arguments are used as raw SQL) called with non-attribute argument(s): "RANDOM()". Non-attribute arguments will be disallowed in Rails 6.0. This method should not be called with user-provided values, such as request parameters or model attributes. Known-safe values can be passed by wrapping them in Arel.sql(). (called from define_question at /Users/vidhi.sharma/Desktop/Lectures/mod2_lec/040119/sessions-cookies-beta/app/controllers/responses_controller.rb:14)
+  [1m[36mQuestion Load (0.3ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/responses_controller.rb:14
+  Rendering responses/new.html.erb within layouts/application
+DEPRECATION WARNING: Dangerous query method (method whose arguments are used as raw SQL) called with non-attribute argument(s): "RANDOM()". Non-attribute arguments will be disallowed in Rails 6.0. This method should not be called with user-provided values, such as request parameters or model attributes. Known-safe values can be passed by wrapping them in Arel.sql(). (called from random_answers at /Users/vidhi.sharma/Desktop/Lectures/mod2_lec/040119/sessions-cookies-beta/app/models/question.rb:7)
+  [1m[36mAnswer Load (0.4ms)[0m  [1m[34mSELECT "answers".* FROM "answers" WHERE "answers"."question_id" = ? ORDER BY RANDOM()[0m  [["question_id", 7]]
+  ↳ app/views/responses/new.html.erb:7
+  Rendered responses/new.html.erb within layouts/application (8.5ms)
+Completed 200 OK in 58ms (Views: 46.9ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/random-question" for ::1 at 2019-05-06 13:36:22 -0500
+Processing by ResponsesController#new as HTML
+DEPRECATION WARNING: Dangerous query method (method whose arguments are used as raw SQL) called with non-attribute argument(s): "RANDOM()". Non-attribute arguments will be disallowed in Rails 6.0. This method should not be called with user-provided values, such as request parameters or model attributes. Known-safe values can be passed by wrapping them in Arel.sql(). (called from define_question at /Users/vidhi.sharma/Desktop/Lectures/mod2_lec/040119/sessions-cookies-beta/app/controllers/responses_controller.rb:18)
+  [1m[36mQuestion Load (1.0ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/responses_controller.rb:18
+  Rendering responses/new.html.erb within layouts/application
+DEPRECATION WARNING: Dangerous query method (method whose arguments are used as raw SQL) called with non-attribute argument(s): "RANDOM()". Non-attribute arguments will be disallowed in Rails 6.0. This method should not be called with user-provided values, such as request parameters or model attributes. Known-safe values can be passed by wrapping them in Arel.sql(). (called from random_answers at /Users/vidhi.sharma/Desktop/Lectures/mod2_lec/040119/sessions-cookies-beta/app/models/question.rb:7)
+  [1m[36mAnswer Load (0.2ms)[0m  [1m[34mSELECT "answers".* FROM "answers" WHERE "answers"."question_id" = ? ORDER BY RANDOM()[0m  [["question_id", 9]]
+  ↳ app/views/responses/new.html.erb:7
+  Rendered responses/new.html.erb within layouts/application (15.9ms)
+Completed 200 OK in 74ms (Views: 42.6ms | ActiveRecord: 3.5ms)
+
+
+Started POST "/responses" for ::1 at 2019-05-06 13:36:29 -0500
+Processing by ResponsesController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"BSQp1vW9LAB4/5v4kzm4EegnVCZPssgrul3XiKrsJC1TekZLa6J6a4uc6/CpdgfhS4/YMpmwTkMXvSZEYa7e0A==", "response"=>{"question_id"=>"9", "answer_id"=>"36"}, "commit"=>"Submit"}
+DEPRECATION WARNING: Dangerous query method (method whose arguments are used as raw SQL) called with non-attribute argument(s): "RANDOM()". Non-attribute arguments will be disallowed in Rails 6.0. This method should not be called with user-provided values, such as request parameters or model attributes. Known-safe values can be passed by wrapping them in Arel.sql(). (called from define_question at /Users/vidhi.sharma/Desktop/Lectures/mod2_lec/040119/sessions-cookies-beta/app/controllers/responses_controller.rb:18)
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/responses_controller.rb:18
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/responses_controller.rb:29
+  [1m[36mQuestion Load (0.1ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/responses_controller.rb:29
+  [1m[36mAnswer Load (0.2ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."id" = ? LIMIT ?[0m  [["id", 36], ["LIMIT", 1]]
+  ↳ app/controllers/responses_controller.rb:29
+  [1m[36mResponse Create (0.4ms)[0m  [1m[32mINSERT INTO "responses" ("question_id", "answer_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["question_id", 9], ["answer_id", 36], ["created_at", "2019-05-06 18:36:29.085280"], ["updated_at", "2019-05-06 18:36:29.085280"]]
+  ↳ app/controllers/responses_controller.rb:29
+  [1m[35m (2.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/responses_controller.rb:29
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT  "answers".* FROM "answers" WHERE "answers"."id" = ? LIMIT ?[0m  [["id", 33], ["LIMIT", 1]]
+  ↳ app/controllers/responses_controller.rb:30
+Redirected to http://localhost:3000/random-question
+Completed 200 OK in 14ms (ActiveRecord: 3.5ms)
+
+
+Started GET "/random-question" for ::1 at 2019-05-06 13:36:29 -0500
+Processing by ResponsesController#new as HTML
+DEPRECATION WARNING: Dangerous query method (method whose arguments are used as raw SQL) called with non-attribute argument(s): "RANDOM()". Non-attribute arguments will be disallowed in Rails 6.0. This method should not be called with user-provided values, such as request parameters or model attributes. Known-safe values can be passed by wrapping them in Arel.sql(). (called from define_question at /Users/vidhi.sharma/Desktop/Lectures/mod2_lec/040119/sessions-cookies-beta/app/controllers/responses_controller.rb:18)
+  [1m[36mQuestion Load (0.3ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/responses_controller.rb:18
+  Rendering responses/new.html.erb within layouts/application
+DEPRECATION WARNING: Dangerous query method (method whose arguments are used as raw SQL) called with non-attribute argument(s): "RANDOM()". Non-attribute arguments will be disallowed in Rails 6.0. This method should not be called with user-provided values, such as request parameters or model attributes. Known-safe values can be passed by wrapping them in Arel.sql(). (called from random_answers at /Users/vidhi.sharma/Desktop/Lectures/mod2_lec/040119/sessions-cookies-beta/app/models/question.rb:7)
+  [1m[36mAnswer Load (0.3ms)[0m  [1m[34mSELECT "answers".* FROM "answers" WHERE "answers"."question_id" = ? ORDER BY RANDOM()[0m  [["question_id", 9]]
+  ↳ app/views/responses/new.html.erb:7
+  Rendered responses/new.html.erb within layouts/application (6.6ms)
+Completed 200 OK in 50ms (Views: 43.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/random-question" for ::1 at 2019-05-06 13:36:49 -0500
+Processing by ResponsesController#new as HTML
+DEPRECATION WARNING: Dangerous query method (method whose arguments are used as raw SQL) called with non-attribute argument(s): "RANDOM()". Non-attribute arguments will be disallowed in Rails 6.0. This method should not be called with user-provided values, such as request parameters or model attributes. Known-safe values can be passed by wrapping them in Arel.sql(). (called from define_question at /Users/vidhi.sharma/Desktop/Lectures/mod2_lec/040119/sessions-cookies-beta/app/controllers/responses_controller.rb:18)
+  [1m[36mQuestion Load (0.4ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/responses_controller.rb:18
+  Rendering responses/new.html.erb within layouts/application
+DEPRECATION WARNING: Dangerous query method (method whose arguments are used as raw SQL) called with non-attribute argument(s): "RANDOM()". Non-attribute arguments will be disallowed in Rails 6.0. This method should not be called with user-provided values, such as request parameters or model attributes. Known-safe values can be passed by wrapping them in Arel.sql(). (called from random_answers at /Users/vidhi.sharma/Desktop/Lectures/mod2_lec/040119/sessions-cookies-beta/app/models/question.rb:7)
+  [1m[36mAnswer Load (0.2ms)[0m  [1m[34mSELECT "answers".* FROM "answers" WHERE "answers"."question_id" = ? ORDER BY RANDOM()[0m  [["question_id", 1]]
+  ↳ app/views/responses/new.html.erb:7
+  Rendered responses/new.html.erb within layouts/application (5.7ms)
+Completed 200 OK in 60ms (Views: 49.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/random-question" for ::1 at 2019-05-06 13:37:36 -0500
+Processing by ResponsesController#new as HTML
+DEPRECATION WARNING: Dangerous query method (method whose arguments are used as raw SQL) called with non-attribute argument(s): "RANDOM()". Non-attribute arguments will be disallowed in Rails 6.0. This method should not be called with user-provided values, such as request parameters or model attributes. Known-safe values can be passed by wrapping them in Arel.sql(). (called from define_question at /Users/vidhi.sharma/Desktop/Lectures/mod2_lec/040119/sessions-cookies-beta/app/controllers/responses_controller.rb:18)
+  [1m[36mQuestion Load (0.3ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/responses_controller.rb:18
+  Rendering responses/new.html.erb within layouts/application
+DEPRECATION WARNING: Dangerous query method (method whose arguments are used as raw SQL) called with non-attribute argument(s): "RANDOM()". Non-attribute arguments will be disallowed in Rails 6.0. This method should not be called with user-provided values, such as request parameters or model attributes. Known-safe values can be passed by wrapping them in Arel.sql(). (called from random_answers at /Users/vidhi.sharma/Desktop/Lectures/mod2_lec/040119/sessions-cookies-beta/app/models/question.rb:7)
+  [1m[36mAnswer Load (0.3ms)[0m  [1m[34mSELECT "answers".* FROM "answers" WHERE "answers"."question_id" = ? ORDER BY RANDOM()[0m  [["question_id", 7]]
+  ↳ app/views/responses/new.html.erb:7
+  Rendered responses/new.html.erb within layouts/application (12.8ms)
+Completed 200 OK in 48ms (Views: 42.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/random-question" for ::1 at 2019-05-06 13:38:23 -0500
+Processing by ResponsesController#new as HTML
+DEPRECATION WARNING: Dangerous query method (method whose arguments are used as raw SQL) called with non-attribute argument(s): "RANDOM()". Non-attribute arguments will be disallowed in Rails 6.0. This method should not be called with user-provided values, such as request parameters or model attributes. Known-safe values can be passed by wrapping them in Arel.sql(). (called from define_question at /Users/vidhi.sharma/Desktop/Lectures/mod2_lec/040119/sessions-cookies-beta/app/controllers/responses_controller.rb:18)
+  [1m[36mQuestion Load (0.8ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/responses_controller.rb:18
+  Rendering responses/new.html.erb within layouts/application
+DEPRECATION WARNING: Dangerous query method (method whose arguments are used as raw SQL) called with non-attribute argument(s): "RANDOM()". Non-attribute arguments will be disallowed in Rails 6.0. This method should not be called with user-provided values, such as request parameters or model attributes. Known-safe values can be passed by wrapping them in Arel.sql(). (called from random_answers at /Users/vidhi.sharma/Desktop/Lectures/mod2_lec/040119/sessions-cookies-beta/app/models/question.rb:7)
+  [1m[36mAnswer Load (0.4ms)[0m  [1m[34mSELECT "answers".* FROM "answers" WHERE "answers"."question_id" = ? ORDER BY RANDOM()[0m  [["question_id", 2]]
+  ↳ app/views/responses/new.html.erb:7
+  Rendered responses/new.html.erb within layouts/application (7.2ms)
+Completed 200 OK in 45ms (Views: 36.4ms | ActiveRecord: 1.2ms)
+
+
