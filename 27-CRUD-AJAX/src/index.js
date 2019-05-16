@@ -56,10 +56,22 @@ document.addEventListener('DOMContentLoaded', () => {
         })
         .then((res) => {return res.json()})
         .then((obj) => {
-          let pokemon = allPokemonData.filter(pokemon => pokemon.id == id)[0]
-          pokemon.name = obj.name
-          pokemonContainer.innerHTML = renderAllPokemon(allPokemonData)
+          // let pokemon = allPokemonData.filter(pokemon => pokemon.id == id)[0]
+          // pokemon.name = obj.name
+          // pokemonContainer.innerHTML = renderAllPokemon(allPokemonData)
           
+          //SOLUTION FOR THE TASK GIVEN AFTER THE LECTURE
+
+          let pokemon = allPokemonData.filter(pokemon => pokemon.id == id)[0]
+          let index = allPokemonData.indexOf(pokemon)
+          allPokemonData[index] = obj
+          pokemonContainer.innerHTML = renderAllPokemon(allPokemonData)
+
+
+
+
+
+
         })
       }
       if(event.target.dataset.action === "delete"){
