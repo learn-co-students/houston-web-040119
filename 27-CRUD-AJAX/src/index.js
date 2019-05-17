@@ -80,8 +80,8 @@ document.addEventListener('DOMContentLoaded', () => {
       })
       
       .then(() => {
-        let pokemons = allPokemonData.filter(pokemon => pokemon.id != id)
-        pokemonContainer.innerHTML = renderAllPokemon(pokemons)
+        allPokemonData = allPokemonData.filter(pokemon => pokemon.id != id)
+        pokemonContainer.innerHTML = renderAllPokemon(allPokemonData)
       
       } )
       }

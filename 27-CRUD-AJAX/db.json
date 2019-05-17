@@ -46,55 +46,10 @@
       }
     },
     {
-      "height": 20,
-      "weight": 1000,
-      "id": 3,
-      "name": "venusaur",
-      "abilities": [
-        "overgrow",
-        "chlorophyll"
-      ],
-      "moves": [],
-      "stats": [
-        {
-          "value": 100,
-          "name": "special-defense"
-        },
-        {
-          "value": 100,
-          "name": "special-attack"
-        },
-        {
-          "value": 83,
-          "name": "defense"
-        },
-        {
-          "value": 82,
-          "name": "attack"
-        },
-        {
-          "value": 80,
-          "name": "speed"
-        },
-        {
-          "value": 80,
-          "name": "hp"
-        }
-      ],
-      "types": [
-        "grass",
-        "poison"
-      ],
-      "sprites": {
-        "front": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/3.png",
-        "back": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/3.png"
-      }
-    },
-    {
       "height": 6,
       "weight": 85,
       "id": 5,
-      "name": "charmander",
+      "name": "VIDHI",
       "abilities": [
         "blaze",
         "solar-power"
@@ -246,65 +201,10 @@
       }
     },
     {
-      "height": 5,
-      "weight": 90,
-      "id": 10,
-      "name": "squirtle",
-      "abilities": [
-        "torrent",
-        "rain-dish"
-      ],
-      "moves": [
-        "mega-punch",
-        "mega-kick",
-        "hydro-pump",
-        "bubble-beam",
-        "submission",
-        "counter",
-        "seismic-toss",
-        "rage",
-        "withdraw",
-        "bide"
-      ],
-      "stats": [
-        {
-          "value": 65,
-          "name": "defense"
-        },
-        {
-          "value": 64,
-          "name": "special-defense"
-        },
-        {
-          "value": 50,
-          "name": "special-attack"
-        },
-        {
-          "value": 48,
-          "name": "attack"
-        },
-        {
-          "value": 44,
-          "name": "hp"
-        },
-        {
-          "value": 43,
-          "name": "speed"
-        }
-      ],
-      "types": [
-        "water"
-      ],
-      "sprites": {
-        "front": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/7.png",
-        "back": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/7.png"
-      }
-    },
-    {
       "height": 10,
       "weight": 225,
       "id": 11,
-      "name": "wartortle",
+      "name": "VIDHI",
       "abilities": [
         "torrent",
         "rain-dish"
@@ -3905,66 +3805,10 @@
       }
     },
     {
-      "height": 8,
-      "weight": 150,
-      "id": 105,
-      "name": "farfetchd",
-      "abilities": [
-        "keen-eye",
-        "inner-focus",
-        "defiant"
-      ],
-      "moves": [
-        "razor-wind",
-        "whirlwind",
-        "fly",
-        "fury-attack",
-        "peck",
-        "rage",
-        "bide",
-        "skull-bash",
-        "slash"
-      ],
-      "stats": [
-        {
-          "value": 65,
-          "name": "attack"
-        },
-        {
-          "value": 62,
-          "name": "special-defense"
-        },
-        {
-          "value": 60,
-          "name": "speed"
-        },
-        {
-          "value": 58,
-          "name": "special-attack"
-        },
-        {
-          "value": 55,
-          "name": "defense"
-        },
-        {
-          "value": 52,
-          "name": "hp"
-        }
-      ],
-      "types": [
-        "normal",
-        "flying"
-      ],
-      "sprites": {
-        "front": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/83.png",
-        "back": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/83.png"
-      }
-    },
-    {
       "height": 14,
       "weight": 392,
       "id": 106,
-      "name": "doduo",
+      "name": "VIDHI",
       "abilities": [
         "run-away",
         "early-bird",
@@ -4490,67 +4334,10 @@
       }
     },
     {
-      "height": 88,
-      "weight": 2100,
-      "id": 118,
-      "name": "onix",
-      "abilities": [
-        "rock-head",
-        "sturdy",
-        "weak-armor"
-      ],
-      "moves": [
-        "bind",
-        "slam",
-        "rock-throw",
-        "fissure",
-        "rage",
-        "harden",
-        "bide",
-        "self-destruct",
-        "skull-bash",
-        "explosion"
-      ],
-      "stats": [
-        {
-          "value": 160,
-          "name": "defense"
-        },
-        {
-          "value": 70,
-          "name": "speed"
-        },
-        {
-          "value": 45,
-          "name": "special-defense"
-        },
-        {
-          "value": 45,
-          "name": "attack"
-        },
-        {
-          "value": 35,
-          "name": "hp"
-        },
-        {
-          "value": 30,
-          "name": "special-attack"
-        }
-      ],
-      "types": [
-        "rock",
-        "ground"
-      ],
-      "sprites": {
-        "front": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/95.png",
-        "back": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/95.png"
-      }
-    },
-    {
       "height": 10,
       "weight": 324,
       "id": 121,
-      "name": "drowzee",
+      "name": "VIDHI",
       "abilities": [
         "insomnia",
         "forewarn",
