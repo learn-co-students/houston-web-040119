@@ -421,55 +421,10 @@
       }
     },
     {
-      "height": 3,
-      "weight": 32,
-      "id": 17,
-      "name": "weedle",
-      "abilities": [
-        "shield-dust",
-        "run-away"
-      ],
-      "moves": [],
-      "stats": [
-        {
-          "value": 50,
-          "name": "speed"
-        },
-        {
-          "value": 40,
-          "name": "hp"
-        },
-        {
-          "value": 35,
-          "name": "attack"
-        },
-        {
-          "value": 30,
-          "name": "defense"
-        },
-        {
-          "value": 20,
-          "name": "special-defense"
-        },
-        {
-          "value": 20,
-          "name": "special-attack"
-        }
-      ],
-      "types": [
-        "bug",
-        "poison"
-      ],
-      "sprites": {
-        "front": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/13.png",
-        "back": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/13.png"
-      }
-    },
-    {
       "height": 6,
       "weight": 100,
       "id": 18,
-      "name": "kakuna",
+      "name": "VIDHI",
       "abilities": [
         "shed-skin"
       ],
@@ -881,55 +836,10 @@
       }
     },
     {
-      "height": 20,
-      "weight": 69,
-      "id": 29,
-      "name": "ekans",
-      "abilities": [
-        "intimidate",
-        "shed-skin",
-        "unnerve"
-      ],
-      "moves": [],
-      "stats": [
-        {
-          "value": 60,
-          "name": "attack"
-        },
-        {
-          "value": 55,
-          "name": "speed"
-        },
-        {
-          "value": 54,
-          "name": "special-defense"
-        },
-        {
-          "value": 44,
-          "name": "defense"
-        },
-        {
-          "value": 40,
-          "name": "special-attack"
-        },
-        {
-          "value": 35,
-          "name": "hp"
-        }
-      ],
-      "types": [
-        "poison"
-      ],
-      "sprites": {
-        "front": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/23.png",
-        "back": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/23.png"
-      }
-    },
-    {
       "height": 35,
       "weight": 650,
       "id": 30,
-      "name": "arbok",
+      "name": "VIDHI",
       "abilities": [
         "intimidate",
         "shed-skin",
@@ -1218,51 +1128,6 @@
       "sprites": {
         "front": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/29.png",
         "back": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/29.png"
-      }
-    },
-    {
-      "height": 8,
-      "weight": 200,
-      "id": 43,
-      "name": "nidorina",
-      "abilities": [
-        "poison-point",
-        "rivalry",
-        "hustle"
-      ],
-      "moves": [],
-      "stats": [
-        {
-          "value": 70,
-          "name": "hp"
-        },
-        {
-          "value": 67,
-          "name": "defense"
-        },
-        {
-          "value": 62,
-          "name": "attack"
-        },
-        {
-          "value": 56,
-          "name": "speed"
-        },
-        {
-          "value": 55,
-          "name": "special-defense"
-        },
-        {
-          "value": 55,
-          "name": "special-attack"
-        }
-      ],
-      "types": [
-        "poison"
-      ],
-      "sprites": {
-        "front": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/30.png",
-        "back": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/30.png"
       }
     },
     {
@@ -1927,51 +1792,6 @@
       "sprites": {
         "front": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/43.png",
         "back": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/43.png"
-      }
-    },
-    {
-      "height": 8,
-      "weight": 86,
-      "id": 60,
-      "name": "gloom",
-      "abilities": [
-        "chlorophyll",
-        "stench"
-      ],
-      "moves": [],
-      "stats": [
-        {
-          "value": 85,
-          "name": "special-attack"
-        },
-        {
-          "value": 75,
-          "name": "special-defense"
-        },
-        {
-          "value": 70,
-          "name": "defense"
-        },
-        {
-          "value": 65,
-          "name": "attack"
-        },
-        {
-          "value": 60,
-          "name": "hp"
-        },
-        {
-          "value": 40,
-          "name": "speed"
-        }
-      ],
-      "types": [
-        "grass",
-        "poison"
-      ],
-      "sprites": {
-        "front": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/44.png",
-        "back": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/44.png"
       }
     },
     {

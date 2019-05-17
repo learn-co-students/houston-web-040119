@@ -80,8 +80,16 @@ document.addEventListener('DOMContentLoaded', () => {
       })
       
       .then(() => {
-        allPokemonData = allPokemonData.filter(pokemon => pokemon.id != id)
+        let pokemon = allPokemonData.filter(pokemon => pokemon.id == id)[0]
+        let index = allPokemonData.indexOf(pokemon)
+
+        allPokemonData.splice(index,1)
         pokemonContainer.innerHTML = renderAllPokemon(allPokemonData)
+
+        //one more way
+        // allPokemonData = allPokemonData.filter(pokemon => pokemon.id != id)
+        // pokemonContainer.innerHTML = renderAllPokemon(allPokemonData)
+
       
       } )
       }
