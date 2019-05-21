@@ -4,6 +4,7 @@ class TaskListItem {
   }
 
   renderListItem(){
+    
       let listitem = document.createElement("li")
       listitem.innerText = this.description
 
@@ -95,4 +96,4 @@ class TaskListItem {
   }
 }
 
-TaskListItem.all = []
+TaskListItem.all = [] //can't define it before class because it won't know what TaskListItem is
