@@ -20,3 +20,52 @@ infoForm.addEventListener("submit",(e) => {
 });
 
 
+
+
+//practice during lecture
+class Animal{
+    constructor(name){
+    this.name = name
+    }
+    
+    speak(){
+    return 'Hello!'
+    }
+}
+
+
+class Cat extends Animal{
+    constructor(name, gender){
+    super(name)
+    this.gender = gender
+    
+    }
+    
+    speak(){
+    
+    return `${super.speak()} I am a cat!!!`
+    }
+}
+
+
+class Dog extends Animal{
+    constructor(name, breed){
+    super(name)
+    this.breed = breed
+    
+    }
+    
+    speak(){
+    
+    return `${super.speak()} I am a dog!!!`
+    }
+}
+
+
+
+let dog1 = new Dog("Richi", "pug")
+dog1.speak()
+
+let cat1 = new Cat("Meawww", "Male")
+cat1.speak()
+
