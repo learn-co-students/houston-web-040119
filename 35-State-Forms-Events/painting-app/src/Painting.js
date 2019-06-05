@@ -10,6 +10,11 @@ class Painting extends Component{
           }
       }
 
+    addVote = () => {
+      this.setState({
+        votes: this.state.votes + 1
+      })
+    }
 
 
     render(){
@@ -19,7 +24,7 @@ class Painting extends Component{
                 <img src={this.props.painting.image}></img>
                  <p>{this.props.painting.artist.name}</p>
                  <span>Votes:{this.state.votes}</span><br/>
-                 <button>Like</button>
+                 <button onClick={this.addVote}>Like</button>
               </div>)
     }
 
