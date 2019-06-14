@@ -26,19 +26,19 @@ class App extends Component{
       }
   }
 
-  componentDidMount(){
-    console.log('test')
-    fetch('http://localhost:3000/api/v1/paintings')
-    .then(res => {
-    return res.json()
-    } )
-    .then(data => {
-      console.log(data)
-      this.setState({
-        paintings: data
-      })
-    })
-  }
+  // componentDidMount(){
+  //   console.log('test')
+  //   fetch('http://localhost:3000/api/v1/paintings')
+  //   .then(res => {
+  //   return res.json()
+  //   } )
+  //   .then(data => {
+  //     console.log(data)
+  //     this.setState({
+  //       paintings: data
+  //     })
+  //   })
+  // }
 
   // state = {
   //   text: '040119'
@@ -76,18 +76,58 @@ class App extends Component{
     })
   }
 
+
+  login = (e) => {
+    e.preventDefault()
+
+    fetch('http://localhost:3000/api/v1/login', {
+      method: 'POST',
+      headers:{
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        username: this.state.username,
+        password: this.state.password
+      })
+    })
+    .then(res => res.json())
+    .then(data => {
+      this.setState({
+        curretuser: data.username
+      })
+      
+      localStorage.token = data.token
+      // localStorage.setItem('token', data.token)
+
+      fetch('http://localhost:3000/api/v1/paintings',{
+      method:'GET',
+      headers:{
+          Authorization: `Bearer ${localStorage.token}`
+      }})
+      .then(res => res.json())
+      .then(data => {
+        this.setState({
+          paintings: data
+        })
+      })
+
+    })
+
+
+  }
+
   render(){
     // console.log(this.state.text)
     return (<div>
       <Header changeList={this.changeList}/>
-      <form>
+      <form onSubmit={(e) => this.login(e)}>
        <label>UserName</label>
-       <input onChange={this.handleChange} name="name" type="text" />
+       <input onChange={this.handleChange} name="username" type="text" />
        <label>Password</label>
        <input onChange={this.handleChange} name="password" type="password" />
        <input type="submit" onClick={this.handleSubmit} />
      </form>
-      {/* {this.state.list ?  <PaintingList paintings={this.state.paintings} /> : <PaintingForm addPainting={this.addPainting}/>} */}
+      {/* {localStorage.token ?  <PaintingList paintings={this.state.paintings} /> : null} */}
      
     </div>
     )
